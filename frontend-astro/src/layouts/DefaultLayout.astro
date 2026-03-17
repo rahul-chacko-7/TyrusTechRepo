@@ -1,0 +1,31 @@
+---
+import Header from '../components/Header.astro';
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document Digitization Services India | Go Green & Secure</title>
+    <meta
+      name="description"
+      content="Document digitization services across India with secure handling of sensitive data, sustainability-focused workflows, and high-speed scanning."
+    />
+  </head>
+  <body class="min-h-screen bg-gradient-to-b from-emerald-50 via-slate-50 to-slate-100 text-slate-900">
+    <div class="flex min-h-screen flex-col">
+      <Header />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <footer class="border-t border-emerald-100 bg-white/90">
+        <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+          <p>&copy; {new Date().getFullYear()} Digitization Platform. All rights reserved.</p>
+          <p>Digitize. Secure. Go Green.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
