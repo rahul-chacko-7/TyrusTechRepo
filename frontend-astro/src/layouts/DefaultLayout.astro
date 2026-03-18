@@ -20,6 +20,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
