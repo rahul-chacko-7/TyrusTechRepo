@@ -555,11 +555,8 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 
 
 
-<script type="module">
+<script type="module" define:vars={{ supabaseUrl, supabaseAnonKey }}>
   import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.4/+esm';
-
-  const supabaseUrl = {JSON.stringify(supabaseUrl)};
-  const supabaseAnonKey = {JSON.stringify(supabaseAnonKey)};
 
   const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
 
