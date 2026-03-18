@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayout.astro
 title: Government archive digitization checklist for departments in India
 date: 2026-03-18
 category: government digitization

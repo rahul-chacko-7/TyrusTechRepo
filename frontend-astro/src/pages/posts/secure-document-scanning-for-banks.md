@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayout.astro
 title: Secure document scanning for banks and NBFCs in India
 date: 2026-03-18
 category: banking & finance

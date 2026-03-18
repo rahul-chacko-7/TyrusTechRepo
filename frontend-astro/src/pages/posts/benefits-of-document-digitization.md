@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayout.astro
 title: Benefits of document digitization for Indian organizations
 date: 2026-03-10
 category: document digitization

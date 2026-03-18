@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayout.astro
 title: How to estimate document digitization costs for your organization
 date: 2026-03-18
 category: planning & budgeting

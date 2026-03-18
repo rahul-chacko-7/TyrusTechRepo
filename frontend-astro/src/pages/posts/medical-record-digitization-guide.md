@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayout.astro
 title: Medical record digitization guide for Indian hospitals
 date: 2026-03-18
 category: healthcare digitization
