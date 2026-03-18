@@ -1,19 +1,21 @@
----
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 const pageTitle = 'Document Digitization Blog | Tyrus Technologies';
 
 const posts = await Astro.glob('./posts/*.md');
 ---
 
-<DefaultLayout>
+<DefaultLayout
+  title={pageTitle}
+  description="Blog articles on document digitization, secure scanning, medical record digitization, banking KYC projects and archive digitization in India."
+>
   <section class="bg-slate-950">
     <div class="mx-auto max-w-5xl px-4 py-16">
-      <header class="mb-8 space-y-3">
+      <header class="mb-8 space-y-3 text-center md:text-left">
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Insights</p>
         <h1 class="text-3xl font-semibold text-slate-50">
           Document digitization & paperless operations.
         </h1>
-        <p class="max-w-2xl text-sm text-slate-300">
+        <p class="mx-auto max-w-2xl text-sm text-slate-300">
           Practical guides on document scanning, handling sensitive records securely, and building
           sustainable, paperless workflows for Indian organizations.
         </p>
@@ -23,21 +25,37 @@ const posts = await Astro.glob('./posts/*.md');
         {posts
           .sort((a, b) => (new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()))
           .map((post) => (
-            <article class="flex flex-col rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
-              <p class="text-xs uppercase tracking-wide text-emerald-300">
-                {post.frontmatter.category}
-              </p>
-              <a href={post.url} class="mt-2 text-sm font-semibold text-slate-50 hover:text-emerald-200">
-                {post.frontmatter.title}
+            <article class="flex flex-col overflow-hidden rounded-2xl bg-slate-950/80 ring-1 ring-slate-800">
+              <a href={post.url} class="block">
+                {post.frontmatter.image ? (
+                  <img
+                    src={post.frontmatter.image}
+                    alt={post.frontmatter.title}
+                    class="h-40 w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div class="h-32 w-full bg-gradient-to-r from-emerald-500/40 via-sky-500/30 to-slate-900" />
+                )}
               </a>
-              <p class="mt-2 flex-1 text-xs text-slate-300">{post.frontmatter.excerpt}</p>
-              <p class="mt-3 text-xs text-slate-500">
-                {new Date(post.frontmatter.date).toLocaleDateString('en-IN', {
-                  day: '2-digit',
-                  month: 'short',
-                  year: 'numeric'
-                })}
-              </p>
+              <div class="flex flex-1 flex-col p-5">
+                <p class="text-xs uppercase tracking-wide text-emerald-300">
+                  {post.frontmatter.category}
+                </p>
+                <a href={post.url} class="mt-2 text-sm font-semibold text-slate-50 hover:text-emerald-200">
+                  {post.frontmatter.title}
+                </a>
+                <p class="mt-2 flex-1 text-xs text-slate-300">
+                  {post.frontmatter.excerpt}
+                </p>
+                <p class="mt-3 text-xs text-slate-500">
+                  {new Date(post.frontmatter.date).toLocaleDateString('en-IN', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric'
+                  })}
+                </p>
+              </div>
             </article>
           ))}
       </div>

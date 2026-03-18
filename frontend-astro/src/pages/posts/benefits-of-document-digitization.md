@@ -1,10 +1,12 @@
 ---
+layout: ../layouts/BlogPostLayout.astro
 title: Benefits of document digitization for Indian organizations
 date: 2026-03-10
 category: document digitization
 excerpt: Learn how document digitization reduces risk, saves space, and improves retrieval speeds across hospitals, banks, government, and enterprises in India.
 seoTitle: Benefits of document digitization in India
 seoDescription: A practical guide to document digitization benefits for hospitals, banks, government departments, legal firms, and enterprises across India.
+image: https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg
 ---
 
 Modern organizations generate thousands of pages of documents every month — medical records, KYC forms,

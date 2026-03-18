@@ -1,10 +1,12 @@
 ---
+layout: ../layouts/BlogPostLayout.astro
 title: How to estimate document digitization costs for your organization
 date: 2026-03-18
 category: planning & budgeting
 excerpt: A practical framework to estimate document digitization costs using page volumes, complexity and timelines.
 seoTitle: How to estimate document digitization costs
 seoDescription: Learn how to estimate document digitization costs using page volumes, document complexity, service mix and project timelines, with India-focused examples.
+image: https://images.pexels.com/photos/884454/pexels-photo-884454.jpeg
 ---
 
 Every organization asks the same question before starting a digitization project:

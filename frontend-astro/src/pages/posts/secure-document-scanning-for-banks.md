@@ -1,10 +1,12 @@
 ---
+layout: ../layouts/BlogPostLayout.astro
 title: Secure document scanning for banks and NBFCs in India
 date: 2026-03-18
 category: banking & finance
 excerpt: Key points operations and risk teams should know before digitizing KYC, loan and account files in Indian banks and NBFCs.
 seoTitle: Secure document scanning for banks and NBFCs in India
 seoDescription: Learn how to plan secure document scanning projects for KYC, loan and account files in Indian banks and NBFCs, with practical controls for risk and compliance teams.
+image: https://images.pexels.com/photos/4386324/pexels-photo-4386324.jpeg
 ---
 
 Banks and NBFCs in India manage millions of pages of paper — KYC forms, loan applications, legal

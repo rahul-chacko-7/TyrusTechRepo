@@ -1,10 +1,12 @@
 ---
+layout: ../layouts/BlogPostLayout.astro
 title: Medical record digitization guide for Indian hospitals
 date: 2026-03-18
 category: healthcare digitization
 excerpt: A simple, practical guide for hospital administrators planning to digitize OPD, IPD and MRD records in India.
 seoTitle: Medical record digitization guide for hospitals in India
 seoDescription: Step-by-step guide for hospital leaders on how to plan, budget and implement medical record digitization and MRD scanning projects in India.
+image: https://images.pexels.com/photos/4226264/pexels-photo-4226264.jpeg
 ---
 
 Running a hospital in India means handling huge volumes of paper — OPD files, IPD jackets, investigation
