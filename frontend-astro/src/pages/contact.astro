@@ -125,11 +125,11 @@ const pageTitle = 'Contact Tyrus Technologies | Document Digitization Services';
       </div>
     </div>
   </section>
-  <script type="module">
+   <script type="module">
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.4/+esm';
 
-    const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
-    const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+    const supabaseUrl = {JSON.stringify(supabaseUrl)};
+    const supabaseAnonKey = {JSON.stringify(supabaseAnonKey)};
 
     const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
 
@@ -169,7 +169,7 @@ const pageTitle = 'Contact Tyrus Technologies | Document Digitization Services';
             phone,
             city,
             pages,
-            estimated_price: estimatedPrice
+            estimated_price: estimatedPrice,
           }]);
           if (error) throw error;
 
