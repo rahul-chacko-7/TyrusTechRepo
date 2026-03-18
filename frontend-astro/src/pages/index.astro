@@ -1,9 +1,8 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 const pageTitle = 'Document Digitization Services India';
-
-const supabaseUrl = {JSON.stringify(supabaseUrl)};
-const supabaseAnonKey = {JSON.stringify(supabaseAnonKey)};
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 ---
 
 <DefaultLayout>
@@ -559,8 +558,8 @@ const supabaseAnonKey = {JSON.stringify(supabaseAnonKey)};
 <script type="module">
   import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.4/+esm';
 
-  const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+  const supabaseUrl = {JSON.stringify(supabaseUrl)};
+  const supabaseAnonKey = {JSON.stringify(supabaseAnonKey)};
 
   const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
 
