@@ -556,9 +556,15 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 
 
 <script type="module" define:vars={{ supabaseUrl, supabaseAnonKey }}>
-  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.4/+esm';
-
-  const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
+  // Load Supabase client only when the user submits the lead form.
+  // This reduces initial JS parsing/compilation time (Lighthouse Total Blocking Time).
+  let supabaseClient;
+  async function getSupabaseClient() {
+    if (supabaseClient) return supabaseClient;
+    const mod = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.4/+esm');
+    supabaseClient = mod.createClient(supabaseUrl, supabaseAnonKey);
+    return supabaseClient;
+  }
 
   const calcForm = document.getElementById('calculator-form');
   const calcError = document.getElementById('calculator-error');
@@ -633,7 +639,8 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
       if (leadSuccess) leadSuccess.textContent = '';
 
       try {
-        const { error } = await supabaseClient.from('leads').insert([{
+        const client = await getSupabaseClient();
+        const { error } = await client.from('leads').insert([{
           name: payload.name,
           company: payload.company,
           email: payload.email,

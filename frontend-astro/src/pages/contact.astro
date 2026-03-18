@@ -129,9 +129,14 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
     </div>
   </section>
    <script type="module" define:vars={{ supabaseUrl, supabaseAnonKey }}>
-    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.4/+esm';
-
-    const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
+    // Load Supabase client only on submit (defer parsing/compilation).
+    let supabaseClient;
+    async function getSupabaseClient() {
+      if (supabaseClient) return supabaseClient;
+      const mod = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.4/+esm');
+      supabaseClient = mod.createClient(supabaseUrl, supabaseAnonKey);
+      return supabaseClient;
+    }
 
     const form = document.getElementById('contact-form');
     const errorEl = document.getElementById('contact-error');
@@ -162,7 +167,8 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
         }
 
         try {
-          const { error } = await supabaseClient.from('leads').insert([{
+          const client = await getSupabaseClient();
+          const { error } = await client.from('leads').insert([{
             name,
             company,
             email,
