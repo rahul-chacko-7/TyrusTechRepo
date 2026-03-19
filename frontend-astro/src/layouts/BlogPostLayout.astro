@@ -4,7 +4,7 @@ import DefaultLayout from './DefaultLayout.astro';
 const { frontmatter, url } = Astro.props;
 const pageTitle = frontmatter.seoTitle ?? frontmatter.title;
 const pageDescription = frontmatter.seoDescription ?? frontmatter.excerpt ?? '';
-const image = frontmatter.image ?? 'https://tyrustech.com/wp-content/uploads/2021/03/tyruslogo-1024x556.png';
+const image = frontmatter.image ?? '/tyrus-logo.png';
 ---
 
 <DefaultLayout title={pageTitle} description={pageDescription} image={image}>

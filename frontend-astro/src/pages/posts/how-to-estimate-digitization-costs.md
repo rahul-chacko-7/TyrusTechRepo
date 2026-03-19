@@ -6,7 +6,7 @@ category: planning & budgeting
 excerpt: A practical framework to estimate document digitization costs using page volumes, complexity and timelines.
 seoTitle: How to estimate document digitization costs
 seoDescription: Learn how to estimate document digitization costs using page volumes, document complexity, service mix and project timelines, with India-focused examples.
-image: https://tyrustech.com/wp-content/uploads/2021/03/tyruslogo-1024x556.png
+image: /tyrus-logo.png
 ---
 
 Every organization asks the same question before starting a digitization project:
