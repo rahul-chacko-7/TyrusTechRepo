@@ -7,5 +7,29 @@
   <url><loc>https://tyrustechlive.vercel.app/about</loc></url>
   <url><loc>https://tyrustechlive.vercel.app/contact</loc></url>
   <url><loc>https://tyrustechlive.vercel.app/blog</loc></url>
+
+  <!-- Services -->
+  <url><loc>https://tyrustechlive.vercel.app/services/document-scanning</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/services/document-digitization</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/services/data-capture-ocr</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/services/digital-archives</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/services/medical-record-scanning</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/services/legal-document-scanning</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/services/hr-document-digitization</loc></url>
+
+  <!-- Industries -->
+  <url><loc>https://tyrustechlive.vercel.app/industries/healthcare</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/industries/banking-finance</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/industries/government</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/industries/legal</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/industries/education</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/industries/manufacturing</loc></url>
+
+  <!-- Blog posts -->
+  <url><loc>https://tyrustechlive.vercel.app/posts/benefits-of-document-digitization</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/posts/government-archive-digitization-checklist</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/posts/how-to-estimate-digitization-costs</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/posts/medical-record-digitization-guide</loc></url>
+  <url><loc>https://tyrustechlive.vercel.app/posts/secure-document-scanning-for-banks</loc></url>
 </urlset>
 
