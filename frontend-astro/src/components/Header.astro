@@ -9,24 +9,29 @@ const navItems = [
 ];
 const phone = '+91 80898 89853';
 const whatsappLink = 'https://wa.me/918089889853';
+
+// Use the exact logo image provided (white background) to avoid
+// the "dark logo background" look in the header.
+const headerLogoSrc = new URL(
+  '../../../assets/c__Users_rahul_AppData_Roaming_Cursor_User_workspaceStorage_caa096f891586a0705d1760c1e2e44d8_images_Screenshot_2026-03-19_221153-c9ac292f-65d8-4208-82f2-049516789e7d.png',
+  import.meta.url
+).href;
 ---
 
 <header class="sticky top-0 z-30 border-b border-emerald-100 bg-white/95 backdrop-blur">
   <div class="mx-auto max-w-6xl px-4 py-3">
     <div class="flex items-center justify-between gap-3">
       <a href="/" class="flex items-center gap-3">
-        <span class="flex items-center rounded-md bg-white p-1">
-          <img
-            src="/tyrus-logo.png"
-            alt="Tyrus Technologies Pvt Ltd"
-            width="74"
-            height="40"
-            fetchpriority="high"
-            class="h-8 w-auto object-contain mix-blend-screen"
-            loading="eager"
-            decoding="async"
-          />
-        </span>
+        <img
+          src={headerLogoSrc}
+          alt="Tyrus Technologies Pvt Ltd"
+          width="74"
+          height="40"
+          fetchpriority="high"
+          class="h-8 w-auto object-contain"
+          loading="eager"
+          decoding="async"
+        />
         <div class="hidden flex-col leading-tight sm:flex">
           <span class="text-sm font-semibold tracking-tight text-slate-900">
             Tyrus Technologies Pvt Ltd

@@ -4,7 +4,12 @@ import DefaultLayout from './DefaultLayout.astro';
 const { frontmatter, url } = Astro.props;
 const pageTitle = frontmatter.seoTitle ?? frontmatter.title;
 const pageDescription = frontmatter.seoDescription ?? frontmatter.excerpt ?? '';
-const image = frontmatter.image ?? '/tyrus-logo.png';
+const defaultLogoImage = new URL(
+  '../../../assets/c__Users_rahul_AppData_Roaming_Cursor_User_workspaceStorage_caa096f891586a0705d1760c1e2e44d8_images_Screenshot_2026-03-19_221153-c9ac292f-65d8-4208-82f2-049516789e7d.png',
+  import.meta.url
+).href;
+
+const image = frontmatter.image ?? defaultLogoImage;
 ---
 
 <DefaultLayout title={pageTitle} description={pageDescription} image={image}>
