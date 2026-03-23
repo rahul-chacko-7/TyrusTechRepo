@@ -156,8 +156,10 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
         const city = String(formData.get('city') || '');
         const pagesRaw = formData.get('pages');
         const pages = pagesRaw ? Number(pagesRaw) || 0 : 0;
+        const message = String(formData.get('message') || '');
         const estimatedPriceRaw = formData.get('estimated_price');
         const estimatedPrice = estimatedPriceRaw ? Number(estimatedPriceRaw) || 0 : 0;
+        const submitButton = form.querySelector('button[type="submit"]');
 
         if (errorEl) errorEl.textContent = '';
         if (successEl) successEl.textContent = '';
@@ -170,27 +172,72 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
         }
 
         try {
-          const client = await getSupabaseClient();
-          const { error } = await client.from('leads').insert([{
-            name,
-            company,
-            email,
-            phone,
-            city,
-            pages,
-            estimated_price: estimatedPrice,
-          }]);
-          if (error) throw error;
+          if (submitButton) {
+            submitButton.setAttribute('disabled', 'disabled');
+            submitButton.textContent = 'Generating proposal...';
+          }
+
+          try {
+            const client = await getSupabaseClient();
+            await client.from('leads').insert([{
+              name,
+              company,
+              email,
+              phone,
+              city,
+              pages,
+              estimated_price: estimatedPrice,
+            }]);
+          } catch {
+            // Lead capture failure should not block proposal generation.
+          }
+
+          const proposalResponse = await fetch('/api/proposal', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+              name,
+              company,
+              email,
+              phone,
+              city,
+              pages,
+              message,
+            }),
+          });
+
+          if (!proposalResponse.ok) {
+            throw new Error('proposal_failed');
+          }
+
+          const emailStatus = proposalResponse.headers.get('x-email-status') || 'unknown';
+          const pdfBlob = await proposalResponse.blob();
+          const downloadUrl = URL.createObjectURL(pdfBlob);
+          const link = document.createElement('a');
+          link.href = downloadUrl;
+          link.download = `Tyrus-Proposal-${(company || name).replace(/[^a-zA-Z0-9-_]/g, '-')}.pdf`;
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          URL.revokeObjectURL(downloadUrl);
 
           form.reset();
           if (successEl) {
-            successEl.textContent =
-              'Thank you! Our team will contact you shortly with a detailed quote.';
+            successEl.textContent = emailStatus === 'sent'
+              ? 'Proposal generated, downloaded, and emailed successfully.'
+              : 'Proposal generated and downloaded. Email dispatch is pending; our team will follow up.';
           }
-        } catch (err) {
+        } catch {
           if (errorEl) {
             errorEl.textContent =
-              'Unable to submit right now. Please email or call us directly.';
+              'Unable to generate proposal right now. Please email or call us directly.';
+          }
+        } finally {
+          if (submitButton) {
+            submitButton.removeAttribute('disabled');
+            submitButton.textContent = 'Submit';
           }
         }
       });
