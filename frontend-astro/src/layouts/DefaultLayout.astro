@@ -1,0 +1,63 @@
+---
+import Header from '../components/Header.astro';
+import '../styles/global.css';
+
+const {
+  title = 'Document Digitization Services India | Go Green & Secure',
+  description = 'Document digitization services across India with secure handling of sensitive data, sustainability-focused workflows, and high-speed scanning.',
+  image = '/favicon.svg'
+} = Astro.props;
+
+const siteUrl = 'https://tyrustechlive.vercel.app';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Tyrus Technologies Pvt Ltd',
+        url: siteUrl,
+        logo: image,
+        description
+      })}
+    </script>
+  </head>
+  <body class="min-h-screen bg-gradient-to-b from-emerald-50 via-slate-50 to-slate-100 text-slate-900">
+    <div class="flex min-h-screen flex-col">
+      <Header />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <footer class="border-t border-emerald-100 bg-white/90">
+        <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+          <p>&copy; {new Date().getFullYear()} Digitization Platform. All rights reserved.</p>
+          <p>Digitize. Secure. Go Green.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

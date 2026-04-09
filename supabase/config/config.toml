@@ -1,0 +1,16 @@
+# Supabase Configuration for the Digitization Platform
+
+project = "digitization-platform"
+db_url = "your_supabase_database_url"
+db_schema = "public"
+db_user = "your_database_user"
+db_password = "your_database_password"
+db_port = 5432
+db_name = "your_database_name"
+
+[api]
+  port = 8000
+  host = "localhost"
+
+[auth]
+  jwt_secret = "your_jwt_secret"

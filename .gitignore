@@ -1,0 +1,6 @@
+.env
+node_modules
+dist
+frontend-astro/node_modules
+frontend-astro/dist
+.DS_Store
