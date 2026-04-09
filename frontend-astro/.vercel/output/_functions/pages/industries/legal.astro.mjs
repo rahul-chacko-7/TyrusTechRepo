@@ -1,0 +1,40 @@
+/* empty css                                    */
+import { f as createComponent, k as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_BcL2CQ5Y.mjs';
+import 'piccolore';
+import { $ as $$DefaultLayout } from '../../chunks/DefaultLayout_CMofUINJ.mjs';
+export { renderers } from '../../renderers.mjs';
+
+const $$Legal = createComponent(($$result, $$props, $$slots) => {
+  const pageTitle = "Legal Industry Document Digitization | Tyrus Technologies";
+  return renderTemplate`${renderComponent($$result, "DefaultLayout", $$DefaultLayout, { "title": pageTitle, "description": "Document digitization for law firms and legal teams in India. We digitize case files, contracts and evidence bundles so documents are easier to manage and prepare." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<section class="bg-white border-b border-slate-200"> <div class="mx-auto max-w-6xl px-4 py-12"> <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+Industries · Legal
+</p> <h1 class="mt-2 text-3xl font-semibold text-slate-900">
+Document digitization for law firms and legal teams.
+</h1> <p class="mt-3 max-w-3xl text-sm text-slate-700">
+We work with law firms and in‑house legal departments to digitize case files, contracts and
+        evidence bundles so matters are easier to manage and prepare.
+</p> </div> </section> <section class="bg-slate-50 border-b border-slate-200"> <div class="mx-auto max-w-6xl px-4 py-12 grid gap-10 md:grid-cols-[1.2fr,1fr]"> <div class="space-y-4"> <h2 class="text-xl font-semibold text-slate-900">Typical legal work we support.</h2> <ul class="space-y-2 text-sm text-slate-800"> <li>• Litigation case records and pleadings.</li> <li>• Corporate contracts and transaction documentation.</li> <li>• Evidence bundles and annexures.</li> <li>• Board minutes and statutory records.</li> </ul> </div> <div class="space-y-4 rounded-2xl bg-white p-6 ring-1 ring-slate-200"> <h3 class="text-sm font-semibold text-slate-900">Matter‑wise organization</h3> <ul class="mt-2 space-y-2 text-sm text-slate-800"> <li>• Folders and file names aligned to your matter IDs and practice areas.</li> <li>• Indexes that help lawyers and support staff find documents quickly.</li> </ul> </div> </div> </section> <section class="bg-white border-b border-slate-200"> <div class="mx-auto max-w-6xl px-4 py-12 grid gap-10 md:grid-cols-2"> <div class="space-y-3"> <h2 class="text-xl font-semibold text-slate-900">Benefits for legal teams.</h2> <ul class="space-y-2 text-sm text-slate-800"> <li>• Faster preparation for hearings and negotiations.</li> <li>• Easier sharing of sets with external counsel and clients.</li> <li>• Better control over who can access sensitive matters.</li> </ul> </div> <div class="space-y-3 rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200"> <h3 class="text-sm font-semibold text-slate-900">Getting started</h3> <ul class="space-y-2 text-sm text-slate-800"> <li>• We review sample matters and your current folder structures.</li> <li>• We suggest a practical scanning and indexing pattern by practice area.</li> </ul> </div> </div> </section> <section class="bg-slate-50"> <div class="mx-auto max-w-6xl px-4 pb-16"> <div class="rounded-3xl bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-slate-100 p-8 ring-1 ring-emerald-200"> <h2 class="text-xl font-semibold text-slate-900">
+Make your matters easier to manage.
+</h2> <p class="mt-2 text-sm text-slate-700">
+Share your matter volumes and document types. We will help you design a digitization
+          approach specific to your legal practice.
+</p> <div class="mt-4 flex flex-wrap gap-3"> <a href="/services/legal-document-scanning/" class="rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-emerald-500/40 hover:bg-emerald-700">
+Explore legal document scanning
+</a> <a href="/contact" class="rounded-full border border-emerald-300 px-5 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">
+Talk to our legal team
+</a> </div> </div> </div> </section> ` })}`;
+}, "C:/Users/iouring/Downloads/TyrusTechRepo-main/frontend-astro/src/pages/industries/legal.astro", void 0);
+
+const $$file = "C:/Users/iouring/Downloads/TyrusTechRepo-main/frontend-astro/src/pages/industries/legal.astro";
+const $$url = "/industries/legal";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Legal,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
