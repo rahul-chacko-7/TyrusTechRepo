@@ -4,10 +4,10 @@ import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  site: 'https://tyrustech.com',
+  site: 'https://www.tyrustech.com',
   srcDir: './src',
   outDir: './dist',
-  output: 'static', 
+  output: 'server',
   trailingSlash: 'never',
   adapter: vercel(),
   integrations: [tailwind(), sitemap()]

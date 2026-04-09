@@ -8,7 +8,7 @@ const {
   image = '/favicon.svg'
 } = Astro.props;
 
-const siteUrl = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.toString() || 'https://tyrustech.com').replace(/\/$/, '');
+const siteUrl = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.toString() || 'https://www.tyrustech.com').replace(/\/$/, '');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 ---
 
