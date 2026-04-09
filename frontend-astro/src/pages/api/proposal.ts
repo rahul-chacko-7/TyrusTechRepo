@@ -92,7 +92,7 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   write('4. Client to provide required infrastructure at project location.');
   y -= 8;
 
-  write('Contact: sales@tyrustech.com | +91 80898 89853', 10, true);
+  write('Contact: corporatesales@tyrustech.com', 10, true);
   write('This is a system-generated proposal based on submitted contact details.', 9);
 
   return pdf.save();
@@ -107,7 +107,7 @@ async function sendProposalEmail(
   const port = Number(import.meta.env.SMTP_PORT || 587);
   const user = import.meta.env.SMTP_USER;
   const pass = import.meta.env.SMTP_PASS;
-  const from = import.meta.env.MAIL_FROM || 'sales@tyrustech.com';
+  const from = import.meta.env.MAIL_FROM || 'corporatesales@tyrustech.com';
 
   if (!host || !user || !pass || !payload.email) {
     return 'skipped';
