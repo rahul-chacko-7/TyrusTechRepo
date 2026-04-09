@@ -1,0 +1,40 @@
+/* empty css                                    */
+import { f as createComponent, k as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_BcL2CQ5Y.mjs';
+import 'piccolore';
+import { $ as $$DefaultLayout } from '../../chunks/DefaultLayout_BkZA-3Ga.mjs';
+export { renderers } from '../../renderers.mjs';
+
+const $$DigitalArchives = createComponent(($$result, $$props, $$slots) => {
+  const pageTitle = "Digital Archives & Records Management | Tyrus Technologies";
+  return renderTemplate`${renderComponent($$result, "DefaultLayout", $$DefaultLayout, { "title": pageTitle, "description": "Digital archives and records organization in India. We structure archives with indexing, fast search, and role-based access so teams can find files quickly." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<section class="bg-white border-b border-slate-200"> <div class="mx-auto max-w-6xl px-4 py-12"> <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+Services · Digital Archives
+</p> <h1 class="mt-2 text-3xl font-semibold text-slate-900">
+Digital archives for fast and secure record access.
+</h1> <p class="mt-3 max-w-3xl text-sm text-slate-700">
+We help you move from carton‑based storage to organized digital archives with clear indexing,
+        fast search and role‑based access so teams can find what they need in seconds.
+</p> </div> </section> <section class="bg-slate-50 border-b border-slate-200"> <div class="mx-auto max-w-6xl px-4 py-12 grid gap-10 md:grid-cols-[1.2fr,1fr]"> <div class="space-y-4"> <h2 class="text-xl font-semibold text-slate-900">How we structure your archives.</h2> <ul class="space-y-2 text-sm text-slate-800"> <li>• Folder and file structures aligned to your departments.</li> <li>• Metadata fields such as MRN, account number, case ID or policy ID.</li> <li>• Consistent naming standards for files and folders.</li> <li>• Index files or database tables that link images and metadata.</li> </ul> </div> <div class="space-y-4 rounded-2xl bg-white p-6 ring-1 ring-slate-200"> <h3 class="text-sm font-semibold text-slate-900">Where archives are hosted</h3> <ul class="mt-2 space-y-2 text-sm text-slate-800"> <li>• On your existing DMS or ECM platform.</li> <li>• On cloud storage with access control (as per your policy).</li> <li>• On dedicated archive servers within your data center.</li> </ul> </div> </div> </section> <section class="bg-white border-b border-slate-200"> <div class="mx-auto max-w-6xl px-4 py-12 grid gap-10 md:grid-cols-2"> <div class="space-y-3"> <h2 class="text-xl font-semibold text-slate-900">Day‑to‑day experience for your users.</h2> <ul class="space-y-2 text-sm text-slate-800"> <li>• Simple search screens to find documents by ID, name or date.</li> <li>• Clear separation between active and inactive records.</li> <li>• Easy export or download options when needed.</li> <li>• Access logs that show who opened which record and when.</li> </ul> </div> <div class="space-y-3 rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200"> <h3 class="text-sm font-semibold text-slate-900">Benefits of digital archives</h3> <ul class="space-y-2 text-sm text-slate-800"> <li>• Faster service to patients, customers and internal teams.</li> <li>• Less dependence on a few people who “know where files are kept”.</li> <li>• Lower long‑term storage costs and easier compliance.</li> </ul> </div> </div> </section> <section class="bg-slate-50"> <div class="mx-auto max-w-6xl px-4 pb-16"> <div class="rounded-3xl bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-slate-100 p-8 ring-1 ring-emerald-200"> <h2 class="text-xl font-semibold text-slate-900">
+Build a digital archive your teams love to use.
+</h2> <p class="mt-2 text-sm text-slate-700">
+We can work with your IT and operations teams to design archives that match how your business
+          actually works today and how you plan to grow.
+</p> <div class="mt-4 flex flex-wrap gap-3"> <a href="/contact" class="rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-emerald-500/40 hover:bg-emerald-700">
+Discuss your archives
+</a> <a href="/#cost-calculator" class="rounded-full border border-emerald-300 px-5 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">
+Get a cost estimate
+</a> </div> </div> </div> </section> ` })}`;
+}, "C:/Users/iouring/Downloads/TyrusTechRepo-main/frontend-astro/src/pages/services/digital-archives.astro", void 0);
+
+const $$file = "C:/Users/iouring/Downloads/TyrusTechRepo-main/frontend-astro/src/pages/services/digital-archives.astro";
+const $$url = "/services/digital-archives";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$DigitalArchives,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
