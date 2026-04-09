@@ -7,7 +7,7 @@ export default defineConfig({
   site: 'https://tyrustech.com',
   srcDir: './src',
   outDir: './dist',
-  output: 'server',
+  output: 'static', 
   trailingSlash: 'never',
   adapter: vercel(),
   integrations: [tailwind(), sitemap()]
