@@ -1,0 +1,135 @@
+---
+import Header from '../components/Header.astro';
+import '../styles/global.css';
+
+const {
+  title = 'Document Digitization Services India | Go Green & Secure',
+  description = 'Document digitization services across India with secure handling of sensitive data, sustainability-focused workflows, and high-speed scanning.',
+  image = '/og-default.svg',
+  type = 'website',
+  keywords = '',
+  noindex = false
+} = Astro.props;
+
+const siteUrl = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.toString() || 'https://tyrustech.com').replace(/\/$/, '');
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const socialImageUrl = new URL(image, siteUrl).toString();
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const breadcrumbItems = [
+  {
+    '@type': 'ListItem',
+    position: 1,
+    name: 'Home',
+    item: siteUrl
+  },
+  ...pathSegments.map((segment, index) => {
+    const itemPath = `/${pathSegments.slice(0, index + 1).join('/')}`;
+    return {
+      '@type': 'ListItem',
+      position: index + 2,
+      name: segment.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+      item: new URL(itemPath, siteUrl).toString()
+    };
+  })
+];
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  url: canonicalUrl,
+  description
+};
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems
+};
+const isServiceDetailPage = Astro.url.pathname.startsWith('/services/') && Astro.url.pathname !== '/services';
+const serviceSchema = isServiceDetailPage
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: title,
+      description,
+      provider: {
+        '@type': 'Organization',
+        name: 'Tyrus Technologies Pvt Ltd',
+        url: siteUrl
+      },
+      areaServed: 'India',
+      url: canonicalUrl
+    }
+  : null;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageUrl} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Tyrus Technologies Pvt Ltd',
+        url: siteUrl,
+        logo: new URL('/favicon.svg', siteUrl).toString(),
+        description
+      })}
+    </script>
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Tyrus Technologies Pvt Ltd',
+        url: siteUrl
+      })}
+    </script>
+    <script type="application/ld+json">
+      {JSON.stringify(pageSchema)}
+    </script>
+    <script type="application/ld+json">
+      {JSON.stringify(breadcrumbSchema)}
+    </script>
+    {serviceSchema && (
+      <script type="application/ld+json">
+        {JSON.stringify(serviceSchema)}
+      </script>
+    )}
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen bg-gradient-to-b from-emerald-50 via-slate-50 to-slate-100 text-slate-900">
+    <div class="flex min-h-screen flex-col">
+      <Header />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <footer class="border-t border-emerald-100 bg-white/90">
+        <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+          <p>&copy; {new Date().getFullYear()} Digitization Platform. All rights reserved.</p>
+          <p>Digitize. Secure. Go Green.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
