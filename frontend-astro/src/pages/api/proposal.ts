@@ -2,6 +2,8 @@ import type { APIRoute } from 'astro';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import nodemailer from 'nodemailer';
 import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 type ProposalPayload = {
   name: string;
@@ -209,11 +211,42 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   const font = await pdf.embedFont(StandardFonts.Helvetica);
   const fontBold = await pdf.embedFont(StandardFonts.HelveticaBold);
   let embeddedLogo: any = null;
-  try {
-    const logoBytes = await readFile(new URL('./tyrus-logo.png', import.meta.url));
-    embeddedLogo = await pdf.embedPng(logoBytes);
-  } catch {
-    embeddedLogo = null;
+  let embeddedClientLogos: any = null;
+  const moduleDir = path.dirname(fileURLToPath(import.meta.url));
+  const readImageBytes = async (fileName: string): Promise<Uint8Array | null> => {
+    const candidatePaths = [
+      path.join(moduleDir, fileName),
+      path.join(process.cwd(), 'src', 'pages', 'api', fileName),
+      path.join(process.cwd(), 'frontend-astro', 'src', 'pages', 'api', fileName)
+    ];
+    for (const candidatePath of candidatePaths) {
+      try {
+        return await readFile(candidatePath);
+      } catch {
+        // Try next candidate path.
+      }
+    }
+    return null;
+  };
+
+  const logoBytes = await readImageBytes('tyrus-logo.png');
+  if (logoBytes) {
+    try {
+      embeddedLogo = await pdf.embedPng(logoBytes);
+    } catch (error) {
+      console.error('Failed to embed main logo PNG:', error);
+    }
+  } else {
+    console.error('Main logo file not found for proposal PDF.');
+  }
+
+  const logosBytes = await readImageBytes('client-logos-grid.png');
+  if (logosBytes) {
+    try {
+      embeddedClientLogos = await pdf.embedPng(logosBytes);
+    } catch (error) {
+      console.error('Failed to embed client logos PNG:', error);
+    }
   }
   const page1 = pdf.addPage([595, 842]);
   const page2 = pdf.addPage([595, 842]);
@@ -330,13 +363,24 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
     x: 248, y: 584, size: 9, font, color: rgb(0.35, 0.35, 0.35)
   });
 
-  page3.drawText('Trusted by India’s Leading Institutions', { x: 42, y: 552, size: 11, font: fontBold, color: green });
-  const partnerCards = ['COCHIN SHIPYARD', 'INDIAN NAVY', 'CMC VELLORE', 'CARITHAS'];
-  let partnerX = 42;
-  for (const partner of partnerCards) {
-    page3.drawRectangle({ x: partnerX, y: 520, width: 120, height: 22, color: rgb(0.97, 0.98, 0.99), borderColor: rgb(0.82, 0.85, 0.88), borderWidth: 1 });
-    page3.drawText(partner, { x: partnerX + 8, y: 527, size: 8, font: fontBold, color: rgb(0.18, 0.23, 0.26) });
-    partnerX += 128;
+  page3.drawText('Project Details', { x: 42, y: 552, size: 11, font: fontBold, color: green });
+  page3.drawText(`Client: ${clientName} (${orgName})`, { x: 42, y: 536, size: 9, font, color: dark });
+  page3.drawText(`Location: ${location}`, { x: 42, y: 522, size: 9, font, color: dark });
+  page3.drawText(`Files: ${fileType}`, { x: 42, y: 508, size: 9, font, color: dark });
+  page3.drawText(`Reference: ${refNo}`, { x: 42, y: 494, size: 9, font, color: dark });
+
+  page3.drawText('Trusted by India’s Leading Institutions', { x: 302, y: 552, size: 11, font: fontBold, color: green });
+  if (embeddedClientLogos) {
+    page3.drawRectangle({ x: 302, y: 448, width: 251, height: 94, color: rgb(1, 1, 1), borderColor: rgb(0.85, 0.88, 0.90), borderWidth: 1 });
+    page3.drawImage(embeddedClientLogos, { x: 306, y: 452, width: 243, height: 86 });
+  } else {
+    const partnerCards = ['COCHIN SHIPYARD', 'INDIAN NAVY', 'CMC VELLORE', 'CARITAS'];
+    let partnerY = 532;
+    for (const partner of partnerCards) {
+      page3.drawRectangle({ x: 302, y: partnerY - 12, width: 251, height: 20, color: rgb(0.97, 0.98, 0.99), borderColor: rgb(0.82, 0.85, 0.88), borderWidth: 1 });
+      page3.drawText(partner, { x: 312, y: partnerY - 5, size: 8, font: fontBold, color: rgb(0.18, 0.23, 0.26) });
+      partnerY -= 24;
+    }
   }
 
   page3.drawRectangle({ x: 0, y: 160, width, height: 86, color: rgb(0.97, 0.99, 0.96) });
