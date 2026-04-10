@@ -198,8 +198,11 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   const location = safeText(payload.city, locationMatch?.[1] || 'Not provided');
   const clientName = safeText(payload.name, 'Client');
   const orgName = safeText(payload.company, 'Organization');
-  const green = rgb(0.03, 0.44, 0.30);
+  const green = rgb(0.03, 0.44, 0.30); // Emerald accent
+  const navy = rgb(0.04, 0.12, 0.23); // Deep navy #0B1F3A-ish
   const dark = rgb(0.08, 0.12, 0.11);
+  const light = rgb(0.97, 0.98, 0.99);
+  const gold = rgb(0.84, 0.68, 0.27);
 
   const pdf = await PDFDocument.create();
   const font = await pdf.embedFont(StandardFonts.Helvetica);
@@ -210,55 +213,58 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   const width = page1.getWidth();
   const height = page1.getHeight();
 
-  // Page 1 - Introduction & Service Overview
-  drawWatermark(page1, width, height);
-  drawHeaderBand(page1, 'CORPORATE PROPOSAL', width, height, fontBold);
+  // Page 1 - Premium cover + vision
+  page1.drawRectangle({ x: 0, y: 0, width, height, color: navy });
+  page1.drawRectangle({ x: 0, y: 420, width, height: 422, color: rgb(0.07, 0.17, 0.31) });
+  page1.drawCircle({ x: 520, y: 760, size: 120, color: rgb(0.10, 0.26, 0.44) });
+  page1.drawCircle({ x: 80, y: 120, size: 140, color: rgb(0.05, 0.21, 0.33) });
   drawBrandLockup(page1, 42, 760, font, fontBold);
-  page1.drawText('TYRUS TECHNOLOGIES', { x: 42, y: 726, size: 24, font: fontBold, color: green });
-  page1.drawText('Document Digitization & Management', { x: 42, y: 703, size: 13, font, color: dark });
-  page1.drawText('Digitize. Secure. Go Green.', {
-    x: 42,
-    y: 684,
-    size: 14,
-    font: fontBold,
-    color: rgb(0.01, 0.20, 0.40)
+
+  page1.drawText('FROM PAPER CHAOS', { x: 42, y: 662, size: 30, font: fontBold, color: rgb(1, 1, 1) });
+  page1.drawText('TO DIGITAL INTELLIGENCE', { x: 42, y: 626, size: 30, font: fontBold, color: rgb(1, 1, 1) });
+  page1.drawText('Digitize. Secure. Go Green.', { x: 42, y: 594, size: 15, font: fontBold, color: rgb(0.72, 0.95, 0.83) });
+  page1.drawText(`Ref ${refNo}  |  ${now.toLocaleDateString('en-IN')}`, {
+    x: 42, y: 570, size: 10, font, color: rgb(0.80, 0.88, 0.92)
   });
-  page1.drawText('Your 3-Step Journey to a Paperless, Searchable Office', {
-    x: 42,
-    y: 664,
-    size: 12,
-    font: fontBold,
-    color: green
+
+  // glowing stats
+  drawMetricCard(page1, { x: 42, y: 470, w: 160, h: 74, title: 'Impact', value: '10B+', font, fontBold, accent: green });
+  page1.drawText('Documents Processed', { x: 52, y: 484, size: 9, font, color: rgb(0.25, 0.29, 0.28) });
+  drawMetricCard(page1, { x: 218, y: 470, w: 160, h: 74, title: 'Clients', value: '250+', font, fontBold, accent: rgb(0.01, 0.20, 0.40) });
+  page1.drawText('Enterprise Institutions', { x: 228, y: 484, size: 9, font, color: rgb(0.25, 0.29, 0.28) });
+  drawMetricCard(page1, { x: 394, y: 470, w: 160, h: 74, title: 'Estimated Value', value: formatCurrency(pricing.estimatedTotal), font, fontBold, accent: gold });
+
+  page1.drawText('Consulting-grade delivery for banks, hospitals and enterprise operations.', {
+    x: 42, y: 432, size: 11, font, color: rgb(0.88, 0.93, 0.95)
   });
-  page1.drawText(`Reference: ${refNo}`, { x: 42, y: 644, size: 10, font, color: rgb(0.35, 0.35, 0.35) });
-  page1.drawText(`Date: ${now.toLocaleDateString('en-IN')}`, { x: 260, y: 644, size: 10, font, color: rgb(0.35, 0.35, 0.35) });
-
-  drawMetricCard(page1, { x: 360, y: 678, w: 190, h: 66, title: 'Impact', value: '10B+ documents', font, fontBold, accent: rgb(0.01, 0.20, 0.40) });
-  drawMetricCard(page1, { x: 360, y: 604, w: 190, h: 66, title: 'Client Trust', value: '250+ clients', font, fontBold });
-  drawMetricCard(page1, { x: 360, y: 530, w: 190, h: 66, title: 'Project Snapshot', value: formatCurrency(pricing.estimatedTotal), font, fontBold });
-
-  page1.drawText('1. About Tyrus Technologies', { x: 42, y: 602, size: 14, font: fontBold, color: green });
-  page1.drawText('[Shield] 100% secure and compliant project operations', { x: 54, y: 580, size: 10, font, color: dark });
-  page1.drawText('[Clock] A decade of experience in the ECM domain', { x: 54, y: 562, size: 10, font, color: dark });
-  page1.drawText('[Scale] Enterprise-ready governance for legal, medical and BFSI records', { x: 54, y: 544, size: 10, font, color: dark });
-
-  page1.drawText('2. Our Process', { x: 42, y: 510, size: 14, font: fontBold, color: green });
-  page1.drawText('Consultation & Audit  ->  Digitization & Data Capture  ->  Cloud Deployment', { x: 54, y: 490, size: 10, font: fontBold, color: rgb(0.01, 0.20, 0.40) });
-  page1.drawText('Consultation & Audit', { x: 54, y: 468, size: 12, font: fontBold, color: dark });
-  page1.drawCircle({ x: 45, y: 497, size: 4, color: green });
-  page1.drawText('We assess your files, quality requirements and indexing rules.', { x: 70, y: 453, size: 10, font, color: dark });
-  page1.drawText('Digitization & Data Capture', { x: 54, y: 430, size: 12, font: fontBold, color: dark });
-  page1.drawCircle({ x: 45, y: 452, size: 4, color: green });
-  page1.drawText('Scanning + OCR/ICR extraction for searchable and structured records.', { x: 70, y: 415, size: 10, font, color: dark });
-  page1.drawText('Cloud Deployment', { x: 54, y: 392, size: 12, font: fontBold, color: dark });
-  page1.drawCircle({ x: 45, y: 407, size: 4, color: green });
-  page1.drawText('Delivery and integration with DMS platforms like Folderit and SharePoint.', { x: 70, y: 377, size: 10, font, color: dark });
   drawFooter(page1, width, font);
 
-  // Page 2 - Service flow and pricing tiers
-  drawWatermark(page2, width, height);
-  drawHeaderBand(page2, '1. SERVICE FLOW & TIERS', width, height, fontBold);
+  // Page 2 - Dashboard snapshot + trust + process + pricing
+  page2.drawRectangle({ x: 0, y: 0, width, height, color: light });
+  drawHeaderBand(page2, 'SNAPSHOT | TRUST | PROCESS | PRICING', width, height, fontBold);
   drawBrandLockup(page2, 42, 760, font, fontBold);
+  // dashboard cards
+  drawMetricCard(page2, { x: 42, y: 650, w: 120, h: 76, title: 'Client', value: clientName, font, fontBold });
+  drawMetricCard(page2, { x: 175, y: 650, w: 120, h: 76, title: 'Pages', value: `${Math.max(0, payload.pages || 0).toLocaleString('en-IN')}`, font, fontBold });
+  drawMetricCard(page2, { x: 308, y: 650, w: 120, h: 76, title: 'Timeline', value: pricing.timelineLabel, font, fontBold });
+  drawMetricCard(page2, { x: 441, y: 650, w: 112, h: 76, title: 'Cost', value: formatCurrency(pricing.estimatedTotal), font, fontBold, accent: gold });
+
+  // trust row
+  page2.drawRectangle({ x: 42, y: 592, width: 511, height: 44, color: rgb(1, 1, 1), borderColor: rgb(0.87, 0.90, 0.92), borderWidth: 1 });
+  page2.drawText('Security & Compliance', { x: 58, y: 614, size: 10, font: fontBold, color: navy });
+  page2.drawText('Experience & Scale', { x: 230, y: 614, size: 10, font: fontBold, color: navy });
+  page2.drawText('Enterprise Readiness', { x: 392, y: 614, size: 10, font: fontBold, color: navy });
+  page2.drawText('ISO-aligned controls', { x: 58, y: 600, size: 8, font, color: dark });
+  page2.drawText('10B+ docs delivered', { x: 230, y: 600, size: 8, font, color: dark });
+  page2.drawText('Governance-first execution', { x: 392, y: 600, size: 8, font, color: dark });
+
+  // process flow
+  page2.drawText('[Consult]  ->  [Digitize]  ->  [Deploy]', { x: 42, y: 560, size: 12, font: fontBold, color: green });
+  page2.drawText('Assess scope', { x: 52, y: 544, size: 8, font, color: dark });
+  page2.drawText('OCR + indexing', { x: 220, y: 544, size: 8, font, color: dark });
+  page2.drawText('Cloud-ready records', { x: 390, y: 544, size: 8, font, color: dark });
+
+  // pricing cards
   const tierCards: Array<{ title: string; price: string; days: string; best?: boolean }> = [
     { title: 'Under 10k', price: 'INR 2.0 / page', days: 'Base 5 days' },
     { title: '10k - 50k', price: 'INR 1.6 / page', days: 'Base 10 days' },
@@ -268,104 +274,55 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   for (const card of tierCards) {
     page2.drawRectangle({
       x: cardX,
-      y: 620,
+      y: 420,
       width: 160,
-      height: 104,
+      height: 106,
       color: card.best ? rgb(0.90, 0.97, 0.93) : rgb(0.97, 0.99, 0.98),
-      borderColor: rgb(0.75, 0.86, 0.80),
-      borderWidth: 1
+      borderColor: card.best ? gold : rgb(0.75, 0.86, 0.80),
+      borderWidth: card.best ? 2 : 1
     });
-    page2.drawText(card.title, { x: cardX + 12, y: 696, size: 10, font: fontBold, color: card.best ? green : dark });
-    page2.drawText(card.price, { x: cardX + 12, y: 674, size: 10, font: fontBold, color: dark });
-    page2.drawText(card.days, { x: cardX + 12, y: 654, size: 9, font, color: dark });
+    page2.drawText(card.title, { x: cardX + 12, y: 492, size: 10, font: fontBold, color: card.best ? green : dark });
+    page2.drawText(card.price, { x: cardX + 12, y: 470, size: 10, font: fontBold, color: dark });
+    page2.drawText(card.days, { x: cardX + 12, y: 450, size: 9, font, color: dark });
     cardX += 176;
   }
 
-  page2.drawText('Timeline Adjustments', { x: 42, y: 570, size: 13, font: fontBold, color: green });
-  page2.drawRectangle({ x: 42, y: 544, width: 511, height: 12, color: rgb(0.90, 0.95, 0.93), borderColor: rgb(0.75, 0.85, 0.81), borderWidth: 1 });
-  const selectedX = pricing.timelineLabel === 'Expedited' ? 212 : pricing.timelineLabel === 'Flexible' ? 382 : 42;
-  page2.drawRectangle({ x: selectedX, y: 544, width: 171, height: 12, color: green, borderWidth: 0 });
-  page2.drawText('Standard', { x: 42, y: 530, size: 9, font: fontBold, color: pricing.timelineLabel === 'Standard' ? green : dark });
-  page2.drawText('Expedited', { x: 212, y: 530, size: 9, font: fontBold, color: pricing.timelineLabel === 'Expedited' ? green : dark });
-  page2.drawText('Flexible', { x: 392, y: 530, size: 9, font: fontBold, color: pricing.timelineLabel === 'Flexible' ? green : dark });
-  page2.drawText('- Standard: Use base days.', { x: 54, y: 510, size: 10, font, color: dark });
-  page2.drawText('- Expedited: Days = max(3, round(base x 0.7))', { x: 54, y: 494, size: 10, font, color: dark });
-  page2.drawText('- Flexible: Days = round(base x 1.2)', { x: 54, y: 478, size: 10, font, color: dark });
-
-  page2.drawText('Proposal generated from your submitted details:', {
-    x: 42,
-    y: 448,
-    size: 11,
-    font: fontBold,
-    color: green
+  page2.drawText('Timeline Logic: Standard | Expedited (x0.7) | Flexible (x1.2)', {
+    x: 42, y: 390, size: 10, font, color: rgb(0.28, 0.33, 0.36)
   });
-  page2.drawText(`Client: ${clientName} (${orgName})`, { x: 54, y: 426, size: 10, font, color: dark });
-  page2.drawText(`Email: ${safeText(payload.email)}`, { x: 54, y: 410, size: 10, font, color: dark });
-  page2.drawText(`Phone: ${safeText(payload.phone)}`, { x: 54, y: 394, size: 10, font, color: dark });
-  page2.drawRectangle({ x: 420, y: 380, width: 133, height: 40, color: rgb(0.93, 0.97, 1), borderColor: rgb(0.72, 0.82, 0.93), borderWidth: 1 });
-  page2.drawText('Certified', { x: 454, y: 406, size: 10, font: fontBold, color: rgb(0.01, 0.20, 0.40) });
-  page2.drawText('Partner', { x: 457, y: 392, size: 10, font: fontBold, color: rgb(0.01, 0.20, 0.40) });
   drawFooter(page2, width, font);
 
-  // Page 3 - Custom quote snapshot
-  drawWatermark(page3, width, height);
-  drawHeaderBand(page3, '2. CUSTOM PROJECT SNAPSHOT', width, height, fontBold);
+  // Page 3 - Money page + social proof + CTA
+  page3.drawRectangle({ x: 0, y: 0, width, height, color: rgb(0.96, 0.97, 0.98) });
+  drawHeaderBand(page3, 'YOUR INVESTMENT SNAPSHOT', width, height, fontBold);
   drawBrandLockup(page3, 42, 760, font, fontBold);
-  page3.drawRectangle({ x: 46, y: 646, width: 511, height: 72, color: rgb(0.87, 0.91, 0.90), borderWidth: 0 });
-  page3.drawRectangle({ x: 42, y: 650, width: 511, height: 72, color: rgb(0.97, 1, 0.98), borderColor: rgb(0.78, 0.88, 0.83), borderWidth: 1 });
-  page3.drawText(`Client Name: ${clientName}`, { x: 42, y: 706, size: 11, font: fontBold, color: dark });
-  page3.drawText(`Organization: ${orgName}`, { x: 42, y: 690, size: 11, font, color: dark });
-  page3.drawText(`Location: ${location}`, { x: 42, y: 674, size: 11, font, color: dark });
-  page3.drawText(`Files: ${fileType}`, { x: 42, y: 658, size: 11, font, color: dark });
-
-  page3.drawText('Specification', { x: 42, y: 624, size: 11, font: fontBold, color: dark });
-  page3.drawText('Result', { x: 300, y: 624, size: 11, font: fontBold, color: dark });
-  page3.drawLine({ start: { x: 42, y: 618 }, end: { x: 553, y: 618 }, thickness: 1, color: rgb(0.75, 0.85, 0.81) });
-
-  const details: Array<[string, string]> = [
-    ['Volume (pages)', `${Math.max(0, payload.pages || 0).toLocaleString('en-IN')}`],
-    ['Price/Page (INR)', `${pricing.pricePerPage}`],
-    ['Tier', pricing.tierLabel],
-    ['Timeline', pricing.timelineLabel],
-    ['Calculated Base Duration', `${pricing.baseDays} days`],
-    ['Actual Duration', `${pricing.actualDays} days`]
-  ];
-
-  let detailsY = 594;
-  for (const [label, value] of details) {
-    page3.drawText(label, { x: 42, y: detailsY, size: 10, font, color: dark });
-    page3.drawText(value, { x: 300, y: detailsY, size: 10, font, color: dark });
-    detailsY -= 22;
-  }
-
-  page3.drawRectangle({ x: 42, y: 412, width: 511, height: 62, color: rgb(0.89, 0.97, 0.93), borderColor: green, borderWidth: 1 });
-  page3.drawText('ESTIMATED TOTAL COST', { x: 56, y: 448, size: 12, font: fontBold, color: green });
-  page3.drawText(`${formatCurrency(pricing.estimatedTotal)} (${Math.max(0, payload.pages || 0).toLocaleString('en-IN')} x ${pricing.pricePerPage})`, {
-    x: 56,
-    y: 428,
-    size: 14,
-    font: fontBold,
-    color: dark
+  page3.drawRectangle({ x: 42, y: 558, width: 511, height: 128, color: rgb(1, 1, 1), borderColor: rgb(0.85, 0.88, 0.90), borderWidth: 1 });
+  page3.drawText('Your Investment', { x: 236, y: 648, size: 16, font: fontBold, color: navy });
+  page3.drawText(`${formatCurrency(pricing.estimatedTotal)}`, { x: 168, y: 610, size: 34, font: fontBold, color: gold });
+  page3.drawText(`${Math.max(0, payload.pages || 0).toLocaleString('en-IN')} pages  |  INR ${pricing.pricePerPage}/page  |  ${pricing.actualDays} days`, {
+    x: 104, y: 588, size: 10, font, color: dark
+  });
+  page3.drawText(`(${Math.max(0, payload.pages || 0).toLocaleString('en-IN')} x ${pricing.pricePerPage})`, {
+    x: 248, y: 572, size: 9, font, color: rgb(0.35, 0.35, 0.35)
   });
 
-  page3.drawText('Our Trusted Partners:', { x: 42, y: 372, size: 11, font: fontBold, color: green });
+  page3.drawText('Trusted by India’s Leading Institutions', { x: 42, y: 520, size: 12, font: fontBold, color: navy });
   const partnerCards = ['COCHIN SHIPYARD', 'INDIAN NAVY', 'CMC VELLORE', 'CARITHAS'];
   let partnerX = 42;
   for (const partner of partnerCards) {
-    page3.drawRectangle({ x: partnerX, y: 338, width: 120, height: 24, color: rgb(0.97, 0.98, 0.99), borderColor: rgb(0.82, 0.85, 0.88), borderWidth: 1 });
-    page3.drawText(partner, { x: partnerX + 8, y: 346, size: 8, font: fontBold, color: rgb(0.18, 0.23, 0.26) });
+    page3.drawRectangle({ x: partnerX, y: 488, width: 120, height: 24, color: rgb(0.97, 0.98, 0.99), borderColor: rgb(0.82, 0.85, 0.88), borderWidth: 1 });
+    page3.drawText(partner, { x: partnerX + 8, y: 496, size: 8, font: fontBold, color: rgb(0.18, 0.23, 0.26) });
     partnerX += 128;
   }
-  page3.drawText('Notes: This is an auto-generated, whole-rupee estimate. Files and location do not alter base figures.', {
-    x: 42,
-    y: 324,
-    size: 9,
-    font,
-    color: rgb(0.35, 0.35, 0.35)
+
+  page3.drawRectangle({ x: 0, y: 150, width, height: 120, color: navy });
+  page3.drawText('Start Your Digital Transformation Today', { x: 108, y: 236, size: 18, font: fontBold, color: rgb(1, 1, 1) });
+  drawButton(page3, 'Call Now', 80, 190, 130, 28, fontBold, false);
+  drawButton(page3, 'WhatsApp', 230, 190, 130, 28, fontBold, false);
+  drawButton(page3, 'Email', 380, 190, 130, 28, fontBold, false);
+  page3.drawText('corporatesales@tyrustech.com  |  +91 9742065852', {
+    x: 166, y: 172, size: 9, font, color: rgb(0.85, 0.91, 0.95)
   });
-  drawButton(page3, 'Email: corporatesales@tyrustech.com', 42, 270, 250, 22, font, false);
-  drawButton(page3, 'WhatsApp: +91 9742065852', 304, 270, 249, 22, font, false);
-  drawButton(page3, 'START YOUR TRANSFORMATION', 42, 236, 511, 26, fontBold, true);
   drawFooter(page3, width, font);
 
   return pdf.save();
