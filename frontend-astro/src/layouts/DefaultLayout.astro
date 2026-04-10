@@ -10,22 +10,22 @@ const {
 
 const siteUrl = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.toString() || 'https://www.tyrustech.com').replace(/\/$/, '');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
-const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? 'G-ZMLEXVR9ZB';
+/** GA4 measurement ID: Vercel `PUBLIC_GA_MEASUREMENT_ID` or default below (must match Google stream). */
+const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZMLEXVR9ZB').trim();
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) — same as Google manual install; `define:vars` only wires Vercel PUBLIC_GA_MEASUREMENT_ID -->
     {gaMeasurementId ? (
       <>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
         <script is:inline define:vars={{ gaMeasurementId }}>
           window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
+          function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
+
           gtag('config', gaMeasurementId);
         </script>
       </>
