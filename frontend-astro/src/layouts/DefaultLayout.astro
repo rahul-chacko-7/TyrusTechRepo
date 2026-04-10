@@ -10,11 +10,26 @@ const {
 
 const siteUrl = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.toString() || 'https://www.tyrustech.com').replace(/\/$/, '');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? 'G-ZMLEXVR9ZB';
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <!-- Google tag (gtag.js) -->
+    {gaMeasurementId ? (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+        <script is:inline define:vars={{ gaMeasurementId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', gaMeasurementId);
+        </script>
+      </>
+    ) : null}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
