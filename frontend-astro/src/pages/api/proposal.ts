@@ -252,7 +252,7 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   page1.drawCircle({ x: 520, y: 760, size: 120, color: rgb(0.32, 0.54, 0.24) });
   page1.drawCircle({ x: 80, y: 120, size: 140, color: rgb(0.86, 0.94, 0.80) });
   if (embeddedLogo) {
-    page1.drawImage(embeddedLogo, { x: 34, y: 770, width: 150, height: 50 });
+    page1.drawImage(embeddedLogo, { x: 34, y: 776, width: 130, height: 42 });
   } else {
     drawBrandLockup(page1, 42, 760, font, fontBold);
   }
@@ -280,7 +280,7 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   page2.drawRectangle({ x: 0, y: 0, width, height, color: light });
   drawHeaderBand(page2, 'SNAPSHOT | TRUST | PROCESS | PRICING', width, height, fontBold);
   if (embeddedLogo) {
-    page2.drawImage(embeddedLogo, { x: 34, y: 770, width: 150, height: 50 });
+    page2.drawImage(embeddedLogo, { x: 34, y: 776, width: 130, height: 42 });
   } else {
     drawBrandLockup(page2, 42, 760, font, fontBold);
   }
@@ -319,21 +319,21 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   for (const card of tierCards) {
     page2.drawRectangle({
       x: cardX,
-      y: 430,
+      y: 398,
       width: 160,
       height: 88,
       color: card.best ? rgb(0.90, 0.97, 0.93) : rgb(0.97, 0.99, 0.98),
       borderColor: card.best ? gold : rgb(0.75, 0.86, 0.80),
       borderWidth: card.best ? 2 : 1
     });
-    page2.drawText(card.title, { x: cardX + 12, y: 500, size: 10, font: fontBold, color: card.best ? green : dark });
-    page2.drawText(card.price, { x: cardX + 12, y: 480, size: 10, font: fontBold, color: dark });
-    page2.drawText(card.days, { x: cardX + 12, y: 462, size: 9, font, color: dark });
+    page2.drawText(card.title, { x: cardX + 12, y: 468, size: 10, font: fontBold, color: card.best ? green : dark });
+    page2.drawText(card.price, { x: cardX + 12, y: 448, size: 10, font: fontBold, color: dark });
+    page2.drawText(card.days, { x: cardX + 12, y: 430, size: 9, font, color: dark });
     cardX += 176;
   }
 
   page2.drawText('Timeline Logic: Standard | Expedited (x0.7) | Flexible (x1.2)', {
-    x: 42, y: 410, size: 9, font, color: rgb(0.28, 0.36, 0.24)
+    x: 42, y: 378, size: 9, font, color: rgb(0.28, 0.36, 0.24)
   });
   drawFooter(page2, width, font);
 
@@ -341,7 +341,7 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   page3.drawRectangle({ x: 0, y: 0, width, height, color: rgb(0.96, 0.97, 0.98) });
   drawHeaderBand(page3, 'YOUR INVESTMENT SNAPSHOT', width, height, fontBold);
   if (embeddedLogo) {
-    page3.drawImage(embeddedLogo, { x: 34, y: 770, width: 150, height: 50 });
+    page3.drawImage(embeddedLogo, { x: 34, y: 776, width: 130, height: 42 });
   } else {
     drawBrandLockup(page3, 42, 760, font, fontBold);
   }
@@ -360,6 +360,11 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   page3.drawText(`Location: ${location}`, { x: 42, y: 522, size: 9, font, color: dark });
   page3.drawText(`Files: ${fileType}`, { x: 42, y: 508, size: 9, font, color: dark });
   page3.drawText(`Reference: ${refNo}`, { x: 42, y: 494, size: 9, font, color: dark });
+  page3.drawRectangle({ x: 42, y: 418, width: 245, height: 64, color: rgb(1, 1, 1), borderColor: rgb(0.85, 0.88, 0.90), borderWidth: 1 });
+  page3.drawText('Why Tyrus Technologies', { x: 52, y: 466, size: 10, font: fontBold, color: green });
+  page3.drawText('10B+ documents processed across enterprise workflows', { x: 52, y: 451, size: 8, font, color: dark });
+  page3.drawText('Multi-level QA checks for indexing accuracy and completeness', { x: 52, y: 438, size: 8, font, color: dark });
+  page3.drawText('Secure handling with governance-first delivery standards', { x: 52, y: 425, size: 8, font, color: dark });
 
   page3.drawText('Trusted by Leading Institutions', { x: 302, y: 552, size: 11, font: fontBold, color: green });
   page3.drawRectangle({ x: 302, y: 474, width: 251, height: 68, color: rgb(1, 1, 1), borderColor: rgb(0.85, 0.88, 0.90), borderWidth: 1 });
