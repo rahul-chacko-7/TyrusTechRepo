@@ -120,6 +120,40 @@ function drawButton(page: any, label: string, x: number, y: number, width: numbe
   });
 }
 
+function drawMetricCard(page: any, opts: { x: number; y: number; w: number; h: number; title: string; value: string; font: any; fontBold: any; accent?: any }): void {
+  const accent = opts.accent || rgb(0.03, 0.44, 0.30);
+  page.drawRectangle({
+    x: opts.x,
+    y: opts.y,
+    width: opts.w,
+    height: opts.h,
+    color: rgb(0.97, 0.99, 0.98),
+    borderColor: rgb(0.82, 0.89, 0.86),
+    borderWidth: 1
+  });
+  page.drawRectangle({
+    x: opts.x,
+    y: opts.y + opts.h - 5,
+    width: opts.w,
+    height: 5,
+    color: accent
+  });
+  page.drawText(opts.title, {
+    x: opts.x + 10,
+    y: opts.y + opts.h - 20,
+    size: 9,
+    font: opts.font,
+    color: rgb(0.24, 0.30, 0.28)
+  });
+  page.drawText(opts.value, {
+    x: opts.x + 10,
+    y: opts.y + opts.h - 40,
+    size: 14,
+    font: opts.fontBold,
+    color: rgb(0.08, 0.12, 0.11)
+  });
+}
+
 function drawBrandLockup(page: any, x: number, y: number, font: any, fontBold: any): void {
   const emerald = rgb(0.03, 0.44, 0.30);
   page.drawRectangle({
@@ -180,40 +214,45 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   drawWatermark(page1, width, height);
   drawHeaderBand(page1, 'CORPORATE PROPOSAL', width, height, fontBold);
   drawBrandLockup(page1, 42, 760, font, fontBold);
-  page1.drawRectangle({ x: 360, y: 630, width: 190, height: 140, color: rgb(0.94, 0.99, 0.96), borderColor: green, borderWidth: 1 });
-  page1.drawText('Proposal Snapshot', { x: 376, y: 744, size: 11, font: fontBold, color: green });
-  page1.drawText(`Client: ${clientName}`, { x: 376, y: 724, size: 9, font, color: dark });
-  page1.drawText(`Company: ${orgName}`, { x: 376, y: 709, size: 9, font, color: dark });
-  page1.drawText(`Pages: ${Math.max(0, payload.pages || 0).toLocaleString('en-IN')}`, { x: 376, y: 694, size: 9, font, color: dark });
-  page1.drawText(`Estimate: ${formatCurrency(pricing.estimatedTotal)}`, { x: 376, y: 679, size: 9, font: fontBold, color: green });
-  page1.drawText(`Timeline: ${pricing.timelineLabel}`, { x: 376, y: 664, size: 9, font, color: dark });
-  page1.drawText('TYRUS TECHNOLOGIES', { x: 42, y: 725, size: 22, font: fontBold, color: green });
-  page1.drawText('Document Digitization & Management', { x: 42, y: 702, size: 13, font, color: dark });
+  page1.drawText('TYRUS TECHNOLOGIES', { x: 42, y: 726, size: 24, font: fontBold, color: green });
+  page1.drawText('Document Digitization & Management', { x: 42, y: 703, size: 13, font, color: dark });
+  page1.drawText('Digitize. Secure. Go Green.', {
+    x: 42,
+    y: 684,
+    size: 14,
+    font: fontBold,
+    color: rgb(0.01, 0.20, 0.40)
+  });
   page1.drawText('Your 3-Step Journey to a Paperless, Searchable Office', {
     x: 42,
-    y: 670,
+    y: 664,
     size: 12,
     font: fontBold,
     color: green
   });
-  page1.drawText(`Reference: ${refNo}`, { x: 42, y: 648, size: 10, font, color: rgb(0.35, 0.35, 0.35) });
-  page1.drawText(`Date: ${now.toLocaleDateString('en-IN')}`, { x: 260, y: 648, size: 10, font, color: rgb(0.35, 0.35, 0.35) });
+  page1.drawText(`Reference: ${refNo}`, { x: 42, y: 644, size: 10, font, color: rgb(0.35, 0.35, 0.35) });
+  page1.drawText(`Date: ${now.toLocaleDateString('en-IN')}`, { x: 260, y: 644, size: 10, font, color: rgb(0.35, 0.35, 0.35) });
 
-  page1.drawText('1. About Tyrus Technologies', { x: 42, y: 610, size: 14, font: fontBold, color: green });
-  page1.drawText('- A decade of experience in the ECM domain.', { x: 54, y: 588, size: 11, font, color: dark });
-  page1.drawText('- 10 Billion+ documents scanned for 250+ major clients.', { x: 54, y: 570, size: 11, font, color: dark });
-  page1.drawText('- 100% secure and compliant project operations.', { x: 54, y: 552, size: 11, font, color: dark });
+  drawMetricCard(page1, { x: 360, y: 678, w: 190, h: 66, title: 'Impact', value: '10B+ documents', font, fontBold, accent: rgb(0.01, 0.20, 0.40) });
+  drawMetricCard(page1, { x: 360, y: 604, w: 190, h: 66, title: 'Client Trust', value: '250+ clients', font, fontBold });
+  drawMetricCard(page1, { x: 360, y: 530, w: 190, h: 66, title: 'Project Snapshot', value: formatCurrency(pricing.estimatedTotal), font, fontBold });
 
-  page1.drawText('2. Our Process', { x: 42, y: 515, size: 14, font: fontBold, color: green });
-  page1.drawText('Consultation & Audit', { x: 54, y: 493, size: 12, font: fontBold, color: dark });
+  page1.drawText('1. About Tyrus Technologies', { x: 42, y: 602, size: 14, font: fontBold, color: green });
+  page1.drawText('[Shield] 100% secure and compliant project operations', { x: 54, y: 580, size: 10, font, color: dark });
+  page1.drawText('[Clock] A decade of experience in the ECM domain', { x: 54, y: 562, size: 10, font, color: dark });
+  page1.drawText('[Scale] Enterprise-ready governance for legal, medical and BFSI records', { x: 54, y: 544, size: 10, font, color: dark });
+
+  page1.drawText('2. Our Process', { x: 42, y: 510, size: 14, font: fontBold, color: green });
+  page1.drawText('Consultation & Audit  ->  Digitization & Data Capture  ->  Cloud Deployment', { x: 54, y: 490, size: 10, font: fontBold, color: rgb(0.01, 0.20, 0.40) });
+  page1.drawText('Consultation & Audit', { x: 54, y: 468, size: 12, font: fontBold, color: dark });
   page1.drawCircle({ x: 45, y: 497, size: 4, color: green });
-  page1.drawText('We assess your files, quality requirements and indexing rules.', { x: 70, y: 478, size: 10, font, color: dark });
-  page1.drawText('Digitization & Data Capture', { x: 54, y: 448, size: 12, font: fontBold, color: dark });
+  page1.drawText('We assess your files, quality requirements and indexing rules.', { x: 70, y: 453, size: 10, font, color: dark });
+  page1.drawText('Digitization & Data Capture', { x: 54, y: 430, size: 12, font: fontBold, color: dark });
   page1.drawCircle({ x: 45, y: 452, size: 4, color: green });
-  page1.drawText('Scanning + OCR/ICR extraction for searchable and structured records.', { x: 70, y: 433, size: 10, font, color: dark });
-  page1.drawText('Cloud Deployment', { x: 54, y: 403, size: 12, font: fontBold, color: dark });
+  page1.drawText('Scanning + OCR/ICR extraction for searchable and structured records.', { x: 70, y: 415, size: 10, font, color: dark });
+  page1.drawText('Cloud Deployment', { x: 54, y: 392, size: 12, font: fontBold, color: dark });
   page1.drawCircle({ x: 45, y: 407, size: 4, color: green });
-  page1.drawText('Delivery and integration with DMS platforms like Folderit and SharePoint.', { x: 70, y: 388, size: 10, font, color: dark });
+  page1.drawText('Delivery and integration with DMS platforms like Folderit and SharePoint.', { x: 70, y: 377, size: 10, font, color: dark });
   drawFooter(page1, width, font);
 
   // Page 2 - Service flow and pricing tiers
@@ -263,6 +302,9 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   page2.drawText(`Client: ${clientName} (${orgName})`, { x: 54, y: 426, size: 10, font, color: dark });
   page2.drawText(`Email: ${safeText(payload.email)}`, { x: 54, y: 410, size: 10, font, color: dark });
   page2.drawText(`Phone: ${safeText(payload.phone)}`, { x: 54, y: 394, size: 10, font, color: dark });
+  page2.drawRectangle({ x: 420, y: 380, width: 133, height: 40, color: rgb(0.93, 0.97, 1), borderColor: rgb(0.72, 0.82, 0.93), borderWidth: 1 });
+  page2.drawText('Certified', { x: 454, y: 406, size: 10, font: fontBold, color: rgb(0.01, 0.20, 0.40) });
+  page2.drawText('Partner', { x: 457, y: 392, size: 10, font: fontBold, color: rgb(0.01, 0.20, 0.40) });
   drawFooter(page2, width, font);
 
   // Page 3 - Custom quote snapshot
@@ -307,13 +349,13 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   });
 
   page3.drawText('Our Trusted Partners:', { x: 42, y: 372, size: 11, font: fontBold, color: green });
-  page3.drawText('Cochin Shipyard Ltd  |  Indian Navy  |  CMC Vellore  |  Carithas Hospital', {
-    x: 42,
-    y: 356,
-    size: 10,
-    font,
-    color: dark
-  });
+  const partnerCards = ['COCHIN SHIPYARD', 'INDIAN NAVY', 'CMC VELLORE', 'CARITHAS'];
+  let partnerX = 42;
+  for (const partner of partnerCards) {
+    page3.drawRectangle({ x: partnerX, y: 338, width: 120, height: 24, color: rgb(0.97, 0.98, 0.99), borderColor: rgb(0.82, 0.85, 0.88), borderWidth: 1 });
+    page3.drawText(partner, { x: partnerX + 8, y: 346, size: 8, font: fontBold, color: rgb(0.18, 0.23, 0.26) });
+    partnerX += 128;
+  }
   page3.drawText('Notes: This is an auto-generated, whole-rupee estimate. Files and location do not alter base figures.', {
     x: 42,
     y: 324,
