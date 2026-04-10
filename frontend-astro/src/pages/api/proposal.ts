@@ -72,8 +72,9 @@ function calculatePricing(pages: number, timelineRaw: string): PricingSnapshot {
 }
 
 function drawHeaderBand(page: any, text: string, pageWidth: number, pageHeight: number, fontBold: any): void {
-  const green = rgb(0.03, 0.44, 0.30);
-  page.drawRectangle({ x: 0, y: pageHeight - 90, width: pageWidth, height: 90, color: green });
+  const navy = rgb(0.01, 0.20, 0.40);
+  page.drawRectangle({ x: 0, y: pageHeight - 90, width: pageWidth, height: 90, color: navy });
+  page.drawRectangle({ x: 0, y: pageHeight - 90, width: pageWidth, height: 6, color: rgb(0.03, 0.44, 0.30) });
   page.drawText(text, {
     x: 42,
     y: pageHeight - 52,
@@ -91,6 +92,31 @@ function drawFooter(page: any, pageWidth: number, font: any): void {
     size: 9,
     color: rgb(0.2, 0.3, 0.27),
     font
+  });
+}
+
+function drawWatermark(page: any, pageWidth: number, pageHeight: number): void {
+  page.drawCircle({ x: pageWidth - 40, y: pageHeight - 130, size: 80, color: rgb(0.90, 0.97, 0.94), borderWidth: 0 });
+  page.drawCircle({ x: pageWidth - 20, y: pageHeight - 165, size: 40, color: rgb(0.95, 0.99, 0.97), borderWidth: 0 });
+}
+
+function drawButton(page: any, label: string, x: number, y: number, width: number, height: number, font: any, filled = false): void {
+  const green = rgb(0.03, 0.44, 0.30);
+  page.drawRectangle({
+    x,
+    y,
+    width,
+    height,
+    color: filled ? green : rgb(1, 1, 1),
+    borderColor: green,
+    borderWidth: 1
+  });
+  page.drawText(label, {
+    x: x + 10,
+    y: y + height / 2 - 5,
+    size: 9,
+    font,
+    color: filled ? rgb(1, 1, 1) : green
   });
 }
 
@@ -151,6 +177,7 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   const height = page1.getHeight();
 
   // Page 1 - Introduction & Service Overview
+  drawWatermark(page1, width, height);
   drawHeaderBand(page1, 'CORPORATE PROPOSAL', width, height, fontBold);
   drawBrandLockup(page1, 42, 760, font, fontBold);
   page1.drawRectangle({ x: 360, y: 630, width: 190, height: 140, color: rgb(0.94, 0.99, 0.96), borderColor: green, borderWidth: 1 });
@@ -190,47 +217,59 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   drawFooter(page1, width, font);
 
   // Page 2 - Service flow and pricing tiers
+  drawWatermark(page2, width, height);
   drawHeaderBand(page2, '1. SERVICE FLOW & TIERS', width, height, fontBold);
   drawBrandLockup(page2, 42, 760, font, fontBold);
-  page2.drawRectangle({ x: 42, y: 638, width: 511, height: 96, color: rgb(0.98, 1, 0.99), borderColor: rgb(0.75, 0.86, 0.80), borderWidth: 1 });
-  page2.drawText('Volume Tier', { x: 42, y: 700, size: 11, font: fontBold, color: dark });
-  page2.drawText('Price/Page (INR)', { x: 220, y: 700, size: 11, font: fontBold, color: dark });
-  page2.drawText('Base Duration (Days)', { x: 390, y: 700, size: 11, font: fontBold, color: dark });
-  page2.drawLine({ start: { x: 42, y: 694 }, end: { x: 553, y: 694 }, thickness: 1, color: rgb(0.75, 0.85, 0.81) });
-
-  const rows = [
-    ['Under 10k', '2.0', '5'],
-    ['10k - 50k', '1.6', '10'],
-    ['50k+', '1.2', '15']
+  const tierCards: Array<{ title: string; price: string; days: string; best?: boolean }> = [
+    { title: 'Under 10k', price: 'INR 2.0 / page', days: 'Base 5 days' },
+    { title: '10k - 50k', price: 'INR 1.6 / page', days: 'Base 10 days' },
+    { title: '50k+ (Best Value)', price: 'INR 1.2 / page', days: 'Base 15 days', best: true }
   ];
-  let rowY = 670;
-  for (const row of rows) {
-    page2.drawText(row[0], { x: 42, y: rowY, size: 11, font, color: dark });
-    page2.drawText(row[1], { x: 240, y: rowY, size: 11, font, color: dark });
-    page2.drawText(row[2], { x: 430, y: rowY, size: 11, font, color: dark });
-    rowY -= 24;
+  let cardX = 42;
+  for (const card of tierCards) {
+    page2.drawRectangle({
+      x: cardX,
+      y: 620,
+      width: 160,
+      height: 104,
+      color: card.best ? rgb(0.90, 0.97, 0.93) : rgb(0.97, 0.99, 0.98),
+      borderColor: rgb(0.75, 0.86, 0.80),
+      borderWidth: 1
+    });
+    page2.drawText(card.title, { x: cardX + 12, y: 696, size: 10, font: fontBold, color: card.best ? green : dark });
+    page2.drawText(card.price, { x: cardX + 12, y: 674, size: 10, font: fontBold, color: dark });
+    page2.drawText(card.days, { x: cardX + 12, y: 654, size: 9, font, color: dark });
+    cardX += 176;
   }
 
   page2.drawText('Timeline Adjustments', { x: 42, y: 570, size: 13, font: fontBold, color: green });
-  page2.drawText('- Standard: Use base days.', { x: 54, y: 548, size: 11, font, color: dark });
-  page2.drawText('- Expedited: Days = max(3, round(base x 0.7))', { x: 54, y: 530, size: 11, font, color: dark });
-  page2.drawText('- Flexible: Days = round(base x 1.2)', { x: 54, y: 512, size: 11, font, color: dark });
+  page2.drawRectangle({ x: 42, y: 544, width: 511, height: 12, color: rgb(0.90, 0.95, 0.93), borderColor: rgb(0.75, 0.85, 0.81), borderWidth: 1 });
+  const selectedX = pricing.timelineLabel === 'Expedited' ? 212 : pricing.timelineLabel === 'Flexible' ? 382 : 42;
+  page2.drawRectangle({ x: selectedX, y: 544, width: 171, height: 12, color: green, borderWidth: 0 });
+  page2.drawText('Standard', { x: 42, y: 530, size: 9, font: fontBold, color: pricing.timelineLabel === 'Standard' ? green : dark });
+  page2.drawText('Expedited', { x: 212, y: 530, size: 9, font: fontBold, color: pricing.timelineLabel === 'Expedited' ? green : dark });
+  page2.drawText('Flexible', { x: 392, y: 530, size: 9, font: fontBold, color: pricing.timelineLabel === 'Flexible' ? green : dark });
+  page2.drawText('- Standard: Use base days.', { x: 54, y: 510, size: 10, font, color: dark });
+  page2.drawText('- Expedited: Days = max(3, round(base x 0.7))', { x: 54, y: 494, size: 10, font, color: dark });
+  page2.drawText('- Flexible: Days = round(base x 1.2)', { x: 54, y: 478, size: 10, font, color: dark });
 
   page2.drawText('Proposal generated from your submitted details:', {
     x: 42,
-    y: 470,
+    y: 448,
     size: 11,
     font: fontBold,
     color: green
   });
-  page2.drawText(`Client: ${clientName} (${orgName})`, { x: 54, y: 448, size: 10, font, color: dark });
-  page2.drawText(`Email: ${safeText(payload.email)}`, { x: 54, y: 432, size: 10, font, color: dark });
-  page2.drawText(`Phone: ${safeText(payload.phone)}`, { x: 54, y: 416, size: 10, font, color: dark });
+  page2.drawText(`Client: ${clientName} (${orgName})`, { x: 54, y: 426, size: 10, font, color: dark });
+  page2.drawText(`Email: ${safeText(payload.email)}`, { x: 54, y: 410, size: 10, font, color: dark });
+  page2.drawText(`Phone: ${safeText(payload.phone)}`, { x: 54, y: 394, size: 10, font, color: dark });
   drawFooter(page2, width, font);
 
   // Page 3 - Custom quote snapshot
+  drawWatermark(page3, width, height);
   drawHeaderBand(page3, '2. CUSTOM PROJECT SNAPSHOT', width, height, fontBold);
   drawBrandLockup(page3, 42, 760, font, fontBold);
+  page3.drawRectangle({ x: 46, y: 646, width: 511, height: 72, color: rgb(0.87, 0.91, 0.90), borderWidth: 0 });
   page3.drawRectangle({ x: 42, y: 650, width: 511, height: 72, color: rgb(0.97, 1, 0.98), borderColor: rgb(0.78, 0.88, 0.83), borderWidth: 1 });
   page3.drawText(`Client Name: ${clientName}`, { x: 42, y: 706, size: 11, font: fontBold, color: dark });
   page3.drawText(`Organization: ${orgName}`, { x: 42, y: 690, size: 11, font, color: dark });
@@ -282,20 +321,9 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
     font,
     color: rgb(0.35, 0.35, 0.35)
   });
-  page3.drawText('GET A CUSTOM QUOTE  ->  corporatesales@tyrustech.com', {
-    x: 42,
-    y: 288,
-    size: 11,
-    font: fontBold,
-    color: green
-  });
-  page3.drawText('WhatsApp: +91 9742065852', {
-    x: 42,
-    y: 270,
-    size: 10,
-    font,
-    color: rgb(0.18, 0.30, 0.27)
-  });
+  drawButton(page3, 'Email: corporatesales@tyrustech.com', 42, 270, 250, 22, font, false);
+  drawButton(page3, 'WhatsApp: +91 9742065852', 304, 270, 249, 22, font, false);
+  drawButton(page3, 'START YOUR TRANSFORMATION', 42, 236, 511, 26, fontBold, true);
   drawFooter(page3, width, font);
 
   return pdf.save();
