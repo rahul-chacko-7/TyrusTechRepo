@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import nodemailer from 'nodemailer';
+import { readFile } from 'node:fs/promises';
 
 type ProposalPayload = {
   name: string;
@@ -72,9 +73,10 @@ function calculatePricing(pages: number, timelineRaw: string): PricingSnapshot {
 }
 
 function drawHeaderBand(page: any, text: string, pageWidth: number, pageHeight: number, fontBold: any): void {
-  const navy = rgb(0.01, 0.20, 0.40);
-  page.drawRectangle({ x: 0, y: pageHeight - 90, width: pageWidth, height: 90, color: navy });
-  page.drawRectangle({ x: 0, y: pageHeight - 90, width: pageWidth, height: 6, color: rgb(0.03, 0.44, 0.30) });
+  const primary = rgb(0.26, 0.41, 0.20); // #426932
+  const accent = rgb(0.35, 0.70, 0.22); // #59B337
+  page.drawRectangle({ x: 0, y: pageHeight - 90, width: pageWidth, height: 90, color: primary });
+  page.drawRectangle({ x: 0, y: pageHeight - 90, width: pageWidth, height: 6, color: accent });
   page.drawText(text, {
     x: 42,
     y: pageHeight - 52,
@@ -96,18 +98,19 @@ function drawFooter(page: any, pageWidth: number, font: any): void {
 }
 
 function drawWatermark(page: any, pageWidth: number, pageHeight: number): void {
-  page.drawCircle({ x: pageWidth - 40, y: pageHeight - 130, size: 80, color: rgb(0.90, 0.97, 0.94), borderWidth: 0 });
-  page.drawCircle({ x: pageWidth - 20, y: pageHeight - 165, size: 40, color: rgb(0.95, 0.99, 0.97), borderWidth: 0 });
+  page.drawCircle({ x: pageWidth - 40, y: pageHeight - 130, size: 80, color: rgb(0.92, 0.97, 0.90), borderWidth: 0 });
+  page.drawCircle({ x: pageWidth - 20, y: pageHeight - 165, size: 40, color: rgb(0.96, 0.99, 0.94), borderWidth: 0 });
 }
 
 function drawButton(page: any, label: string, x: number, y: number, width: number, height: number, font: any, filled = false): void {
-  const green = rgb(0.03, 0.44, 0.30);
+  const green = rgb(0.26, 0.41, 0.20);
+  const highlight = rgb(0.35, 0.70, 0.22);
   page.drawRectangle({
     x,
     y,
     width,
     height,
-    color: filled ? green : rgb(1, 1, 1),
+    color: filled ? highlight : rgb(1, 1, 1),
     borderColor: green,
     borderWidth: 1
   });
@@ -121,14 +124,14 @@ function drawButton(page: any, label: string, x: number, y: number, width: numbe
 }
 
 function drawMetricCard(page: any, opts: { x: number; y: number; w: number; h: number; title: string; value: string; font: any; fontBold: any; accent?: any }): void {
-  const accent = opts.accent || rgb(0.03, 0.44, 0.30);
+  const accent = opts.accent || rgb(0.26, 0.41, 0.20);
   page.drawRectangle({
     x: opts.x,
     y: opts.y,
     width: opts.w,
     height: opts.h,
-    color: rgb(0.97, 0.99, 0.98),
-    borderColor: rgb(0.82, 0.89, 0.86),
+    color: rgb(0.98, 0.99, 0.97),
+    borderColor: rgb(0.84, 0.90, 0.80),
     borderWidth: 1
   });
   page.drawRectangle({
@@ -155,7 +158,7 @@ function drawMetricCard(page: any, opts: { x: number; y: number; w: number; h: n
 }
 
 function drawBrandLockup(page: any, x: number, y: number, font: any, fontBold: any): void {
-  const emerald = rgb(0.03, 0.44, 0.30);
+  const emerald = rgb(0.26, 0.41, 0.20);
   page.drawRectangle({
     x,
     y,
@@ -182,7 +185,7 @@ function drawBrandLockup(page: any, x: number, y: number, font: any, fontBold: a
     y: y + 4,
     size: 8,
     font,
-    color: rgb(0.22, 0.34, 0.30)
+    color: rgb(0.30, 0.40, 0.26)
   });
 }
 
@@ -198,15 +201,22 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   const location = safeText(payload.city, locationMatch?.[1] || 'Not provided');
   const clientName = safeText(payload.name, 'Client');
   const orgName = safeText(payload.company, 'Organization');
-  const green = rgb(0.03, 0.44, 0.30); // Emerald accent
-  const navy = rgb(0.04, 0.12, 0.23); // Deep navy #0B1F3A-ish
-  const dark = rgb(0.08, 0.12, 0.11);
+  const green = rgb(0.26, 0.41, 0.20); // #426932
+  const greenAccent = rgb(0.35, 0.70, 0.22); // #59B337
+  const dark = rgb(0.15, 0.20, 0.14);
   const light = rgb(0.97, 0.98, 0.99);
   const gold = rgb(0.84, 0.68, 0.27);
 
   const pdf = await PDFDocument.create();
   const font = await pdf.embedFont(StandardFonts.Helvetica);
   const fontBold = await pdf.embedFont(StandardFonts.HelveticaBold);
+  let embeddedLogo: any = null;
+  try {
+    const logoBytes = await readFile(new URL('./tyrus-logo.png', import.meta.url));
+    embeddedLogo = await pdf.embedPng(logoBytes);
+  } catch {
+    embeddedLogo = null;
+  }
   const page1 = pdf.addPage([595, 842]);
   const page2 = pdf.addPage([595, 842]);
   const page3 = pdf.addPage([595, 842]);
@@ -214,35 +224,44 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   const height = page1.getHeight();
 
   // Page 1 - Premium cover + vision
-  page1.drawRectangle({ x: 0, y: 0, width, height, color: navy });
-  page1.drawRectangle({ x: 0, y: 420, width, height: 422, color: rgb(0.07, 0.17, 0.31) });
-  page1.drawCircle({ x: 520, y: 760, size: 120, color: rgb(0.10, 0.26, 0.44) });
-  page1.drawCircle({ x: 80, y: 120, size: 140, color: rgb(0.05, 0.21, 0.33) });
-  drawBrandLockup(page1, 42, 760, font, fontBold);
+  page1.drawRectangle({ x: 0, y: 0, width, height, color: rgb(0.95, 0.98, 0.93) });
+  page1.drawRectangle({ x: 0, y: 440, width, height: 402, color: rgb(0.26, 0.41, 0.20) });
+  page1.drawRectangle({ x: 0, y: 430, width, height: 40, color: rgb(0.35, 0.70, 0.22) });
+  page1.drawCircle({ x: 520, y: 760, size: 120, color: rgb(0.32, 0.54, 0.24) });
+  page1.drawCircle({ x: 80, y: 120, size: 140, color: rgb(0.86, 0.94, 0.80) });
+  if (embeddedLogo) {
+    page1.drawImage(embeddedLogo, { x: 42, y: 728, width: 180, height: 70 });
+  } else {
+    drawBrandLockup(page1, 42, 760, font, fontBold);
+  }
 
-  page1.drawText('FROM PAPER CHAOS', { x: 42, y: 662, size: 30, font: fontBold, color: rgb(1, 1, 1) });
-  page1.drawText('TO DIGITAL INTELLIGENCE', { x: 42, y: 626, size: 30, font: fontBold, color: rgb(1, 1, 1) });
-  page1.drawText('Digitize. Secure. Go Green.', { x: 42, y: 594, size: 15, font: fontBold, color: rgb(0.72, 0.95, 0.83) });
+  page1.drawText('FROM PAPER CHAOS', { x: 42, y: 668, size: 32, font: fontBold, color: rgb(1, 1, 1) });
+  page1.drawText('TO DIGITAL INTELLIGENCE', { x: 42, y: 628, size: 32, font: fontBold, color: rgb(1, 1, 1) });
+  page1.drawText('Digitize. Secure. Go Green.', { x: 42, y: 590, size: 16, font: fontBold, color: rgb(0.90, 1, 0.85) });
   page1.drawText(`Ref ${refNo}  |  ${now.toLocaleDateString('en-IN')}`, {
-    x: 42, y: 570, size: 10, font, color: rgb(0.80, 0.88, 0.92)
+    x: 42, y: 564, size: 10, font, color: rgb(0.90, 0.95, 0.89)
   });
 
   // glowing stats
-  drawMetricCard(page1, { x: 42, y: 470, w: 160, h: 74, title: 'Impact', value: '10B+', font, fontBold, accent: green });
+  drawMetricCard(page1, { x: 42, y: 464, w: 160, h: 74, title: 'Impact', value: '10B+', font, fontBold, accent: green });
   page1.drawText('Documents Processed', { x: 52, y: 484, size: 9, font, color: rgb(0.25, 0.29, 0.28) });
-  drawMetricCard(page1, { x: 218, y: 470, w: 160, h: 74, title: 'Clients', value: '250+', font, fontBold, accent: rgb(0.01, 0.20, 0.40) });
+  drawMetricCard(page1, { x: 218, y: 464, w: 160, h: 74, title: 'Clients', value: '250+', font, fontBold, accent: greenAccent });
   page1.drawText('Enterprise Institutions', { x: 228, y: 484, size: 9, font, color: rgb(0.25, 0.29, 0.28) });
-  drawMetricCard(page1, { x: 394, y: 470, w: 160, h: 74, title: 'Estimated Value', value: formatCurrency(pricing.estimatedTotal), font, fontBold, accent: gold });
+  drawMetricCard(page1, { x: 394, y: 464, w: 160, h: 74, title: 'Estimated Value', value: formatCurrency(pricing.estimatedTotal), font, fontBold, accent: greenAccent });
 
   page1.drawText('Consulting-grade delivery for banks, hospitals and enterprise operations.', {
-    x: 42, y: 432, size: 11, font, color: rgb(0.88, 0.93, 0.95)
+    x: 42, y: 420, size: 11, font, color: rgb(0.24, 0.33, 0.22)
   });
   drawFooter(page1, width, font);
 
   // Page 2 - Dashboard snapshot + trust + process + pricing
   page2.drawRectangle({ x: 0, y: 0, width, height, color: light });
   drawHeaderBand(page2, 'SNAPSHOT | TRUST | PROCESS | PRICING', width, height, fontBold);
-  drawBrandLockup(page2, 42, 760, font, fontBold);
+  if (embeddedLogo) {
+    page2.drawImage(embeddedLogo, { x: 42, y: 728, width: 180, height: 70 });
+  } else {
+    drawBrandLockup(page2, 42, 760, font, fontBold);
+  }
   // dashboard cards
   drawMetricCard(page2, { x: 42, y: 650, w: 120, h: 76, title: 'Client', value: clientName, font, fontBold });
   drawMetricCard(page2, { x: 175, y: 650, w: 120, h: 76, title: 'Pages', value: `${Math.max(0, payload.pages || 0).toLocaleString('en-IN')}`, font, fontBold });
@@ -251,9 +270,9 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
 
   // trust row
   page2.drawRectangle({ x: 42, y: 592, width: 511, height: 44, color: rgb(1, 1, 1), borderColor: rgb(0.87, 0.90, 0.92), borderWidth: 1 });
-  page2.drawText('Security & Compliance', { x: 58, y: 614, size: 10, font: fontBold, color: navy });
-  page2.drawText('Experience & Scale', { x: 230, y: 614, size: 10, font: fontBold, color: navy });
-  page2.drawText('Enterprise Readiness', { x: 392, y: 614, size: 10, font: fontBold, color: navy });
+  page2.drawText('Security & Compliance', { x: 58, y: 614, size: 10, font: fontBold, color: green });
+  page2.drawText('Experience & Scale', { x: 230, y: 614, size: 10, font: fontBold, color: green });
+  page2.drawText('Enterprise Readiness', { x: 392, y: 614, size: 10, font: fontBold, color: green });
   page2.drawText('ISO-aligned controls', { x: 58, y: 600, size: 8, font, color: dark });
   page2.drawText('10B+ docs delivered', { x: 230, y: 600, size: 8, font, color: dark });
   page2.drawText('Governance-first execution', { x: 392, y: 600, size: 8, font, color: dark });
@@ -288,17 +307,21 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   }
 
   page2.drawText('Timeline Logic: Standard | Expedited (x0.7) | Flexible (x1.2)', {
-    x: 42, y: 390, size: 10, font, color: rgb(0.28, 0.33, 0.36)
+    x: 42, y: 390, size: 10, font, color: rgb(0.28, 0.36, 0.24)
   });
   drawFooter(page2, width, font);
 
   // Page 3 - Money page + social proof + CTA
   page3.drawRectangle({ x: 0, y: 0, width, height, color: rgb(0.96, 0.97, 0.98) });
   drawHeaderBand(page3, 'YOUR INVESTMENT SNAPSHOT', width, height, fontBold);
-  drawBrandLockup(page3, 42, 760, font, fontBold);
+  if (embeddedLogo) {
+    page3.drawImage(embeddedLogo, { x: 42, y: 728, width: 180, height: 70 });
+  } else {
+    drawBrandLockup(page3, 42, 760, font, fontBold);
+  }
   page3.drawRectangle({ x: 42, y: 558, width: 511, height: 128, color: rgb(1, 1, 1), borderColor: rgb(0.85, 0.88, 0.90), borderWidth: 1 });
-  page3.drawText('Your Investment', { x: 236, y: 648, size: 16, font: fontBold, color: navy });
-  page3.drawText(`${formatCurrency(pricing.estimatedTotal)}`, { x: 168, y: 610, size: 34, font: fontBold, color: gold });
+  page3.drawText('Your Investment', { x: 236, y: 648, size: 16, font: fontBold, color: green });
+  page3.drawText(`${formatCurrency(pricing.estimatedTotal)}`, { x: 168, y: 610, size: 34, font: fontBold, color: greenAccent });
   page3.drawText(`${Math.max(0, payload.pages || 0).toLocaleString('en-IN')} pages  |  INR ${pricing.pricePerPage}/page  |  ${pricing.actualDays} days`, {
     x: 104, y: 588, size: 10, font, color: dark
   });
@@ -306,7 +329,7 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
     x: 248, y: 572, size: 9, font, color: rgb(0.35, 0.35, 0.35)
   });
 
-  page3.drawText('Trusted by India’s Leading Institutions', { x: 42, y: 520, size: 12, font: fontBold, color: navy });
+  page3.drawText('Trusted by India’s Leading Institutions', { x: 42, y: 520, size: 12, font: fontBold, color: green });
   const partnerCards = ['COCHIN SHIPYARD', 'INDIAN NAVY', 'CMC VELLORE', 'CARITHAS'];
   let partnerX = 42;
   for (const partner of partnerCards) {
@@ -315,7 +338,7 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
     partnerX += 128;
   }
 
-  page3.drawRectangle({ x: 0, y: 150, width, height: 120, color: navy });
+  page3.drawRectangle({ x: 0, y: 150, width, height: 120, color: green });
   page3.drawText('Start Your Digital Transformation Today', { x: 108, y: 236, size: 18, font: fontBold, color: rgb(1, 1, 1) });
   drawButton(page3, 'Call Now', 80, 190, 130, 28, fontBold, false);
   drawButton(page3, 'WhatsApp', 230, 190, 130, 28, fontBold, false);
