@@ -13,11 +13,10 @@ type ProposalPayload = {
 };
 
 function formatCurrency(value: number): string {
-  return new Intl.NumberFormat('en-IN', {
-    style: 'currency',
-    currency: 'INR',
+  const amount = new Intl.NumberFormat('en-IN', {
     maximumFractionDigits: 0
   }).format(Math.max(0, value));
+  return `INR ${amount}`;
 }
 
 function safeText(value: unknown, fallback = 'Not provided'): string {
@@ -339,7 +338,8 @@ async function sendProposalEmail(
       ]
     });
     return 'sent';
-  } catch {
+  } catch (error) {
+    console.error('Proposal email send failed:', error);
     return 'failed';
   }
 }
@@ -376,7 +376,8 @@ export const POST: APIRoute = async ({ request }) => {
         'x-email-status': emailStatus
       }
     });
-  } catch {
+  } catch (error) {
+    console.error('Proposal PDF generation failed:', error);
     return new Response(JSON.stringify({ error: 'Unable to generate proposal right now.' }), {
       status: 500,
       headers: { 'content-type': 'application/json' }
