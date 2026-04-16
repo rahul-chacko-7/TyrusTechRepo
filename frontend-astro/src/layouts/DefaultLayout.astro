@@ -5,11 +5,24 @@ import '../styles/global.css';
 const {
   title = 'Document Digitization Services India | Go Green & Secure',
   description = 'Document digitization services across India with secure handling of sensitive data, sustainability-focused workflows, and high-speed scanning.',
-  image = '/favicon.svg'
+  image = '/favicon.svg',
+  schemas = []
 } = Astro.props;
 
 const siteUrl = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.toString() || 'https://www.tyrustech.com').replace(/\/$/, '');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const imageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).toString();
+const jsonLdSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Tyrus Technologies Pvt Ltd',
+    url: siteUrl,
+    logo: imageUrl,
+    description
+  },
+  ...schemas
+];
 /** GA4 measurement ID: Vercel `PUBLIC_GA_MEASUREMENT_ID` or default below (must match Google stream). */
 const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZMLEXVR9ZB').trim();
 ---
@@ -42,24 +55,19 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={imageUrl} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={imageUrl} />
 
-    <script type="application/ld+json">
-      {JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Organization',
-        name: 'Tyrus Technologies Pvt Ltd',
-        url: siteUrl,
-        logo: image,
-        description
-      })}
-    </script>
+    {jsonLdSchemas.map((schema) => (
+      <script type="application/ld+json">
+        {JSON.stringify(schema)}
+      </script>
+    ))}
   </head>
   <body class="min-h-screen bg-gradient-to-b from-emerald-50 via-slate-50 to-slate-100 text-slate-900">
     <div class="flex min-h-screen flex-col">

@@ -144,16 +144,16 @@ function drawMetricCard(page: any, opts: { x: number; y: number; w: number; h: n
   page.drawText(opts.title, {
     x: opts.x + 10,
     y: opts.y + opts.h - 20,
-    size: 9,
+    size: 10,
     font: opts.font,
-    color: rgb(0.24, 0.30, 0.28)
+    color: rgb(0.20, 0.26, 0.24)
   });
   page.drawText(opts.value, {
     x: opts.x + 10,
-    y: opts.y + opts.h - 40,
-    size: 14,
+    y: opts.y + opts.h - 42,
+    size: 15,
     font: opts.fontBold,
-    color: rgb(0.08, 0.12, 0.11)
+    color: rgb(0.10, 0.14, 0.12)
   });
 }
 
@@ -292,6 +292,8 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
 
   // trust row
   page2.drawRectangle({ x: 42, y: 602, width: 511, height: 38, color: rgb(1, 1, 1), borderColor: rgb(0.87, 0.90, 0.92), borderWidth: 1 });
+  page2.drawLine({ start: { x: 212, y: 604 }, end: { x: 212, y: 638 }, thickness: 1, color: rgb(0.90, 0.92, 0.94) });
+  page2.drawLine({ start: { x: 376, y: 604 }, end: { x: 376, y: 638 }, thickness: 1, color: rgb(0.90, 0.92, 0.94) });
   page2.drawText('Security & Compliance', { x: 58, y: 621, size: 9, font: fontBold, color: green });
   page2.drawText('Experience & Scale', { x: 230, y: 621, size: 9, font: fontBold, color: green });
   page2.drawText('Enterprise Readiness', { x: 392, y: 621, size: 9, font: fontBold, color: green });
@@ -300,14 +302,15 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   page2.drawText('Governance-first', { x: 392, y: 608, size: 8, font, color: dark });
 
   // process flow
+  page2.drawRectangle({ x: 42, y: 492, width: 511, height: 96, color: rgb(0.99, 1, 0.99), borderColor: rgb(0.87, 0.91, 0.86), borderWidth: 1 });
   page2.drawText('[Consult]  ->  [Digitize]  ->  [Deploy]', { x: 42, y: 574, size: 11, font: fontBold, color: green });
-  page2.drawText('Assess scope', { x: 52, y: 560, size: 8, font, color: dark });
-  page2.drawText('OCR + indexing', { x: 220, y: 560, size: 8, font, color: dark });
-  page2.drawText('Cloud-ready records', { x: 390, y: 560, size: 8, font, color: dark });
-  page2.drawText('How it works', { x: 42, y: 540, size: 10, font: fontBold, color: green });
-  page2.drawText('1) We audit your files and finalize indexing rules.', { x: 52, y: 527, size: 8, font, color: dark });
-  page2.drawText('2) We scan, run OCR, and perform quality checks batch-wise.', { x: 52, y: 515, size: 8, font, color: dark });
-  page2.drawText('3) We deliver searchable records to your agreed folder/DMS.', { x: 52, y: 503, size: 8, font, color: dark });
+  page2.drawText('Assess scope', { x: 52, y: 560, size: 8.5, font, color: dark });
+  page2.drawText('OCR + indexing', { x: 220, y: 560, size: 8.5, font, color: dark });
+  page2.drawText('Cloud-ready records', { x: 390, y: 560, size: 8.5, font, color: dark });
+  page2.drawText('How it works', { x: 52, y: 541, size: 10, font: fontBold, color: green });
+  page2.drawText('1) Audit files and finalize indexing standards.', { x: 62, y: 527, size: 8.5, font, color: dark });
+  page2.drawText('2) Scan + OCR with batch-level quality checks.', { x: 62, y: 514, size: 8.5, font, color: dark });
+  page2.drawText('3) Deliver searchable records to your folder/DMS.', { x: 62, y: 501, size: 8.5, font, color: dark });
 
   // pricing cards
   const tierCards: Array<{ title: string; price: string; days: string; best?: boolean }> = [
@@ -360,11 +363,11 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   page3.drawText(`Location: ${location}`, { x: 42, y: 522, size: 9, font, color: dark });
   page3.drawText(`Files: ${fileType}`, { x: 42, y: 508, size: 9, font, color: dark });
   page3.drawText(`Reference: ${refNo}`, { x: 42, y: 494, size: 9, font, color: dark });
-  page3.drawRectangle({ x: 42, y: 418, width: 245, height: 64, color: rgb(1, 1, 1), borderColor: rgb(0.85, 0.88, 0.90), borderWidth: 1 });
+  page3.drawRectangle({ x: 42, y: 410, width: 245, height: 72, color: rgb(1, 1, 1), borderColor: rgb(0.85, 0.88, 0.90), borderWidth: 1 });
   page3.drawText('Why Tyrus Technologies', { x: 52, y: 466, size: 10, font: fontBold, color: green });
-  page3.drawText('10B+ documents processed across enterprise workflows', { x: 52, y: 451, size: 8, font, color: dark });
-  page3.drawText('Multi-level QA checks for indexing accuracy and completeness', { x: 52, y: 438, size: 8, font, color: dark });
-  page3.drawText('Secure handling with governance-first delivery standards', { x: 52, y: 425, size: 8, font, color: dark });
+  page3.drawText('10B+ documents processed across enterprise workflows', { x: 52, y: 451, size: 8.5, font, color: dark });
+  page3.drawText('Multi-level QA checks for indexing quality and completeness', { x: 52, y: 437, size: 8.5, font, color: dark });
+  page3.drawText('Secure governance-first delivery with controlled access', { x: 52, y: 423, size: 8.5, font, color: dark });
 
   page3.drawText('Trusted by Leading Institutions', { x: 302, y: 552, size: 11, font: fontBold, color: green });
   page3.drawRectangle({ x: 302, y: 474, width: 251, height: 68, color: rgb(1, 1, 1), borderColor: rgb(0.85, 0.88, 0.90), borderWidth: 1 });

@@ -1,13 +1,69 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
-const pageTitle = 'Document Digitization Services in India | DMS Company – Tyrus Technologies';
+const pageTitle = '10B+ Pages Scanned: Secure Document Digitization & DMS in India | Tyrus Technologies';
+const pageDescription = 'Digitize paper archives with India\'s trusted DMS partner. 13+ years of high-volume healthcare, legal, and banking record scanning with OCR-ready delivery. Get a free project estimate today.';
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Document Digitization and Scanning Services',
+    provider: {
+      '@type': 'Organization',
+      name: 'Tyrus Technologies Pvt Ltd'
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'India'
+    },
+    description: pageDescription
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What does paper-to-digital conversion mean?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We scan your paper files and convert them into digital files. These digital files are searchable and easier to store.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Is my data safe?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We use controlled access, NDA-backed staff, and secure handling. We also keep logs for document movement and access.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How long does it take?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'It depends on your pages and timeline. You can see an estimate in the calculator. For exact timing, we review your files and send a final quote.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can we search our files after conversion?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We create searchable digital files with indexes.'
+        }
+      }
+    ]
+  }
+];
 const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 ---
 
 <DefaultLayout
   title={pageTitle}
-  description="Document digitization services in India. We convert your paper files into digital files so your team can find them easily anytime."
+  description={pageDescription}
+  schemas={pageSchemas}
 >
 
 <section class="border-b border-emerald-100 bg-gradient-to-b from-emerald-900 via-emerald-800 to-emerald-700">
