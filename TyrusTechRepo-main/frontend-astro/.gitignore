@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Build & local tooling
+dist/
+.astro/
+.vercel/
+
+# Environment (keep .env.example tracked)
+.env
+.env.local
+.env.*.local
