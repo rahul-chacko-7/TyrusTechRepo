@@ -20,7 +20,13 @@ const jsonLdSchemas = [
     name: 'Tyrus Technologies Pvt Ltd',
     url: siteUrl,
     logo: imageUrl,
-    description
+    description,
+    email: 'corporatesales@tyrustech.com',
+    telephone: '+91 80898 89853',
+    areaServed: {
+      '@type': 'Country',
+      name: 'India'
+    }
   },
   ...schemas
 ];
@@ -48,11 +54,14 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#047857" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tyrus Technologies" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
