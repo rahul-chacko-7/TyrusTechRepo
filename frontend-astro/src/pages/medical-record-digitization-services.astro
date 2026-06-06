@@ -1,0 +1,48 @@
+---
+import SeoServicePage from '../components/SeoServicePage.astro';
+
+const props = {
+  title: 'Medical Record Digitization Services in India | Tyrus Technologies',
+  description: 'Medical record digitization services for hospitals and clinics, including MRD scanning, OPD/IPD files, case sheets, reports, OCR, indexing, and secure retrieval.',
+  canonical: '/medical-record-digitization-services',
+  eyebrow: 'Hospital MRD digitization',
+  h1: 'Medical record digitization services',
+  serviceType: 'Medical Record Digitization Services',
+  intro: 'Tyrus Technologies supports hospitals and clinics with MRD digitization, medical record scanning, indexing, and searchable archive creation. We help teams retrieve OPD, IPD, case sheet, consent, insurance, and diagnostic records faster while reducing pressure on record rooms.',
+  primaryItems: [
+    'Scanning and indexing for OPD files, IPD files, case sheets, consent forms, reports, prescriptions, and insurance records.',
+    'Onsite scanning inside hospital premises or secure offsite scanning based on record sensitivity and workflow.',
+    'Patient ID, MRD number, admission date, department, doctor, and file type based metadata capture.',
+    'Searchable digital files that support retrieval, audit readiness, and EMR/HMS alignment.'
+  ],
+  outputs: [
+    'Searchable patient file archives',
+    'MRD number and patient ID based indexes',
+    'Department-wise and date-wise folder structures',
+    'PDF/PDF-A, image files, and metadata sheets',
+    'Exception logs for missing or damaged pages'
+  ],
+  process: [
+    ['Map records', 'We review hospital record types, MRD workflow, indexing needs, and privacy rules.'],
+    ['Prepare files', 'Files are batched, sequenced, and prepared for scanning with handling controls.'],
+    ['Digitize', 'Records are scanned, OCR processed, indexed, and checked for image clarity and completeness.'],
+    ['Deliver archive', 'Digital output is handed over for retrieval, storage, EMR/HMS upload, or archive access.']
+  ],
+  industries: [
+    'Hospitals and specialty clinics',
+    'Medical record departments',
+    'Diagnostic centers',
+    'Healthcare groups with multiple branches',
+    'Insurance and TPA documentation teams',
+    'Clinical administration and audit teams'
+  ],
+  faqs: [
+    ['What medical records can Tyrus digitize?', 'Tyrus can digitize OPD files, IPD files, case sheets, prescriptions, reports, consent forms, insurance papers, and MRD archives.'],
+    ['Can scanning happen inside the hospital?', 'Yes. Tyrus can deploy onsite scanning teams when patient files should remain inside hospital premises.'],
+    ['Can files be indexed by MRD number or patient ID?', 'Yes. Indexing can be configured by MRD number, patient ID, admission date, department, doctor, or other fields.'],
+    ['Does medical record digitization support faster retrieval?', 'Yes. Searchable files and metadata indexes help MRD and administration teams retrieve records faster.']
+  ]
+};
+---
+
+<SeoServicePage {...props} />

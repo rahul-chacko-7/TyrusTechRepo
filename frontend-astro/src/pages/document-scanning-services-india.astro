@@ -1,0 +1,48 @@
+---
+import SeoServicePage from '../components/SeoServicePage.astro';
+
+const props = {
+  title: 'Document Scanning Services in India | Tyrus Technologies',
+  description: 'Secure document scanning services in India for bulk files, office records, medical records, KYC files, legal documents, and government archives with OCR and indexing.',
+  canonical: '/document-scanning-services-india',
+  eyebrow: 'India-wide document scanning',
+  h1: 'Document scanning services in India',
+  serviceType: 'Document Scanning Services',
+  intro: 'Tyrus Technologies provides high-volume document scanning services across India for enterprises, hospitals, banks, legal teams, education institutions, and government departments. We convert paper records into clean, searchable digital files with secure handling, indexing, and quality checks.',
+  primaryItems: [
+    'High-speed scanning for loose sheets, bound files, registers, forms, invoices, drawings, and archive boxes.',
+    'Onsite and offsite scanning models based on document sensitivity, available space, and project timeline.',
+    'OCR, file naming, metadata capture, folder structuring, and searchable PDF delivery.',
+    'Batch tracking, access control, image checks, index verification, and secure transfer for sensitive records.'
+  ],
+  outputs: [
+    'Searchable PDF, PDF/A, TIFF, JPEG, or PNG output',
+    'Excel or CSV index sheets with agreed metadata fields',
+    'Department-wise and record-wise folder structure',
+    'DMS, EMR, ERP, or cloud archive ready files',
+    'Quality reports and batch handover summaries'
+  ],
+  process: [
+    ['Assess', 'We review document types, volume, condition, security needs, and required output format.'],
+    ['Prepare', 'Files are sorted, de-stapled, repaired if needed, batched, barcoded, and mapped to indexing rules.'],
+    ['Scan', 'Documents are scanned using suitable equipment with image enhancement and page-level quality checks.'],
+    ['Deliver', 'Digital files, indexes, and reports are delivered securely; physical files are returned or stored as agreed.']
+  ],
+  industries: [
+    'Hospitals and medical record departments',
+    'Banks, NBFCs, KYC, and loan operations',
+    'Government departments and public-sector archives',
+    'Legal firms and corporate legal teams',
+    'Education institutions and universities',
+    'Corporate record rooms, HR, finance, and admin teams'
+  ],
+  faqs: [
+    ['What are document scanning services?', 'Document scanning services convert physical paper records into digital images and searchable files using scanning, OCR, indexing, quality checks, and secure delivery.'],
+    ['Can Tyrus handle bulk document scanning?', 'Yes. Tyrus plans manpower, scanners, batching, quality checks, and delivery for high-volume scanning projects across India.'],
+    ['Do you provide onsite document scanning?', 'Yes. Tyrus can deploy a scanning team at your premises when records are sensitive or cannot be moved offsite.'],
+    ['What file formats can we receive?', 'Common outputs include searchable PDF, PDF/A, TIFF, JPEG, PNG, Excel indexes, CSV metadata, and DMS-ready folders.']
+  ]
+};
+---
+
+<SeoServicePage {...props} />

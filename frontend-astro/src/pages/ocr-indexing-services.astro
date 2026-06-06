@@ -1,0 +1,48 @@
+---
+import SeoServicePage from '../components/SeoServicePage.astro';
+
+const props = {
+  title: 'OCR and Document Indexing Services in India | Tyrus Technologies',
+  description: 'OCR and document indexing services for searchable PDFs, metadata capture, data extraction, file naming, and archive retrieval across India.',
+  canonical: '/ocr-indexing-services',
+  eyebrow: 'Searchable digital records',
+  h1: 'OCR and document indexing services',
+  serviceType: 'OCR and Document Indexing Services',
+  intro: 'Tyrus Technologies converts scanned images into searchable, organized records through OCR, metadata capture, file naming, and index verification. These services help teams find records faster and prepare digital archives for DMS, EMR, ERP, or cloud storage.',
+  primaryItems: [
+    'OCR conversion for searchable PDF and text extraction from scanned images.',
+    'Metadata capture such as file number, customer ID, patient ID, date, department, branch, or document type.',
+    'Manual verification for important fields where OCR confidence is low or documents are handwritten.',
+    'Folder structuring and naming rules that match your retrieval and audit workflows.'
+  ],
+  outputs: [
+    'Searchable PDF or PDF/A files',
+    'CSV or Excel metadata indexes',
+    'Document-wise and field-wise index reports',
+    'DMS, EMR, ERP, or cloud-import ready folders',
+    'Exception reports for unreadable or incomplete documents'
+  ],
+  process: [
+    ['Define fields', 'We agree indexing fields, naming rules, OCR language, and validation logic.'],
+    ['Process OCR', 'Scanned files are processed for searchable text and image cleanup where required.'],
+    ['Capture data', 'Key fields are extracted, entered, or verified based on document type and accuracy needs.'],
+    ['Validate', 'Indexes are checked, exceptions are flagged, and structured output is handed over.']
+  ],
+  industries: [
+    'Healthcare records and MRD archives',
+    'Banking KYC and loan files',
+    'Legal case bundles and contracts',
+    'Government archives and citizen records',
+    'Education certificates and student files',
+    'Corporate invoices, HR files, and administration records'
+  ],
+  faqs: [
+    ['What is OCR?', 'OCR, or optical character recognition, converts text in scanned images into searchable machine-readable text.'],
+    ['Is OCR enough for accurate indexing?', 'OCR helps searchability, but important metadata fields often need validation or manual verification for better accuracy.'],
+    ['Can you create searchable PDFs?', 'Yes. Tyrus can create searchable PDFs, PDF/A files, and metadata sheets based on the required output.'],
+    ['Can indexing fields be customized?', 'Yes. Indexing can be customized by department, document type, customer ID, file number, patient ID, date, or other business fields.']
+  ]
+};
+---
+
+<SeoServicePage {...props} />
