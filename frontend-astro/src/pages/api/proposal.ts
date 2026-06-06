@@ -451,7 +451,7 @@ async function sendProposalEmail(
 
 async function sendLeadNotificationEmail(payload: ProposalPayload): Promise<'sent' | 'skipped' | 'failed'> {
   const config = getMailerConfig();
-  const leadRecipient = import.meta.env.MAIL_LEAD_TO || 'joe@tyrustech.com';
+  const leadRecipient = import.meta.env.MAIL_LEAD_TO || 'rahul.chacko@tyrustech.com';
 
   if (!config || !leadRecipient) {
     return 'skipped';
