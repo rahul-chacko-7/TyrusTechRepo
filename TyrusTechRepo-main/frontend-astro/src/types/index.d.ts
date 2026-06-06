@@ -1,1 +1,0 @@
-// This file defines TypeScript types used throughout the frontend application.
