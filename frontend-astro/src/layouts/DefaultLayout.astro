@@ -10,7 +10,8 @@ const {
   schemas = []
 } = Astro.props;
 
-const siteUrl = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.toString() || 'https://www.tyrustech.com').replace(/\/$/, '');
+const configuredSiteUrl = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.toString() || 'https://www.tyrustech.com').replace(/\/$/, '');
+const siteUrl = configuredSiteUrl.replace('https://tyrustech.com', 'https://www.tyrustech.com');
 const canonicalUrl = new URL(canonical || Astro.url.pathname, siteUrl).toString();
 const imageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).toString();
 const jsonLdSchemas = [
