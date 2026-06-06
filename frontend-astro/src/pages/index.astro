@@ -1,0 +1,932 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+const pageTitle = 'Document Digitization Services in India | DMS Company – Tyrus Technologies';
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+---
+
+<DefaultLayout
+  title={pageTitle}
+  description="Document digitization services in India. We convert your paper files into digital files so your team can find them easily anytime."
+>
+
+<section class="border-b border-emerald-100 bg-gradient-to-b from-emerald-900 via-emerald-800 to-emerald-700">
+  <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 sm:py-12 md:flex-row md:items-center md:gap-10 md:py-20">
+    <!-- Left: text -->
+    <div class="flex-1 space-y-5 text-center md:text-left">
+      <p class="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-300/40 bg-emerald-800/70 px-3 py-1 text-[11px] font-medium text-emerald-100 md:justify-start">
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+        Trusted across India
+      </p>
+
+      <h1 class="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
+        Convert your paper files into digital files
+      </h1>
+
+      <p class="max-w-xl mx-auto text-balance text-xs text-emerald-50/90 sm:text-sm md:mx-0 md:text-base">
+        Find any file easily anytime.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-3 md:justify-start">
+        <a
+          href="#cost-calculator"
+          class="rounded-full bg-emerald-400 px-6 py-2 text-sm font-semibold text-emerald-950 shadow-lg shadow-emerald-900/40 transition hover:bg-white"
+        >
+          See estimate
+        </a>
+        <a
+          href="/contact"
+          class="rounded-full border border-emerald-200/70 px-6 py-2 text-sm font-semibold text-emerald-50 hover:bg-emerald-700/60"
+        >
+          Talk to an expert
+        </a>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3 text-[11px] text-emerald-100/90 md:justify-start">
+        <span>✓ 13+ years handling paper-to-digital projects</span>
+        <span>✓ 250+ customers · 10B+ pages scanned</span>
+        <span>✓ Trusted by hospitals, banks &amp; government</span>
+      </div>
+    </div>
+
+    <!-- Right: stats card -->
+    <div class="flex-1 w-full">
+      <div class="mx-auto max-w-md rounded-2xl border border-emerald-200/40 bg-emerald-900/70 p-5 shadow-2xl shadow-emerald-950/70 sm:p-6">
+        <h2 class="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-100">
+          Why people choose us
+        </h2>
+        <p class="mb-5 text-[11px] text-emerald-100/80">
+          We scan your files, keep them safe, and give them back on time.
+        </p>
+        <dl class="grid grid-cols-1 gap-3 text-sm text-emerald-50 sm:grid-cols-3">
+          <div class="rounded-lg bg-emerald-900/80 p-3 ring-1 ring-emerald-700/60">
+            <dt class="mb-1 text-[11px] font-medium uppercase tracking-wide text-emerald-200">
+              Sustainability
+            </dt>
+            <dd class="text-base font-semibold text-emerald-200">
+              Use less paper
+            </dd>
+            <p class="mt-1 text-[11px] text-emerald-100/80">
+              You need less paper, less storage space, and less file moving.
+            </p>
+          </div>
+          <div class="rounded-lg bg-emerald-900/80 p-3 ring-1 ring-emerald-700/60">
+            <dt class="mb-1 text-[11px] font-medium uppercase tracking-wide text-emerald-200">
+              Security
+            </dt>
+            <dd class="text-base font-semibold text-emerald-200">
+              Safe and secure
+            </dd>
+            <p class="mt-1 text-[11px] text-emerald-100/80">
+              Only approved people can open your files, and your data stays protected.
+            </p>
+          </div>
+          <div class="rounded-lg bg-emerald-900/80 p-3 ring-1 ring-emerald-700/60">
+            <dt class="mb-1 text-[11px] font-medium uppercase tracking-wide text-emerald-200">
+              Efficiency
+            </dt>
+            <dd class="text-base font-semibold text-emerald-200">
+              Fast work
+            </dd>
+            <p class="mt-1 text-[11px] text-emerald-100/80">
+              We can scan many pages quickly and finish on time.
+            </p>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sustainability" class="border-b border-slate-800 bg-slate-950">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-[1.2fr,1fr]">
+    <div class="space-y-4">
+      <h2 class="text-2xl font-semibold text-slate-50">
+        Save paper and storage space.
+      </h2>
+      <p class="text-sm text-slate-300">
+        We convert your paper files into digital records.
+        Your team stores less and finds files faster.
+      </p>
+      <ul class="mt-4 grid gap-3 text-sm text-slate-200 sm:grid-cols-2">
+        <li class="flex items-start gap-2">
+          <span class="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          <span>Reduce paper consumption and printing overheads.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          <span>Free up storage rooms, warehouses, and office space.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          <span>Lower logistics and transportation emissions.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          <span>Enable hybrid and remote teams with digital access.</span>
+        </li>
+      </ul>
+    </div>
+    <div class="space-y-4 rounded-2xl bg-gradient-to-br from-emerald-500/10 via-sky-500/5 to-slate-900 p-6 ring-1 ring-emerald-400/20">
+      <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">
+        What you save
+      </h3>
+      <p class="text-xs text-slate-300">
+        Common results after moving archives to digital.
+      </p>
+      <dl class="space-y-3 text-sm">
+        <div class="flex items-center justify-between rounded-lg bg-slate-950/60 px-4 py-3">
+          <dt class="text-slate-300">Storage space saved</dt>
+          <dd class="font-semibold text-emerald-300">60–80%</dd>
+        </div>
+        <div class="flex items-center justify-between rounded-lg bg-slate-950/60 px-4 py-3">
+          <dt class="text-slate-300">Paper usage reduction</dt>
+          <dd class="font-semibold text-emerald-300">Up to 70%</dd>
+        </div>
+        <div class="flex items-center justify-between rounded-lg bg-slate-950/60 px-4 py-3">
+          <dt class="text-slate-300">Carbon footprint</dt>
+          <dd class="font-semibold text-emerald-300">Lower logistics & printing</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="security" class="border-b border-slate-800 bg-slate-950">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="grid gap-10 md:grid-cols-[1.1fr,1.1fr]">
+      <div class="space-y-4">
+        <h2 class="text-2xl font-semibold text-slate-50">
+          Keep your records safe.
+        </h2>
+        <p class="text-sm text-slate-300">
+          We handle medical records, KYC, legal files, and government archives.
+          We follow strict privacy and compliance practices.
+        </p>
+        <ul class="mt-4 space-y-3 text-sm text-slate-200">
+          <li class="flex gap-2">
+            <span class="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            <span>Only authorised staff can access physical files.</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            <span>Trained staff under NDA.</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            <span>Encrypted transfer and secure storage.</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            <span>Logs for document movement and access.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="space-y-4 rounded-2xl bg-slate-950/80 p-6 ring-1 ring-slate-700/80">
+        <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-sky-300">
+          Built for regulated work
+        </h3>
+        <p class="text-xs text-slate-300">
+          For healthcare, BFSI, government, and legal teams.
+        </p>
+        <div class="grid gap-3 text-sm sm:grid-cols-2">
+          <div class="rounded-lg bg-slate-900/80 p-4">
+            <p class="text-xs font-medium uppercase tracking-wide text-slate-400">Healthcare</p>
+            <p class="mt-1 text-slate-100">OPD/IPD, radiology, and EMR-ready archives.</p>
+          </div>
+          <div class="rounded-lg bg-slate-900/80 p-4">
+            <p class="text-xs font-medium uppercase tracking-wide text-slate-400">Banking & KYC</p>
+            <p class="mt-1 text-slate-100">Account, loan, and KYC bundles digitized securely.</p>
+          </div>
+          <div class="rounded-lg bg-slate-900/80 p-4">
+            <p class="text-xs font-medium uppercase tracking-wide text-slate-400">Government</p>
+            <p class="mt-1 text-slate-100">Archives, land records, and citizen files.</p>
+          </div>
+          <div class="rounded-lg bg-slate-900/80 p-4">
+            <p class="text-xs font-medium uppercase tracking-wide text-slate-400">Legal</p>
+            <p class="mt-1 text-slate-100">Case files, contracts, and evidence bundles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="border-b border-slate-800 bg-slate-950">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <div>
+        <h2 class="text-2xl font-semibold text-slate-50">What we can do for you.</h2>
+        <p class="mt-2 max-w-xl text-sm text-slate-300">
+          We scan paper files, convert them to digital, and help you store them safely.
+          You can find any file quickly.
+        </p>
+      </div>
+      <a
+        href="/services"
+        class="text-sm font-medium text-emerald-300 hover:text-emerald-200"
+      >
+        View all services →
+      </a>
+    </div>
+    <div class="grid gap-4 md:grid-cols-3">
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Scan your paper files</h3>
+        <p class="mt-2 text-xs text-slate-300">
+          Fast scanning with quality checks for clear, readable digital images.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Convert to digital files</h3>
+        <p class="mt-2 text-xs text-slate-300">
+          OCR and structured capture so your files are searchable and organised.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Store them safely</h3>
+        <p class="mt-2 text-xs text-slate-300">
+          Safe digital files with controlled access.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Find any file fast</h3>
+        <p class="mt-2 text-xs text-slate-300">
+          Searchable archives so teams and auditors can retrieve records quickly.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Medical record scanning</h3>
+        <p class="mt-2 text-xs text-slate-300">
+          OPD/IPD and MRD scanning workflows designed for hospitals.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Legal document scanning</h3>
+        <p class="mt-2 text-xs text-slate-300">
+          Case files and contracts organised for legal teams.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works" class="border-b border-slate-800 bg-slate-950">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="mb-8 max-w-2xl space-y-3">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">How it works</p>
+      <h2 class="text-2xl font-semibold text-slate-50">Three simple steps.</h2>
+      <p class="text-sm text-slate-300">
+        Tell us what you have.
+        We scan and convert it.
+        You get digital files.
+      </p>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-3">
+      <div class="rounded-2xl bg-slate-950/70 p-6 ring-1 ring-slate-800">
+        <div class="text-sm font-semibold text-emerald-300">1. Share your files</div>
+        <p class="mt-2 text-sm text-slate-300">
+          Tell us how many files you have.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-6 ring-1 ring-slate-800">
+        <div class="text-sm font-semibold text-emerald-300">2. We scan & convert</div>
+        <p class="mt-2 text-sm text-slate-300">
+          We scan your files and convert them into digital files.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-6 ring-1 ring-slate-800">
+        <div class="text-sm font-semibold text-emerald-300">3. Get digital access</div>
+        <p class="mt-2 text-sm text-slate-300">
+          You get digital files your team can use anytime.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  id="cost-calculator"
+  class="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900"
+>
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="mb-8 max-w-2xl space-y-3">
+      <h2 class="text-2xl font-semibold text-slate-50">Enter number of pages to see your price.</h2>
+      <p class="text-sm text-slate-300">
+        Fill the form and we show a rough estimate.
+        For exact price, we confirm after review.
+      </p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1.2fr),minmax(0,1fr)]">
+      <div class="rounded-2xl bg-slate-950/80 p-6 ring-1 ring-slate-800">
+        <form
+          id="calculator-form"
+          class="space-y-4 text-sm"
+        >
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <label for="pages" class="mb-1 block text-xs font-medium text-slate-300">
+                Number of pages
+              </label>
+              <input
+                id="pages"
+                name="pages"
+                type="number"
+                min="1"
+                required
+                class="block w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-50 outline-none ring-emerald-500/40 placeholder:text-slate-500 focus:border-emerald-400 focus:ring-2"
+                placeholder="e.g. 25,000"
+              />
+            </div>
+            <div>
+              <label for="document_type" class="mb-1 block text-xs font-medium text-slate-300">
+                Type of files
+              </label>
+              <select
+                id="document_type"
+                name="document_type"
+                class="block w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-50 outline-none ring-emerald-500/40 focus:border-emerald-400 focus:ring-2"
+              >
+                <option value="mixed">Mixed office files</option>
+                <option value="medical">Medical records</option>
+                <option value="legal">Legal files</option>
+                <option value="banking">Banking & KYC</option>
+                <option value="government">Government archives</option>
+              </select>
+            </div>
+            <div>
+              <label for="timeline" class="mb-1 block text-xs font-medium text-slate-300">
+                Timeline
+              </label>
+              <select
+                id="timeline"
+                name="timeline"
+                class="block w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-50 outline-none ring-emerald-500/40 focus:border-emerald-400 focus:ring-2"
+              >
+                <option value="flexible">Flexible</option>
+                <option value="standard">Standard (SLA-based)</option>
+                <option value="expedited">Expedited</option>
+              </select>
+            </div>
+            <div>
+              <label for="location" class="mb-1 block text-xs font-medium text-slate-300">
+                City
+              </label>
+              <input
+                id="location"
+                name="location"
+                type="text"
+                class="block w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-50 outline-none ring-emerald-500/40 placeholder:text-slate-500 focus:border-emerald-400 focus:ring-2"
+                placeholder="e.g. Mumbai, Delhi, Bengaluru"
+              />
+            </div>
+          </div>
+          <p id="calculator-error" class="text-xs text-rose-400"></p>
+          <button
+            type="submit"
+            class="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400"
+          >
+            Calculate cost
+          </button>
+          <p id="calculator-result" class="mt-3 text-xs text-emerald-200"></p>
+          <p class="text-xs text-slate-500">
+            This is a rough estimate.
+            We will confirm the exact price.
+          </p>
+        </form>
+      </div>
+
+      <div
+        id="lead-form-card"
+        class="hidden rounded-2xl bg-slate-950/80 p-6 ring-1 ring-emerald-500/40"
+      >
+        <h3 class="text-sm font-semibold text-slate-50">Request proposal</h3>
+        <p class="mt-1 text-xs text-slate-300">
+          Send your details. Our team will send your quote.
+        </p>
+
+        <form
+          id="lead-form"
+          class="mt-4 space-y-3 text-sm"
+        >
+          <div class="grid gap-3 md:grid-cols-2">
+            <div>
+              <label for="name" class="mb-1 block text-xs font-medium text-slate-300">Name</label>
+              <input
+                id="name"
+                name="name"
+                required
+                class="block w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-50 outline-none ring-emerald-500/40 placeholder:text-slate-500 focus:border-emerald-400 focus:ring-2"
+                placeholder="Your full name"
+              />
+            </div>
+            <div>
+              <label for="company" class="mb-1 block text-xs font-medium text-slate-300">
+                Organization / Company
+              </label>
+              <input
+                id="company"
+                name="company"
+                class="block w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-50 outline-none ring-emerald-500/40 placeholder:text-slate-500 focus:border-emerald-400 focus:ring-2"
+                placeholder="Hospital, bank, firm, etc."
+              />
+            </div>
+            <div>
+              <label for="email" class="mb-1 block text-xs font-medium text-slate-300">Work email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                class="block w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-50 outline-none ring-emerald-500/40 placeholder:text-slate-500 focus:border-emerald-400 focus:ring-2"
+                placeholder="you@company.com"
+              />
+            </div>
+            <div>
+              <label for="phone" class="mb-1 block text-xs font-medium text-slate-300">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                class="block w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-50 outline-none ring-emerald-500/40 placeholder:text-slate-500 focus:border-emerald-400 focus:ring-2"
+                placeholder="+91 ..."
+              />
+            </div>
+            <div>
+              <label for="city" class="mb-1 block text-xs font-medium text-slate-300">City</label>
+              <input
+                id="city"
+                name="city"
+                class="block w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-50 outline-none ring-emerald-500/40 placeholder:text-slate-500 focus:border-emerald-400 focus:ring-2"
+                placeholder="Project location"
+              />
+            </div>
+            <div>
+              <label for="lead-pages" class="mb-1 block text-xs font-medium text-slate-300">
+                Pages (auto-filled)
+              </label>
+              <input
+                id="lead-pages"
+                name="pages"
+                readonly
+                class="block w-full cursor-not-allowed rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-400"
+              />
+            </div>
+            <div>
+              <label for="lead-estimated-price" class="mb-1 block text-xs font-medium text-slate-300">
+                Estimated price (₹)
+              </label>
+              <input
+                id="lead-estimated-price"
+                name="estimated_price"
+                readonly
+                class="block w-full cursor-not-allowed rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-400"
+              />
+            </div>
+          </div>
+          <p id="lead-error" class="text-xs text-rose-400"></p>
+          <p id="lead-success" class="text-xs text-emerald-300"></p>
+          <button
+            type="submit"
+            class="mt-1 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400"
+          >
+            Send details
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="industries" class="border-b border-slate-800 bg-slate-950">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <div>
+        <h2 class="text-2xl font-semibold text-slate-50">Who we worked with.</h2>
+        <p class="mt-2 max-w-xl text-sm text-slate-300">
+          We help offices, hospitals, banks and government teams manage paper files better.
+          We convert them into digital records you can find anytime.
+        </p>
+      </div>
+      <a
+        href="/industries"
+        class="text-sm font-medium text-emerald-300 hover:text-emerald-200"
+      >
+        See all industries →
+      </a>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Hospitals</h3>
+        <p class="mt-2 text-xs text-slate-300">MRD, OPD/IPD files and medical record scanning.</p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Banks &amp; NBFCs</h3>
+        <p class="mt-2 text-xs text-slate-300">KYC and loan files converted to digital with tracking.</p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Government offices</h3>
+        <p class="mt-2 text-xs text-slate-300">Land records and citizen files converted to digital.</p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Law firms</h3>
+        <p class="mt-2 text-xs text-slate-300">Case files, contracts and evidence bundles.</p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Schools &amp; colleges</h3>
+        <p class="mt-2 text-xs text-slate-300">Student records, exam papers and admin files.</p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Companies &amp; factories</h3>
+        <p class="mt-2 text-xs text-slate-300">Office files, contracts and process records.</p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Insurance teams</h3>
+        <p class="mt-2 text-xs text-slate-300">Claims documents converted to digital files.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="case-studies" class="border-b border-slate-800 bg-slate-950">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <div>
+        <h2 class="text-2xl font-semibold text-slate-50">Our work samples.</h2>
+        <p class="mt-2 max-w-xl text-sm text-slate-300">
+          Real examples of how we move paper files to safe digital files you can find anytime.
+        </p>
+      </div>
+      <a
+        href="/case-studies"
+        class="text-sm font-medium text-emerald-300 hover:text-emerald-200"
+      >
+        View more case studies →
+      </a>
+    </div>
+    <div class="grid gap-4 md:grid-cols-3">
+      <article class="flex flex-col rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <p class="text-xs font-medium uppercase tracking-wide text-emerald-300">
+          Healthcare · 4.5M pages
+        </p>
+        <h3 class="mt-2 text-sm font-semibold text-slate-50">
+          Multi-hospital medical record scanning.
+        </h3>
+        <p class="mt-2 flex-1 text-xs text-slate-300">
+          We scan and convert MRD files into searchable digital files.
+          Retrieval time drops from hours to seconds.
+        </p>
+        <p class="mt-3 text-xs text-emerald-200">Result: 70% faster retrieval · MRD space freed.</p>
+      </article>
+      <article class="flex flex-col rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <p class="text-xs font-medium uppercase tracking-wide text-sky-300">
+          Banking · 1.2M pages
+        </p>
+        <h3 class="mt-2 text-sm font-semibold text-slate-50">
+          Loan file and KYC bundle scanning.
+        </h3>
+        <p class="mt-2 flex-1 text-xs text-slate-300">
+          We convert KYC and loan documents into digital files with fast searching.
+        </p>
+        <p class="mt-3 text-xs text-emerald-200">Result: Faster audits · Reduced storage costs.</p>
+      </article>
+      <article class="flex flex-col rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <p class="text-xs font-medium uppercase tracking-wide text-amber-300">
+          Government · 800K pages
+        </p>
+        <h3 class="mt-2 text-sm font-semibold text-slate-50">
+          Land record and archive scanning.
+        </h3>
+        <p class="mt-2 flex-1 text-xs text-slate-300">
+          We convert decades of land and citizen records into safe digital files.
+        </p>
+        <p class="mt-3 text-xs text-emerald-200">Result: Faster citizen services · Improved traceability.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="trust" class="border-b border-slate-800 bg-slate-950">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="mb-8 grid gap-6 md:grid-cols-[minmax(0,1.3fr),minmax(0,0.9fr)] md:items-center">
+      <div>
+        <h2 class="text-2xl font-semibold text-slate-50">Our work</h2>
+        <p class="mt-2 max-w-xl text-sm text-slate-300">
+          Big numbers that matter in document scanning.
+          13+ years, 250+ customers, 10B+ files scanned.
+        </p>
+        <dl class="mt-6 grid gap-4 text-sm text-slate-100 sm:grid-cols-3">
+          <div class="rounded-2xl bg-slate-950/70 p-4 ring-1 ring-slate-800">
+            <dt class="text-xs font-medium uppercase tracking-wide text-slate-400">Experience</dt>
+            <dd class="mt-1 text-lg font-semibold text-emerald-300">13+ years</dd>
+            <p class="mt-1 text-[11px] text-slate-400">Specialised in paper-to-digital projects.</p>
+          </div>
+          <div class="rounded-2xl bg-slate-950/70 p-4 ring-1 ring-slate-800">
+            <dt class="text-xs font-medium uppercase tracking-wide text-slate-400">Customers</dt>
+            <dd class="mt-1 text-lg font-semibold text-emerald-300">250+</dd>
+            <p class="mt-1 text-[11px] text-slate-400">Healthcare, BFSI, IT, manufacturing, NGOs and government.</p>
+          </div>
+          <div class="rounded-2xl bg-slate-950/70 p-4 ring-1 ring-slate-800">
+            <dt class="text-xs font-medium uppercase tracking-wide text-slate-400">Pages scanned</dt>
+            <dd class="mt-1 text-lg font-semibold text-emerald-300">10B+</dd>
+            <p class="mt-1 text-[11px] text-slate-400">High‑volume archives with audited quality controls.</p>
+          </div>
+        </dl>
+      </div>
+
+      <div class="space-y-4">
+        <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">
+            Head of Medical Records, multi‑speciality hospital
+          </p>
+          <p class="mt-2 text-sm text-slate-50">
+              “Tyrus scanned and converted MRD files without disrupting admissions.
+              Retrieval for medico‑legal cases dropped from days to minutes.”
+          </p>
+        </div>
+        <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">
+            Compliance lead, private bank
+          </p>
+          <p class="mt-2 text-sm text-slate-50">
+            “Our KYC and loan documents are now centralised and searchable. Internal audit and RBI inspections
+            are faster and better documented.”
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="clients" class="border-b border-slate-800 bg-slate-950">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="mb-8 space-y-3">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Trusted by</p>
+      <h2 class="text-2xl font-semibold text-slate-50">Organizations we worked with</h2>
+      <p class="max-w-3xl text-sm text-slate-300">
+        Real client brands that trusted us to scan and convert their files.
+      </p>
+    </div>
+
+    <div class="overflow-hidden rounded-3xl border border-slate-800 bg-white p-3 shadow-xl sm:p-5">
+      <img
+        src="/client-logos-grid.png"
+        alt="Client logos of organizations that worked with Tyrus Technologies"
+        width="1024"
+        height="768"
+        class="h-auto w-full rounded-2xl"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="border-b border-slate-800 bg-slate-950">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="mb-8 space-y-3">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Common questions</p>
+      <h2 class="text-2xl font-semibold text-slate-50">Quick answers for non-technical teams</h2>
+    </div>
+
+    <div class="space-y-4">
+      <details class="rounded-2xl border border-slate-800 bg-slate-900/40 p-4 group">
+        <summary class="cursor-pointer list-none text-sm font-semibold text-slate-50">
+          What does paper-to-digital conversion mean?
+        </summary>
+        <p class="mt-3 text-sm text-slate-300">
+          We scan your paper files and convert them into digital files.
+          These digital files are searchable and easier to store.
+        </p>
+      </details>
+
+      <details class="rounded-2xl border border-slate-800 bg-slate-900/40 p-4 group">
+        <summary class="cursor-pointer list-none text-sm font-semibold text-slate-50">
+          Is my data safe?
+        </summary>
+        <p class="mt-3 text-sm text-slate-300">
+          Yes. We use controlled access, NDA-backed staff, and secure handling.
+          We also keep logs for document movement and access.
+        </p>
+      </details>
+
+      <details class="rounded-2xl border border-slate-800 bg-slate-900/40 p-4 group">
+        <summary class="cursor-pointer list-none text-sm font-semibold text-slate-50">
+          How long does it take?
+        </summary>
+        <p class="mt-3 text-sm text-slate-300">
+          It depends on your pages and timeline. You can see an estimate in the calculator.
+          For exact timing, we review your files and send a final quote.
+        </p>
+      </details>
+
+      <details class="rounded-2xl border border-slate-800 bg-slate-900/40 p-4 group">
+        <summary class="cursor-pointer list-none text-sm font-semibold text-slate-50">
+          Can we search our files after conversion?
+        </summary>
+        <p class="mt-3 text-sm text-slate-300">
+          Yes. We create searchable digital files with indexes.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="rounded-3xl bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-slate-100 p-8 ring-1 ring-emerald-200">
+      <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+        <div>
+          <h2 class="text-2xl font-semibold text-slate-900">
+            Ready to convert your paper files?
+          </h2>
+          <p class="mt-2 text-sm text-slate-700">
+            Get a free estimate or talk to our team. We will guide you step-by-step.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="#cost-calculator"
+            class="rounded-full bg-emerald-600 px-6 py-2 text-sm font-semibold text-white shadow-md shadow-emerald-500/40 hover:bg-emerald-700"
+          >
+            Get estimate
+          </a>
+          <a
+            href="/contact"
+            class="rounded-full border border-emerald-300 px-6 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50"
+          >
+            Talk to an expert
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="module" define:vars={{ supabaseUrl, supabaseAnonKey }}>
+  // Load Supabase client only when the user submits the lead form.
+  // This reduces initial JS parsing/compilation time (Lighthouse Total Blocking Time).
+  let supabaseClient;
+  async function getSupabaseClient() {
+    if (supabaseClient) return supabaseClient;
+    const mod = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.4/+esm');
+    supabaseClient = mod.createClient(supabaseUrl, supabaseAnonKey);
+    return supabaseClient;
+  }
+
+  const calcForm = document.getElementById('calculator-form');
+  const calcError = document.getElementById('calculator-error');
+  const calcResult = document.getElementById('calculator-result');
+  const leadCard = document.getElementById('lead-form-card');
+  const estField = document.getElementById('lead-estimated-price');
+  const pagesField = document.getElementById('lead-pages');
+  let lastCalculatorSnapshot = {
+    pages: 0,
+    documentType: '',
+    timeline: '',
+    location: ''
+  };
+
+  function calculateCost(pages, timeline) {
+    let pricePerPage, tier;
+    if (pages < 10000) { pricePerPage = 2.0; tier = '<10k'; }
+    else if (pages < 50000) { pricePerPage = 1.6; tier = '10k–50k'; }
+    else { pricePerPage = 1.2; tier = '50k+'; }
+
+    let days = pages <= 10000 ? 5 : pages <= 50000 ? 10 : 15;
+    let label = 'Standard';
+    if (timeline === 'expedited') {
+      days = Math.max(3, Math.round(days * 0.7));
+      label = 'Expedited';
+    } else if (timeline === 'flexible') {
+      days = Math.round(days * 1.2);
+      label = 'Flexible';
+    }
+
+    return { estimatedPrice: pages * pricePerPage, days, pricePerPage, tier, label };
+  }
+
+  if (calcForm) {
+    calcForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(calcForm);
+      const pages = Number(formData.get('pages') || 0);
+      const documentType = String(formData.get('document_type') || '');
+      const timeline = String(formData.get('timeline') || '');
+      const location = String(formData.get('location') || '');
+
+      if (calcError) calcError.textContent = '';
+      if (!pages || pages < 1) {
+        if (calcError) calcError.textContent = 'Please enter a valid number of pages.';
+        return;
+      }
+
+      const { estimatedPrice, days } = calculateCost(pages, timeline);
+
+      if (calcResult) {
+        calcResult.textContent =
+          `Estimated Cost: ₹${estimatedPrice.toLocaleString('en-IN', {
+            maximumFractionDigits: 0
+          })} · Estimated Completion: ${days} days`;
+      }
+
+      if (leadCard) {
+        leadCard.classList.remove('hidden');
+        leadCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (estField) estField.value = String(estimatedPrice);
+      if (pagesField) pagesField.value = String(pages);
+      lastCalculatorSnapshot = { pages, documentType, timeline, location };
+    });
+  }
+
+  const leadForm = document.getElementById('lead-form');
+  const leadError = document.getElementById('lead-error');
+  const leadSuccess = document.getElementById('lead-success');
+
+  if (leadForm) {
+    leadForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const formData = new FormData(leadForm);
+      const payload = Object.fromEntries(formData.entries());
+      const submitButton = leadForm.querySelector('button[type="submit"]');
+
+      if (leadError) leadError.textContent = '';
+      if (leadSuccess) leadSuccess.textContent = '';
+
+      try {
+        if (submitButton) {
+          submitButton.setAttribute('disabled', 'disabled');
+          submitButton.textContent = 'Generating proposal...';
+        }
+
+        try {
+          const client = await getSupabaseClient();
+          await client.from('leads').insert([{
+            name: payload.name,
+            company: payload.company,
+            email: payload.email,
+            phone: payload.phone,
+            city: payload.city,
+            pages: Number(payload.pages || 0) || 0,
+            estimated_price: Number(payload.estimated_price || 0) || 0
+          }]);
+        } catch {
+          // Lead save failure should not block proposal creation.
+        }
+
+        const contextMessage = `Requirement from calculator: ${lastCalculatorSnapshot.documentType || 'mixed'} files, timeline ${lastCalculatorSnapshot.timeline || 'standard'}, location ${lastCalculatorSnapshot.location || 'not provided'}.`;
+        const proposalResponse = await fetch('/api/proposal', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: payload.name,
+            company: payload.company,
+            email: payload.email,
+            phone: payload.phone,
+            city: payload.city,
+            pages: Number(payload.pages || 0) || 0,
+            message: contextMessage
+          })
+        });
+
+        if (!proposalResponse.ok) {
+          throw new Error('proposal_failed');
+        }
+
+        const emailStatus = proposalResponse.headers.get('x-email-status') || 'unknown';
+        const pdfBlob = await proposalResponse.blob();
+        const downloadUrl = URL.createObjectURL(pdfBlob);
+        const link = document.createElement('a');
+        link.href = downloadUrl;
+        link.download = `Tyrus-Proposal-${String(payload.company || payload.name || 'Client').replace(/[^a-zA-Z0-9-_]/g, '-')}.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(downloadUrl);
+
+        leadForm.reset();
+        if (leadSuccess) {
+          leadSuccess.textContent = emailStatus === 'sent'
+            ? 'Proposal generated, downloaded, and emailed successfully.'
+            : 'Proposal generated and downloaded. Email dispatch is pending; our team will follow up.';
+        }
+      } catch {
+        if (leadError) {
+          leadError.textContent =
+            'Unable to generate proposal right now. Please email or call us directly.';
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.removeAttribute('disabled');
+          submitButton.textContent = 'Send details';
+        }
+      }
+    });
+  }
+</script>
+
+</DefaultLayout>
+ 
