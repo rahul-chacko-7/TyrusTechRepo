@@ -15,6 +15,14 @@ type ProposalPayload = {
   message: string;
 };
 
+type MailerConfig = {
+  host: string;
+  port: number;
+  user: string;
+  pass: string;
+  from: string;
+};
+
 function formatCurrency(value: number): string {
   const amount = new Intl.NumberFormat('en-IN', {
     maximumFractionDigits: 0
@@ -25,6 +33,29 @@ function formatCurrency(value: number): string {
 function safeText(value: unknown, fallback = 'Not provided'): string {
   const text = String(value ?? '').trim();
   return text || fallback;
+}
+
+function getMailerConfig(): MailerConfig | null {
+  const host = import.meta.env.SMTP_HOST;
+  const port = Number(import.meta.env.SMTP_PORT || 587);
+  const user = import.meta.env.SMTP_USER;
+  const pass = import.meta.env.SMTP_PASS;
+  const from = import.meta.env.MAIL_FROM || 'corporatesales@tyrustech.com';
+
+  if (!host || !user || !pass) {
+    return null;
+  }
+
+  return { host, port, user, pass, from };
+}
+
+function createTransporter(config: MailerConfig) {
+  return nodemailer.createTransport({
+    host: config.host,
+    port: config.port,
+    secure: config.port === 465,
+    auth: { user: config.user, pass: config.pass }
+  });
 }
 
 type PricingSnapshot = {
@@ -389,26 +420,17 @@ async function sendProposalEmail(
   pdfBytes: Uint8Array,
   fileName: string
 ): Promise<'sent' | 'skipped' | 'failed'> {
-  const host = import.meta.env.SMTP_HOST;
-  const port = Number(import.meta.env.SMTP_PORT || 587);
-  const user = import.meta.env.SMTP_USER;
-  const pass = import.meta.env.SMTP_PASS;
-  const from = import.meta.env.MAIL_FROM || 'corporatesales@tyrustech.com';
+  const config = getMailerConfig();
 
-  if (!host || !user || !pass || !payload.email) {
+  if (!config || !payload.email) {
     return 'skipped';
   }
 
   try {
-    const transporter = nodemailer.createTransport({
-      host,
-      port,
-      secure: port === 465,
-      auth: { user, pass }
-    });
+    const transporter = createTransporter(config);
 
     await transporter.sendMail({
-      from,
+      from: config.from,
       to: payload.email,
       cc: import.meta.env.MAIL_CC || undefined,
       subject: `Business Proposal - Tyrus Technologies (${safeText(payload.company, payload.name)})`,
@@ -423,6 +445,54 @@ async function sendProposalEmail(
     return 'sent';
   } catch (error) {
     console.error('Proposal email send failed:', error);
+    return 'failed';
+  }
+}
+
+async function sendLeadNotificationEmail(payload: ProposalPayload): Promise<'sent' | 'skipped' | 'failed'> {
+  const config = getMailerConfig();
+  const leadRecipient = import.meta.env.MAIL_LEAD_TO || 'joe@tyrustech.com';
+
+  if (!config || !leadRecipient) {
+    return 'skipped';
+  }
+
+  const submittedAt = new Date().toLocaleString('en-IN', {
+    timeZone: 'Asia/Kolkata',
+    dateStyle: 'medium',
+    timeStyle: 'short'
+  });
+
+  const lines = [
+    'New Tyrus website lead received.',
+    '',
+    `Submitted: ${submittedAt}`,
+    `Name: ${safeText(payload.name)}`,
+    `Company: ${safeText(payload.company)}`,
+    `Email: ${safeText(payload.email)}`,
+    `Phone: ${safeText(payload.phone)}`,
+    `City / Location: ${safeText(payload.city)}`,
+    `Estimated pages: ${Math.max(0, payload.pages || 0).toLocaleString('en-IN')}`,
+    '',
+    'Message / requirement:',
+    safeText(payload.message),
+    '',
+    'Source: Tyrus website lead form'
+  ];
+
+  try {
+    const transporter = createTransporter(config);
+
+    await transporter.sendMail({
+      from: config.from,
+      to: leadRecipient,
+      replyTo: payload.email || undefined,
+      subject: `New website lead - ${safeText(payload.company, payload.name)}`,
+      text: lines.join('\n')
+    });
+    return 'sent';
+  } catch (error) {
+    console.error('Lead notification email send failed:', error);
     return 'failed';
   }
 }
@@ -449,14 +519,18 @@ export const POST: APIRoute = async ({ request }) => {
 
     const pdfBytes = await buildProposalPdf(payload);
     const fileName = `Tyrus-Proposal-${safeText(payload.company, payload.name).replace(/[^a-zA-Z0-9-_]/g, '-')}.pdf`;
-    const emailStatus = await sendProposalEmail(payload, pdfBytes, fileName);
+    const [emailStatus, leadEmailStatus] = await Promise.all([
+      sendProposalEmail(payload, pdfBytes, fileName),
+      sendLeadNotificationEmail(payload)
+    ]);
 
     return new Response(Buffer.from(pdfBytes), {
       status: 200,
       headers: {
         'content-type': 'application/pdf',
         'content-disposition': `attachment; filename="${fileName}"`,
-        'x-email-status': emailStatus
+        'x-email-status': emailStatus,
+        'x-lead-email-status': leadEmailStatus
       }
     });
   } catch (error) {
