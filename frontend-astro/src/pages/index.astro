@@ -56,6 +56,32 @@ const pageSchemas = [
     ]
   }
 ];
+const certificationBadges = [
+  {
+    src: '/certifications/iso-9001-2015.png',
+    label: 'ISO 9001:2015'
+  },
+  {
+    src: '/certifications/iso-27001.png',
+    label: 'ISO 27001'
+  },
+  {
+    src: '/certifications/iso-company.png',
+    label: 'ISO certified company'
+  },
+  {
+    src: '/certifications/iso-15000-5-2014.png',
+    label: 'ISO 15000-5:2014'
+  },
+  {
+    src: '/certifications/iso-20000.png',
+    label: 'ISO 20000'
+  },
+  {
+    src: '/certifications/iso-45001.png',
+    label: 'ISO 45001'
+  }
+];
 const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 ---
@@ -118,12 +144,28 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
     <!-- Right: stats card -->
     <div class="flex-1 w-full">
       <div class="mx-auto max-w-md rounded-2xl border border-emerald-200/40 bg-emerald-900/70 p-5 shadow-2xl shadow-emerald-950/70 sm:p-6">
-        <img
-          src="/certificate.png"
-          alt="Tyrus ISO certification badges including ISO 9001:2015, ISO 27001, ISO 15000-5:2014, ISO 20000, and ISO 45001"
-          class="w-full rounded-2xl border border-emerald-200/20 bg-white object-cover shadow-lg shadow-emerald-950/30"
-          loading="lazy"
-        />
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-100">
+          Certifications
+        </p>
+        <div
+          class="-mx-1 flex snap-x gap-3 overflow-x-auto px-1 pb-3 [scrollbar-width:thin] [scrollbar-color:#34d399_transparent]"
+          aria-label="Tyrus certification badges"
+        >
+          {certificationBadges.map((badge) => (
+            <figure class="min-w-[7.75rem] snap-start rounded-2xl border border-emerald-100/30 bg-white p-3 text-center shadow-lg shadow-emerald-950/30">
+              <img
+                src={badge.src}
+                alt={`${badge.label} certification badge`}
+                class="mx-auto h-24 w-24 object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="mt-2 text-[10px] font-semibold uppercase tracking-wide text-emerald-900">
+                {badge.label}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </div>
   </div>

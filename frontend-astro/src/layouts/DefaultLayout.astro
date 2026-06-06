@@ -6,11 +6,12 @@ const {
   title = 'Document Digitization Services India | Go Green & Secure',
   description = 'Document digitization services across India with secure handling of sensitive data, sustainability-focused workflows, and high-speed scanning.',
   image = '/favicon.svg',
+  canonical,
   schemas = []
 } = Astro.props;
 
 const siteUrl = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.toString() || 'https://www.tyrustech.com').replace(/\/$/, '');
-const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const canonicalUrl = new URL(canonical || Astro.url.pathname, siteUrl).toString();
 const imageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).toString();
 const jsonLdSchemas = [
   {

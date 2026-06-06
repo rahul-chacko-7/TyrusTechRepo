@@ -1,0 +1,260 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+
+const pageTitle = 'Document Digitization Services Company in India | Tyrus Technologies';
+const pageDescription =
+  'Tyrus Technologies provides document digitization services in India, including scanning, OCR, indexing, secure archiving, and retrieval for enterprise records.';
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Document Digitization Services in India',
+    serviceType: 'Document Digitization, Document Scanning, OCR and Digital Archiving',
+    provider: {
+      '@type': 'Organization',
+      name: 'Tyrus Technologies Pvt Ltd',
+      url: 'https://www.tyrustech.com'
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'India'
+    },
+    description: pageDescription
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What are document digitization services?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Document digitization services convert paper records and archives into organized digital files using scanning, OCR, indexing, quality checks, and secure digital delivery.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can Tyrus handle large document scanning projects?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Tyrus supports high-volume digitization projects for hospitals, banks, enterprises, government departments, legal teams, and record rooms across India.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you provide OCR and searchable PDF output?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Projects can include OCR, searchable PDF, indexed folders, metadata capture, and structured data files depending on the required output.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can digitization be done onsite?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Tyrus can plan onsite or offsite scanning depending on document sensitivity, available space, timeline, and security requirements.'
+        }
+      }
+    ]
+  }
+];
+
+const highlights = [
+  'Identification of document types and physical condition',
+  'Grouping and batching by topic, department, year, or file type',
+  'Scanning mechanism selected by document size and sensitivity',
+  'OCR, indexing, metadata capture, and searchable digital output',
+  'Secure archive access planning for authorized users',
+  'End-to-end management of scanning, quality check, and delivery'
+];
+
+const outputs = [
+  'Searchable PDF or PDF/A files',
+  'TIFF, JPEG, PNG, or custom image output',
+  'Indexed folders by department, date, customer, file, or record number',
+  'Excel or CSV metadata sheets',
+  'OCR text extraction for search and retrieval',
+  'Digital archive handover through drive, secure transfer, or DMS import'
+];
+---
+
+<DefaultLayout title={pageTitle} description={pageDescription} schemas={pageSchemas}>
+  <section class="relative overflow-hidden border-b border-emerald-100 bg-gradient-to-b from-emerald-950 via-emerald-900 to-emerald-800">
+    <div class="absolute inset-0">
+      <img src="/hero-scanner-bg.png" alt="" class="h-full w-full object-cover opacity-20" loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-r from-emerald-950/95 via-emerald-900/85 to-emerald-800/70"></div>
+    </div>
+    <div class="relative mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.15fr,0.85fr] md:items-center md:py-20">
+      <div>
+        <p class="inline-flex rounded-full border border-emerald-300/40 bg-emerald-800/70 px-3 py-1 text-xs font-semibold text-emerald-100">
+          Best document digitization services in India
+        </p>
+        <h1 class="mt-5 text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
+          Document digitization services company in India
+        </h1>
+        <p class="mt-5 max-w-3xl text-sm leading-7 text-emerald-50/90 sm:text-base">
+          Tyrus Technologies converts records, files, and archives into organized digital formats so essential information can be found, shared, and used when your team needs it. We provide customized document scanning, OCR, indexing, and digital archiving services for paper-heavy organizations.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/#cost-calculator" class="rounded-full bg-emerald-400 px-6 py-2 text-sm font-semibold text-emerald-950 shadow-lg shadow-emerald-950/30 hover:bg-white">
+            Get a quote
+          </a>
+          <a href="/contact" class="rounded-full border border-emerald-200/70 px-6 py-2 text-sm font-semibold text-emerald-50 hover:bg-emerald-700/70">
+            Contact now
+          </a>
+        </div>
+      </div>
+      <div class="rounded-3xl border border-emerald-200/30 bg-emerald-950/55 p-5 shadow-2xl shadow-emerald-950/50">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">Core services</p>
+        <dl class="mt-5 grid gap-3 text-sm text-emerald-50">
+          <div class="rounded-2xl bg-white/10 p-4">
+            <dt class="font-semibold">Document scanning</dt>
+            <dd class="mt-1 text-emerald-50/80">High-volume conversion of loose sheets, files, books, forms, and archives.</dd>
+          </div>
+          <div class="rounded-2xl bg-white/10 p-4">
+            <dt class="font-semibold">OCR and indexing</dt>
+            <dd class="mt-1 text-emerald-50/80">Searchable PDFs, metadata fields, and folder structures for quick retrieval.</dd>
+          </div>
+          <div class="rounded-2xl bg-white/10 p-4">
+            <dt class="font-semibold">Digital archives</dt>
+            <dd class="mt-1 text-emerald-50/80">Secure handover, retention planning, and role-based access recommendations.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl font-semibold text-slate-900">Why organizations digitize documents</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">
+          Organizations often store documents for many years for compliance, audit, operations, and customer service. Physical records create challenges such as misplacing files, slow searching, preservation risk, mishandling, loss, theft, and high storage cost. Digitized documents can be indexed, archived, and retrieved through a flexible digital system so business processes can run from digital records instead of physical movement of files.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-slate-50">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-2">
+      <div>
+        <h2 class="text-2xl font-semibold text-slate-900">Highlights of Tyrus document digitization services</h2>
+        <ul class="mt-5 space-y-3 text-sm text-slate-800">
+          {highlights.map((item) => (
+            <li class="flex gap-3">
+              <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-emerald-500"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="rounded-3xl bg-white p-6 ring-1 ring-slate-200">
+        <h3 class="text-lg font-semibold text-slate-900">What you receive</h3>
+        <ul class="mt-5 space-y-3 text-sm text-slate-800">
+          {outputs.map((item) => (
+            <li class="flex gap-3">
+              <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-sky-500"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <h2 class="text-2xl font-semibold text-slate-900">Document digitization process</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-4">
+        {[
+          ['1', 'Analyze', 'We review document types, volumes, condition, security needs, and retrieval requirements.'],
+          ['2', 'Prepare', 'Files are sorted, grouped, de-stapled, batched, and mapped to indexing rules.'],
+          ['3', 'Digitize', 'Documents are scanned, enhanced, OCR processed, indexed, and checked for image quality.'],
+          ['4', 'Deliver', 'Digital files are handed over in the agreed format, with physical files returned or stored.']
+        ].map(([number, title, text]) => (
+          <article class="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
+            <div class="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold text-white">{number}</div>
+            <h3 class="mt-4 text-sm font-semibold text-slate-900">{title}</h3>
+            <p class="mt-2 text-xs leading-6 text-slate-700">{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="mb-6 max-w-3xl">
+        <h2 class="text-2xl font-semibold text-slate-900">Document types and industries we support</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">
+          Tyrus supports office records, HR files, legal case files, medical records, banking KYC, loan files, education records, government archives, invoices, forms, and legacy cartons.
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          'Hospitals and healthcare MRD archives',
+          'Banks, NBFCs, KYC, and loan departments',
+          'Government records and public-sector archives',
+          'Legal firms, contracts, and case repositories',
+          'Education records, certificates, and student files',
+          'Corporate record rooms and administrative files'
+        ].map((item) => (
+          <div class="rounded-2xl bg-white p-5 text-sm font-semibold text-slate-900 ring-1 ring-slate-200">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-white">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-[1fr,1fr]">
+      <div>
+        <h2 class="text-2xl font-semibold text-slate-900">Security and quality controls</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">
+          Document digitization projects need more than scanners. They need trained teams, handling logs, access control, quality checks, and clear output standards. Tyrus plans each project around confidentiality, file traceability, and accurate retrieval after conversion.
+        </p>
+      </div>
+      <div class="grid gap-3 text-sm text-slate-800">
+        {['Authorized team access', 'Batch tracking and movement logs', 'Image quality checks', 'Index verification', 'Secure file transfer', 'Onsite or offsite project model'].map((item) => (
+          <div class="rounded-xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <h2 class="text-2xl font-semibold text-slate-900">Frequently asked questions</h2>
+      <div class="mt-6 space-y-4">
+        {[
+          ['What is document digitization?', 'Document digitization is the process of converting paper files, records, and archives into digital files with scanning, OCR, indexing, and organized storage.'],
+          ['Is document digitization different from scanning?', 'Scanning captures the image of a document. Digitization is broader and can include sorting, indexing, OCR, metadata capture, quality control, archive design, and retrieval planning.'],
+          ['Can you scan confidential documents onsite?', 'Yes. If documents are sensitive or cannot leave your premises, Tyrus can plan an onsite scanning workflow with trained operators and controlled access.'],
+          ['What output format can we get?', 'Common outputs include searchable PDF, PDF/A, TIFF, JPEG, PNG, Excel or CSV indexes, folder structures, and DMS-ready files.'],
+          ['How do we get a quote?', 'Share the approximate number of pages, document types, locations, and timeline. Tyrus can then estimate cost, manpower, scanning approach, and delivery schedule.']
+        ].map(([question, answer]) => (
+          <details class="rounded-2xl bg-white p-5 ring-1 ring-slate-200">
+            <summary class="cursor-pointer text-sm font-semibold text-slate-900">{question}</summary>
+            <p class="mt-3 text-sm leading-7 text-slate-700">{answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="rounded-3xl bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-slate-100 p-8 ring-1 ring-emerald-200">
+        <h2 class="text-2xl font-semibold text-slate-900">Get a document digitization quote</h2>
+        <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-700">
+          Tell us your page volume, locations, document types, and timeline. We will suggest the right scanning mechanism, indexing model, archive output, and project plan.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="/#cost-calculator" class="rounded-full bg-emerald-600 px-6 py-2 text-sm font-semibold text-white shadow-md shadow-emerald-500/40 hover:bg-emerald-700">Calculate estimate</a>
+          <a href="/contact" class="rounded-full border border-emerald-300 px-6 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Write us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
