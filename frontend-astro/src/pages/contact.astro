@@ -174,7 +174,7 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
         try {
           if (submitButton) {
             submitButton.setAttribute('disabled', 'disabled');
-            submitButton.textContent = 'Generating proposal...';
+            submitButton.textContent = 'Sending request...';
           }
 
           try {
@@ -212,27 +212,20 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
             throw new Error('proposal_failed');
           }
 
-          const emailStatus = proposalResponse.headers.get('x-email-status') || 'unknown';
-          const pdfBlob = await proposalResponse.blob();
-          const downloadUrl = URL.createObjectURL(pdfBlob);
-          const link = document.createElement('a');
-          link.href = downloadUrl;
-          link.download = `Tyrus-Proposal-${(company || name).replace(/[^a-zA-Z0-9-_]/g, '-')}.pdf`;
-          document.body.appendChild(link);
-          link.click();
-          link.remove();
-          URL.revokeObjectURL(downloadUrl);
+          const result = await proposalResponse.json();
+          const emailStatus = result.emailStatus || proposalResponse.headers.get('x-email-status') || 'unknown';
+          const leadEmailStatus = result.leadEmailStatus || proposalResponse.headers.get('x-lead-email-status') || 'unknown';
 
           form.reset();
           if (successEl) {
-            successEl.textContent = emailStatus === 'sent'
-              ? 'Proposal generated, downloaded, and emailed successfully.'
-              : 'Proposal generated and downloaded. Email dispatch is pending; our team will follow up.';
+            successEl.textContent = emailStatus === 'sent' || leadEmailStatus === 'sent'
+              ? 'Thanks. Your request has been sent to the Tyrus team.'
+              : 'Thanks. Your request was received and our team will follow up.';
           }
         } catch {
           if (errorEl) {
             errorEl.textContent =
-              'Unable to generate proposal right now. Please email or call us directly.';
+              'Unable to send the request right now. Please email or call us directly.';
           }
         } finally {
           if (submitButton) {
@@ -244,4 +237,3 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
     }
   </script>
 </DefaultLayout>
-

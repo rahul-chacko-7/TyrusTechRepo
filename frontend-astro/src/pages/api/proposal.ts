@@ -36,13 +36,13 @@ function safeText(value: unknown, fallback = 'Not provided'): string {
 }
 
 function getMailerConfig(): MailerConfig | null {
-  const host = import.meta.env.SMTP_HOST;
-  const port = Number(import.meta.env.SMTP_PORT || 587);
-  const user = import.meta.env.SMTP_USER;
+  const host = import.meta.env.SMTP_HOST || 'mail.tyrustech.com';
+  const port = Number(import.meta.env.SMTP_PORT || 465);
+  const user = import.meta.env.SMTP_USER || 'sales@tyrustech.com';
   const pass = import.meta.env.SMTP_PASS;
-  const from = import.meta.env.MAIL_FROM || 'corporatesales@tyrustech.com';
+  const from = import.meta.env.MAIL_FROM || 'sales@tyrustech.com';
 
-  if (!host || !user || !pass) {
+  if (!pass) {
     return null;
   }
 
@@ -499,6 +499,8 @@ async function sendLeadNotificationEmail(payload: ProposalPayload): Promise<'sen
 
 export const POST: APIRoute = async ({ request }) => {
   try {
+    const url = new URL(request.url);
+    const shouldDownload = url.searchParams.get('download') === '1';
     const body = (await request.json()) as Partial<ProposalPayload>;
     const payload: ProposalPayload = {
       name: safeText(body.name, ''),
@@ -524,11 +526,26 @@ export const POST: APIRoute = async ({ request }) => {
       sendLeadNotificationEmail(payload)
     ]);
 
-    return new Response(Buffer.from(pdfBytes), {
+    if (shouldDownload) {
+      return new Response(Buffer.from(pdfBytes), {
+        status: 200,
+        headers: {
+          'content-type': 'application/pdf',
+          'content-disposition': `attachment; filename="${fileName}"`,
+          'x-email-status': emailStatus,
+          'x-lead-email-status': leadEmailStatus
+        }
+      });
+    }
+
+    return new Response(JSON.stringify({
+      ok: true,
+      emailStatus,
+      leadEmailStatus
+    }), {
       status: 200,
       headers: {
-        'content-type': 'application/pdf',
-        'content-disposition': `attachment; filename="${fileName}"`,
+        'content-type': 'application/json',
         'x-email-status': emailStatus,
         'x-lead-email-status': leadEmailStatus
       }
