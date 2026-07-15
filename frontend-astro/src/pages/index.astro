@@ -1,21 +1,52 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
-const pageTitle = 'Document Scanning & Digitization Company in India Since 2009 | Tyrus Technologies';
-const pageDescription = 'Pan-India document scanning and digitization company since 2009. Trusted by 500+ clients with 17+ years of experience, a nationwide presence, and 10T+ pages scanned.';
+const pageTitle = 'Document Digitization Services in India | Scanning, OCR & DMS - Tyrus';
+const pageDescription = 'Secure document digitization services in India: bulk scanning, onsite scanning, OCR indexing, DMS-ready archives and medical, banking, legal and government records.';
 const pageSchemas = [
   {
     '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: pageTitle,
+    description: pageDescription,
+    about: [
+      'Document digitization services in India',
+      'Document scanning services',
+      'OCR indexing services',
+      'DMS-ready digital archives',
+      'Onsite document scanning'
+    ]
+  },
+  {
+    '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: 'Document Digitization and Scanning Services',
+    name: 'Document Digitization Services in India',
+    serviceType: 'Document Scanning, OCR Indexing, Data Capture and Digital Archive Services',
     provider: {
       '@type': 'Organization',
-      name: 'Tyrus Technologies Pvt Ltd'
+      name: 'Tyrus Technologies Pvt Ltd',
+      url: 'https://www.tyrustech.com'
     },
     areaServed: {
       '@type': 'Country',
       name: 'India'
     },
-    description: pageDescription
+    audience: {
+      '@type': 'BusinessAudience',
+      audienceType: 'Hospitals, banks, NBFCs, government departments, legal teams, education institutions and enterprises'
+    },
+    description: pageDescription,
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Document scanning and digitization services',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Bulk document scanning services' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Onsite document scanning services' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'OCR and indexing services' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Medical record digitization services' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Banking and KYC document scanning services' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Government record digitization services' } }
+      ]
+    }
   },
   {
     '@context': 'https://schema.org',
@@ -23,34 +54,42 @@ const pageSchemas = [
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'What does paper-to-digital conversion mean?',
+        name: 'What document digitization services does Tyrus provide?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'We scan your paper files and convert them into digital files. These digital files are searchable and easier to store.'
+          text: 'Tyrus provides bulk document scanning, onsite scanning, OCR indexing, metadata capture, searchable PDF creation, DMS-ready digital archives and secure handover for enterprise records.'
         }
       },
       {
         '@type': 'Question',
-        name: 'Is my data safe?',
+        name: 'Can Tyrus handle confidential records onsite?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. We use controlled access, NDA-backed staff, and secure handling. We also keep logs for document movement and access.'
+          text: 'Yes. Tyrus can plan onsite document scanning when files must remain inside a hospital, bank, government office, law firm or enterprise location.'
         }
       },
       {
         '@type': 'Question',
-        name: 'How long does it take?',
+        name: 'Can scanned files be searchable and indexed?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'It depends on your pages and timeline. You can see an estimate in the calculator. For exact timing, we review your files and send a final quote.'
+          text: 'Yes. Tyrus can create searchable PDFs, OCR text, metadata indexes, structured folders and DMS-ready outputs based on the retrieval fields your team needs.'
         }
       },
       {
         '@type': 'Question',
-        name: 'Can we search our files after conversion?',
+        name: 'Which industries does Tyrus support?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. We create searchable digital files with indexes.'
+          text: 'Tyrus supports healthcare, banking and NBFCs, insurance, government departments, legal teams, education institutions, manufacturing and corporate record rooms.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How do we get a document scanning quote?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Share page volume, document type, locations, timeline, onsite or offsite preference and output requirements. Tyrus will estimate manpower, scanner deployment, OCR, indexing and delivery effort.'
         }
       }
     ]
@@ -97,8 +136,12 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
     <img
       src="/hero-scanner-bg.png"
       alt=""
+      width="1600"
+      height="900"
       class="h-full w-full object-cover object-center opacity-20"
       loading="eager"
+      fetchpriority="high"
+      decoding="async"
     />
     <div class="absolute inset-0 bg-gradient-to-r from-emerald-950/90 via-emerald-900/78 to-emerald-800/68"></div>
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.12),transparent_28%)]"></div>
@@ -112,11 +155,11 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
       </p>
 
       <h1 class="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
-        Document scanning and digitization company since 2009
+        Document digitization services in India for scanning, OCR and DMS
       </h1>
 
       <p class="max-w-xl mx-auto text-balance text-xs text-emerald-50/90 sm:text-sm md:mx-0 md:text-base">
-        Transform physical records into secure, searchable digital archives with a nationwide delivery network built for enterprise-scale scanning.
+        Convert physical records into secure, searchable digital archives with bulk scanning, onsite document scanning, OCR indexing, metadata capture and DMS-ready outputs for enterprise teams.
       </p>
 
       <div class="flex flex-wrap justify-center gap-3 md:justify-start">
@@ -135,12 +178,46 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
       </div>
 
       <div class="flex flex-wrap justify-center gap-3 text-[11px] text-emerald-100/90 md:justify-start">
-        <span>✓ 17+ years of digitization experience</span>
-        <span>✓ 500+ clients · 10T+ pages scanned</span>
-        <span>✓ Trusted by hospitals, banks, enterprises &amp; government</span>
+        <span>17+ years of digitization experience</span>
+        <span>500+ clients · 10B+ pages scanned</span>
+        <span>Trusted by hospitals, banks, enterprises &amp; government</span>
       </div>
     </div>
 
+  </div>
+</section>
+
+<section id="document-digitization-services-india" class="border-b border-slate-800 bg-slate-950">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="grid gap-10 lg:grid-cols-[1.05fr,1fr] lg:items-start">
+      <div class="space-y-4">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Enterprise document digitization</p>
+        <h2 class="text-2xl font-semibold text-slate-50">
+          Document scanning, OCR indexing and digital archive services under one workflow.
+        </h2>
+        <p class="text-sm text-slate-300">
+          Tyrus plans each project from physical file intake to searchable output: document preparation, scanning, image quality checks, OCR, metadata indexing, file naming, secure transfer and DMS-ready handover.
+        </p>
+        <p class="text-sm text-slate-300">
+          This helps teams searching for document digitization services in India, bulk document scanning, onsite document scanning, OCR indexing, medical record digitization, banking KYC scanning and government archive digitization.
+        </p>
+      </div>
+      <div class="grid gap-3 sm:grid-cols-2">
+        {[
+          ['Document scanning services', '/document-scanning-services-india', 'High-speed scanning with quality checks for offices, branches and record rooms.'],
+          ['Document digitization services', '/document-digitization-services', 'End-to-end paper-to-digital conversion with OCR, metadata and archive planning.'],
+          ['Bulk document scanning', '/bulk-document-scanning-services', 'Large-volume page conversion projects with manpower and scanner planning.'],
+          ['Onsite scanning services', '/onsite-document-scanning-services', 'Scanning teams deployed at your location when records cannot leave premises.'],
+          ['OCR indexing services', '/ocr-indexing-services', 'Searchable PDFs, index sheets, metadata fields and file naming for faster retrieval.'],
+          ['Medical record digitization', '/medical-record-digitization-services', 'MRD, OPD, IPD, diagnostic and hospital archive scanning workflows.']
+        ].map(([label, href, copy]) => (
+          <a href={href} class="block rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800 transition hover:ring-emerald-400/70">
+            <h3 class="text-sm font-semibold text-slate-50">{label}</h3>
+            <p class="mt-2 text-xs text-slate-300">{copy}</p>
+          </a>
+        ))}
+      </div>
+    </div>
   </div>
 </section>
 
@@ -328,10 +405,9 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
   <div class="mx-auto max-w-6xl px-4 py-16">
     <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
       <div>
-        <h2 class="text-2xl font-semibold text-slate-50">What we can do for you.</h2>
+        <h2 class="text-2xl font-semibold text-slate-50">Document scanning services Tyrus can handle.</h2>
         <p class="mt-2 max-w-xl text-sm text-slate-300">
-          We scan paper files, convert them to digital, and help you store them safely.
-          You can find any file quickly.
+          We scan, index and deliver records in formats your teams can actually use: searchable PDFs, metadata sheets, DMS import folders, secure archives and retrieval-ready digital files.
         </p>
       </div>
       <a
@@ -343,41 +419,106 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
     </div>
     <div class="grid gap-4 md:grid-cols-3">
       <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
-        <h3 class="text-sm font-semibold text-slate-50">Scan your paper files</h3>
+        <h3 class="text-sm font-semibold text-slate-50">Bulk document scanning</h3>
         <p class="mt-2 text-xs text-slate-300">
-          Fast scanning with quality checks for clear, readable digital images.
+          High-volume scanning for cartons, record rooms, branch archives and legacy office files.
         </p>
       </div>
       <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
-        <h3 class="text-sm font-semibold text-slate-50">Convert to digital files</h3>
+        <h3 class="text-sm font-semibold text-slate-50">OCR and indexing</h3>
         <p class="mt-2 text-xs text-slate-300">
-          OCR and structured capture so your files are searchable and organised.
+          Searchable PDFs, metadata fields, index sheets and naming rules for fast retrieval.
         </p>
       </div>
       <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
-        <h3 class="text-sm font-semibold text-slate-50">Store them safely</h3>
+        <h3 class="text-sm font-semibold text-slate-50">Onsite document scanning</h3>
         <p class="mt-2 text-xs text-slate-300">
-          Safe digital files with controlled access.
+          Scanner, operator and supervisor deployment when records cannot leave your premises.
         </p>
       </div>
       <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
-        <h3 class="text-sm font-semibold text-slate-50">Find any file fast</h3>
+        <h3 class="text-sm font-semibold text-slate-50">DMS-ready archive output</h3>
         <p class="mt-2 text-xs text-slate-300">
-          Searchable archives so teams and auditors can retrieve records quickly.
+          Folder structures and data outputs prepared for DMS, EMR, ERP, cloud or SFTP handover.
         </p>
       </div>
       <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
         <h3 class="text-sm font-semibold text-slate-50">Medical record scanning</h3>
         <p class="mt-2 text-xs text-slate-300">
-          OPD/IPD and MRD scanning workflows designed for hospitals.
+          OPD, IPD, MRD, consent, diagnostic, insurance and medico-legal record workflows.
         </p>
       </div>
       <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
         <h3 class="text-sm font-semibold text-slate-50">Legal document scanning</h3>
         <p class="mt-2 text-xs text-slate-300">
-          Case files and contracts organised for legal teams.
+          Case files, contracts, evidence bundles and compliance archives organized for legal teams.
         </p>
       </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Banking KYC scanning</h3>
+        <p class="mt-2 text-xs text-slate-300">
+          Account opening forms, loan files, KYC bundles and branch archive scanning for BFSI teams.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Government record digitization</h3>
+        <p class="mt-2 text-xs text-slate-300">
+          Legacy registers, citizen files, land records and department archives digitized for traceability.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800">
+        <h3 class="text-sm font-semibold text-slate-50">Secure archive handover</h3>
+        <p class="mt-2 text-xs text-slate-300">
+          Encrypted delivery, access-controlled workflows and movement logs for sensitive documents.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why-tyrus" class="border-b border-slate-800 bg-slate-950">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="mb-8 max-w-3xl space-y-3">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Why teams choose Tyrus</p>
+      <h2 class="text-2xl font-semibold text-slate-50">
+        Built for high-volume, confidential and retrieval-heavy scanning projects.
+      </h2>
+      <p class="text-sm text-slate-300">
+        The strongest ranking competitors explain project execution clearly. Tyrus now surfaces the same decision factors on the homepage: security, onsite capability, OCR accuracy, indexing structure, quality control and DMS-ready outputs.
+      </p>
+    </div>
+    <div class="overflow-hidden rounded-2xl border border-slate-800">
+      <table class="w-full border-collapse text-left text-sm">
+        <thead class="bg-slate-900 text-slate-50">
+          <tr>
+            <th class="border border-slate-800 px-4 py-3 font-semibold">Requirement</th>
+            <th class="border border-slate-800 px-4 py-3 font-semibold">Tyrus workflow</th>
+            <th class="border border-slate-800 px-4 py-3 font-semibold">Business outcome</th>
+          </tr>
+        </thead>
+        <tbody class="bg-slate-950/70 text-slate-300">
+          <tr>
+            <td class="border border-slate-800 px-4 py-3">Onsite or offsite scanning</td>
+            <td class="border border-slate-800 px-4 py-3">Scanning teams, scanners and supervisors can be deployed onsite, or records can be processed through a controlled offsite workflow.</td>
+            <td class="border border-slate-800 px-4 py-3">Sensitive files stay under the right level of control.</td>
+          </tr>
+          <tr>
+            <td class="border border-slate-800 px-4 py-3">OCR and indexing</td>
+            <td class="border border-slate-800 px-4 py-3">Searchable PDFs, metadata fields, folder structures, file naming rules and index sheets are configured around retrieval needs.</td>
+            <td class="border border-slate-800 px-4 py-3">Teams can find records faster for audits, service requests and legal checks.</td>
+          </tr>
+          <tr>
+            <td class="border border-slate-800 px-4 py-3">Secure document handling</td>
+            <td class="border border-slate-800 px-4 py-3">NDA-backed staff, controlled access, movement logs, encrypted handover and role-aware workflows.</td>
+            <td class="border border-slate-800 px-4 py-3">Better fit for healthcare, BFSI, legal and government records.</td>
+          </tr>
+          <tr>
+            <td class="border border-slate-800 px-4 py-3">DMS-ready output</td>
+            <td class="border border-slate-800 px-4 py-3">Digital files can be prepared for DMS, EMR, ERP, cloud folders, SFTP, HDD handover or internal archive systems.</td>
+            <td class="border border-slate-800 px-4 py-3">Digitization becomes usable, not just scanned images.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -838,6 +979,33 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
         </summary>
         <p class="mt-3 text-sm text-slate-300">
           Yes. We create searchable digital files with indexes.
+        </p>
+      </details>
+
+      <details class="rounded-2xl border border-slate-800 bg-slate-900/40 p-4 group">
+        <summary class="cursor-pointer list-none text-sm font-semibold text-slate-50">
+          Can Tyrus scan documents onsite at our office?
+        </summary>
+        <p class="mt-3 text-sm text-slate-300">
+          Yes. Tyrus can deploy scanners, operators and supervisors at your location when records are confidential or cannot leave your premises.
+        </p>
+      </details>
+
+      <details class="rounded-2xl border border-slate-800 bg-slate-900/40 p-4 group">
+        <summary class="cursor-pointer list-none text-sm font-semibold text-slate-50">
+          What output formats can we get after scanning?
+        </summary>
+        <p class="mt-3 text-sm text-slate-300">
+          Outputs can include searchable PDFs, PDF/A, TIFF or image files, metadata index sheets, structured folders and DMS-ready import packages.
+        </p>
+      </details>
+
+      <details class="rounded-2xl border border-slate-800 bg-slate-900/40 p-4 group">
+        <summary class="cursor-pointer list-none text-sm font-semibold text-slate-50">
+          Do you handle medical, banking and government records?
+        </summary>
+        <p class="mt-3 text-sm text-slate-300">
+          Yes. Tyrus supports MRD and hospital files, banking KYC and loan files, government archives, land records, legal files, education records and enterprise record rooms.
         </p>
       </details>
     </div>

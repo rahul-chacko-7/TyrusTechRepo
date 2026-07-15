@@ -24,9 +24,33 @@ const jsonLdSchemas = [
     description,
     email: 'corporatesales@tyrustech.com',
     telephone: '+91 80898 89853',
+    sameAs: [
+      'https://www.tyrustech.com'
+    ],
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+91 80898 89853',
+        email: 'corporatesales@tyrustech.com',
+        contactType: 'sales',
+        areaServed: 'IN',
+        availableLanguage: ['en', 'hi']
+      }
+    ],
     areaServed: {
       '@type': 'Country',
       name: 'India'
+    }
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Tyrus Technologies',
+    url: siteUrl,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteUrl}/blog?search={search_term_string}`,
+      'query-input': 'required name=search_term_string'
     }
   },
   ...schemas
@@ -60,6 +84,7 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
     <meta name="google-site-verification" content="d3IOP12jDpQPkdQyH0hf5xijhtu62q4Ky0wjBVLXJks" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -87,7 +112,7 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
       </main>
       <footer class="border-t border-emerald-100 bg-white/90">
         <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-          <p>&copy; {new Date().getFullYear()} Digitization Platform. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Tyrus Technologies Pvt Ltd. All rights reserved.</p>
           <p>Digitize. Secure. Go Green.</p>
         </div>
       </footer>
