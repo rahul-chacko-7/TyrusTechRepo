@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/document-scanning-services-2",
+      "destination": "/document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/document-scanning-services-2/",
+      "destination": "/document-scanning-services-india",
+      "permanent": true
+    }
+  ]
+}
