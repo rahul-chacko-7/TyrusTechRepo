@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
+import { locationPages } from '../data/locationPages';
 const pageTitle = 'Document Digitization Services in India | DMS Company – Tyrus Technologies';
 const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
@@ -266,6 +267,31 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
           Case files and contracts organised for legal teams.
         </p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="locations" class="border-b border-slate-800 bg-slate-950">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Service locations</p>
+        <h2 class="mt-2 text-2xl font-semibold text-slate-50">Document scanning services across India.</h2>
+        <p class="mt-2 max-w-2xl text-sm leading-7 text-slate-300">
+          Find city-specific document scanning, document digitization, bulk scanning, onsite scanning and OCR indexing services near your office, branch, hospital or record room.
+        </p>
+      </div>
+      <a href="/locations" class="text-sm font-medium text-emerald-300 hover:text-emerald-200">
+        View all cities
+      </a>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {locationPages.map((location) => (
+        <a href={`/locations/${location.slug}`} class="rounded-2xl bg-slate-950/70 p-5 ring-1 ring-slate-800 transition hover:ring-emerald-400/70">
+          <h3 class="text-sm font-semibold text-slate-50">Document scanning services in {location.city}</h3>
+          <p class="mt-2 text-xs leading-6 text-slate-300">{location.region}</p>
+        </a>
+      ))}
     </div>
   </div>
 </section>
