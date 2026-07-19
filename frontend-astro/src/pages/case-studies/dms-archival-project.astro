@@ -1,0 +1,112 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+
+const pageTitle = 'Archival DMS Case Study for Corporate Records | Tyrus';
+const pageDescription =
+  'Restored Tyrus case study on archival document management systems, corporate history preservation, digital archive retrieval, DMS security, and document workflow productivity.';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: pageTitle,
+    description: pageDescription,
+    author: {
+      '@type': 'Organization',
+      name: 'Tyrus Technologies Pvt Ltd'
+    },
+    mainEntityOfPage: 'https://www.tyrustech.com/case-studies/dms-archival-project'
+  }
+];
+---
+
+<DefaultLayout title={pageTitle} description={pageDescription} schemas={pageSchemas}>
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+        Restored Archive Case Study
+      </p>
+      <h1 class="mt-2 max-w-4xl text-3xl font-semibold text-slate-900">
+        Archival document management system for enterprise history and business records.
+      </h1>
+      <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-700">
+        The earlier Tyrus website highlighted an archival DMS case study around preserving company
+        history, business-critical documents, and old records in a secure retrieval system. This
+        restored page keeps that search value alive while presenting the work in the current site
+        structure.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-[1fr,1.1fr]">
+      <div class="rounded-2xl bg-white p-6 ring-1 ring-slate-200">
+        <h2 class="text-lg font-semibold text-slate-900">Project focus</h2>
+        <dl class="mt-5 space-y-4 text-sm">
+          <div>
+            <dt class="font-semibold text-slate-900">Record types</dt>
+            <dd class="mt-1 leading-6 text-slate-700">Historical records, business-critical files, corporate archives, and workflow documents.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-slate-900">Core need</dt>
+            <dd class="mt-1 leading-6 text-slate-700">Preserve institutional memory while improving document retrieval, employee productivity, and file security.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-slate-900">Solution area</dt>
+            <dd class="mt-1 leading-6 text-slate-700">Document scanning, digital archiving, DMS-ready indexing, metadata, and controlled retrieval.</dd>
+          </div>
+        </dl>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold text-slate-900">Why archival digitization was needed</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">
+          Delays in document operations can affect client response, audit readiness, internal
+          decisions, and brand history. When the required document is not available at the right
+          time, teams lose productivity and important corporate memory becomes harder to protect.
+          A document management system helps store, retrieve, secure, and organize both active
+          business documents and historical records.
+        </p>
+        <h2 class="mt-8 text-xl font-semibold text-slate-900">Value addition of DMS</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">
+          The digital processing associated with document scanning and workflow improves retrieval
+          speed, reduces operating cost, and gives users complete information at the right time.
+          Digitization also ensures each record receives the right treatment: preparation, scanning,
+          quality control, indexing, metadata, and secure archive placement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-xl font-semibold text-slate-900">Outcomes from archival DMS projects</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-3">
+        {[
+          ['Faster retrieval', 'Teams can search digital archives instead of depending on manual file-room knowledge.'],
+          ['Better preservation', 'Historical and business-critical documents are handled less often after digitization.'],
+          ['Improved security', 'Access rules, logs, and structured DMS workflows reduce uncontrolled document movement.']
+        ].map(([title, text]) => (
+          <article class="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900">{title}</h3>
+            <p class="mt-2 text-xs leading-6 text-slate-700">{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-xl font-semibold text-slate-900">Related DMS and archive services</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-3">
+        {[
+          ['Digital archive services', '/services/digital-archives'],
+          ['Document digitization services', '/document-digitization-services'],
+          ['Document management company comparison', '/document-digitization-companies-india']
+        ].map(([label, href]) => (
+          <a href={href} class="rounded-2xl bg-white p-5 text-sm font-semibold text-slate-900 ring-1 ring-slate-200 hover:text-emerald-700 hover:ring-emerald-300">{label}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+</DefaultLayout>

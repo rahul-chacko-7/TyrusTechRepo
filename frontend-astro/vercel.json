@@ -11,6 +11,136 @@
       "permanent": true
     },
     {
+      "source": "/document-digitization",
+      "destination": "/document-digitization-services",
+      "permanent": true
+    },
+    {
+      "source": "/document-digitization/",
+      "destination": "/document-digitization-services",
+      "permanent": true
+    },
+    {
+      "source": "/document-scanning-services-records-management-services",
+      "destination": "/document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/document-scanning-services-records-management-services/",
+      "destination": "/document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/document-scanning-system",
+      "destination": "/document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/document-scanning-system/",
+      "destination": "/document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/data-archives",
+      "destination": "/services/digital-archives",
+      "permanent": true
+    },
+    {
+      "source": "/data-archives/",
+      "destination": "/services/digital-archives",
+      "permanent": true
+    },
+    {
+      "source": "/cloud-document-management-system",
+      "destination": "/services/digital-archives",
+      "permanent": true
+    },
+    {
+      "source": "/cloud-document-management-system/",
+      "destination": "/services/digital-archives",
+      "permanent": true
+    },
+    {
+      "source": "/electronic-document-corporate-records-management-system",
+      "destination": "/services/digital-archives",
+      "permanent": true
+    },
+    {
+      "source": "/electronic-document-corporate-records-management-system/",
+      "destination": "/services/digital-archives",
+      "permanent": true
+    },
+    {
+      "source": "/document-management-consulting",
+      "destination": "/document-digitization-companies-india",
+      "permanent": true
+    },
+    {
+      "source": "/document-management-consulting/",
+      "destination": "/document-digitization-companies-india",
+      "permanent": true
+    },
+    {
+      "source": "/blogs",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/page/:page",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/page/:page/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/infosys-archival-project",
+      "destination": "/case-studies/dms-archival-project",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/infosys-archival-project/",
+      "destination": "/case-studies/dms-archival-project",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/go-green",
+      "destination": "/posts/benefits-of-document-digitization",
+      "permanent": true
+    },
+    {
+      "source": "/go-green/",
+      "destination": "/posts/benefits-of-document-digitization",
+      "permanent": true
+    },
+    {
       "source": "/digitization/finance/detailed-case-study-on-digitisation-of-finance-documents",
       "destination": "/case-studies/finance-document-digitization",
       "permanent": true
