@@ -9,6 +9,76 @@
       "source": "/document-scanning-services-2/",
       "destination": "/document-scanning-services-india",
       "permanent": true
+    },
+    {
+      "source": "/digitization/finance/detailed-case-study-on-digitisation-of-finance-documents",
+      "destination": "/case-studies/finance-document-digitization",
+      "permanent": true
+    },
+    {
+      "source": "/digitization/finance/detailed-case-study-on-digitisation-of-finance-documents/",
+      "destination": "/case-studies/finance-document-digitization",
+      "permanent": true
+    },
+    {
+      "source": "/document-scanning-solutions/why-you-should-leave-your-bulk-document-scanning-to-professionals",
+      "destination": "/bulk-document-scanning-services",
+      "permanent": true
+    },
+    {
+      "source": "/document-scanning-solutions/why-you-should-leave-your-bulk-document-scanning-to-professionals/",
+      "destination": "/bulk-document-scanning-services",
+      "permanent": true
+    },
+    {
+      "source": "/data-capture-services",
+      "destination": "/ocr-indexing-services",
+      "permanent": true
+    },
+    {
+      "source": "/data-capture-services/",
+      "destination": "/ocr-indexing-services",
+      "permanent": true
+    },
+    {
+      "source": "/category/digital-document-imaging",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/category/digital-document-imaging/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/tag/cloud-document-management-system-india",
+      "destination": "/services/digital-archives",
+      "permanent": true
+    },
+    {
+      "source": "/tag/cloud-document-management-system-india/",
+      "destination": "/services/digital-archives",
+      "permanent": true
+    },
+    {
+      "source": "/tag/how-to-choose-document-scanning-services",
+      "destination": "/document-digitization-companies-india",
+      "permanent": true
+    },
+    {
+      "source": "/tag/how-to-choose-document-scanning-services/",
+      "destination": "/document-digitization-companies-india",
+      "permanent": true
+    },
+    {
+      "source": "/uncategorized/how-digitization-is-helping-the-environment",
+      "destination": "/posts/benefits-of-document-digitization",
+      "permanent": true
+    },
+    {
+      "source": "/uncategorized/how-digitization-is-helping-the-environment/",
+      "destination": "/posts/benefits-of-document-digitization",
+      "permanent": true
     }
   ]
 }

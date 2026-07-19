@@ -1,0 +1,139 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+
+const pageTitle = 'Document Digitization Companies in India | How to Choose Tyrus';
+const pageDescription =
+  'Compare document digitization companies in India by scanning capacity, OCR indexing, onsite capability, security controls, DMS-ready delivery, and case-study proof.';
+
+const criteria = [
+  ['Scanning capacity', 'Can the vendor handle bulk document scanning, mixed paper sizes, old records, cartons, and multi-location projects?'],
+  ['Security controls', 'Look for NDA-backed staff, controlled access, document movement logs, secure transfer, and clear escalation handling.'],
+  ['OCR and indexing', 'A strong partner should produce searchable PDFs, metadata sheets, folder structures, and DMS-ready output.'],
+  ['Onsite option', 'Sensitive records may need onsite document scanning with operators, scanners, and supervisors at your premises.'],
+  ['Industry experience', 'Healthcare, banking, government, legal, HR, finance, and enterprise archives need different indexing rules.'],
+  ['Proof of work', 'Case studies and relevant examples help confirm the company has handled similar volumes and record types before.']
+];
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Document Digitization Company in India',
+    provider: {
+      '@type': 'Organization',
+      name: 'Tyrus Technologies Pvt Ltd',
+      url: 'https://www.tyrustech.com'
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'India'
+    },
+    description: pageDescription
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How do I choose a document digitization company in India?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Compare vendors by scanning capacity, document security, OCR and indexing quality, onsite scanning capability, output format, industry experience, and case-study proof.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Tyrus provide pan-India document scanning services?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Tyrus Technologies supports document scanning, digitization, OCR indexing, and archive conversion projects across India.'
+        }
+      }
+    ]
+  }
+];
+---
+
+<DefaultLayout title={pageTitle} description={pageDescription} schemas={pageSchemas}>
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+        Vendor Selection
+      </p>
+      <h1 class="mt-2 max-w-4xl text-3xl font-semibold text-slate-900">
+        Document digitization companies in India: what to check before choosing a partner.
+      </h1>
+      <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-700">
+        Many buyers search for document digitization companies in India, document scanning
+        companies in India, or the best document digitization services before contacting a vendor.
+        The right partner should combine secure handling, high-volume scanning, OCR indexing, and
+        useful digital archive output.
+      </p>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a href="/contact" class="rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Talk to Tyrus</a>
+        <a href="/case-studies" class="rounded-full border border-emerald-300 px-5 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">View case studies</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-xl font-semibold text-slate-900">Comparison checklist</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {criteria.map(([title, text]) => (
+          <article class="rounded-2xl bg-white p-5 ring-1 ring-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900">{title}</h3>
+            <p class="mt-2 text-xs leading-6 text-slate-700">{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-[1fr,1fr]">
+      <div>
+        <h2 class="text-xl font-semibold text-slate-900">Why Tyrus is a strong fit</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">
+          Tyrus Technologies focuses on document scanning services, document digitization services,
+          bulk document scanning, onsite document scanning, OCR indexing, searchable PDF creation,
+          metadata capture, and DMS-ready archive delivery for Indian organizations.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
+        <h3 class="text-sm font-semibold text-slate-900">Relevant service pages</h3>
+        <div class="mt-4 grid gap-3">
+          {[
+            ['Document digitization services in India', '/document-digitization-services'],
+            ['Document scanning services in India', '/document-scanning-services-india'],
+            ['Bulk document scanning services', '/bulk-document-scanning-services'],
+            ['Onsite document scanning services', '/onsite-document-scanning-services'],
+            ['OCR indexing services', '/ocr-indexing-services']
+          ].map(([label, href]) => (
+            <a href={href} class="rounded-xl bg-white px-4 py-3 text-sm font-semibold text-slate-900 ring-1 ring-slate-200 hover:text-emerald-700 hover:ring-emerald-300">{label}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-xl font-semibold text-slate-900">Questions to ask any digitization company</h2>
+      <div class="mt-5 space-y-4">
+        {[
+          ['Can you handle our exact document types?', 'Ask about mixed file sizes, bound records, fragile papers, forms, medical files, KYC folders, registers, and old archives.'],
+          ['How will files be indexed?', 'Decide the search fields before scanning starts: customer ID, MRN, file number, department, year, vendor, branch, or record category.'],
+          ['What output will we receive?', 'Confirm searchable PDF, PDF/A, TIFF, metadata sheets, folder hierarchy, DMS import format, or secure transfer method.'],
+          ['How is confidentiality maintained?', 'Check access control, NDAs, movement logs, secure storage, encryption, and document handover process.']
+        ].map(([question, answer]) => (
+          <details class="rounded-2xl bg-white p-5 ring-1 ring-slate-200">
+            <summary class="cursor-pointer text-sm font-semibold text-slate-900">{question}</summary>
+            <p class="mt-3 text-sm leading-7 text-slate-700">{answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</DefaultLayout>

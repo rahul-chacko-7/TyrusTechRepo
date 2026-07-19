@@ -1,88 +1,143 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
-const pageTitle = 'Document Digitization Case Studies: Healthcare, BFSI, Government';
+
+const pageTitle = 'Document Digitization Case Studies in India | Tyrus Technologies';
+const pageDescription =
+  'Read document digitization case studies from Tyrus Technologies covering finance, healthcare, banking, government archives, OCR indexing, and secure high-volume scanning projects.';
+
+const studies = [
+  {
+    sector: 'Finance operations',
+    volume: 'Invoice and finance files',
+    title: 'Finance document digitization for faster invoice processing',
+    href: '/case-studies/finance-document-digitization',
+    summary:
+      'A finance records workflow was converted into searchable digital files so approval, retrieval, and payment follow-up could move faster.',
+    result: 'Faster invoice lookup, reduced manual handling, and better audit readiness.',
+    color: 'text-sky-700'
+  },
+  {
+    sector: 'Healthcare',
+    volume: '4.5M pages',
+    title: 'Multi-hospital medical record digitization',
+    href: '/case-studies/healthcare-medical-record-digitization',
+    summary:
+      'Legacy MRD archives were scanned and indexed by MRN, department, and episode details for faster medico-legal and clinical retrieval.',
+    result: '70% faster retrieval and record-room space released.',
+    color: 'text-emerald-700'
+  },
+  {
+    sector: 'Banking and NBFC',
+    volume: '1.2M pages',
+    title: 'KYC and loan file digitization for BFSI teams',
+    href: '/case-studies/banking-kyc-loan-file-digitization',
+    summary:
+      'Branch-wise KYC and loan files were digitized with customer-level indexing and controlled chain-of-custody reporting.',
+    result: 'Faster audit response and lower branch-to-branch carton movement.',
+    color: 'text-indigo-700'
+  },
+  {
+    sector: 'Government',
+    volume: '800K pages',
+    title: 'Government archive and citizen record digitization',
+    href: '/case-studies/government-archive-digitization',
+    summary:
+      'Registers, citizen files, and department archives were digitized with structured metadata for traceability and public-service requests.',
+    result: 'Better visibility, faster responses, and less handling risk for originals.',
+    color: 'text-amber-700'
+  }
+];
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: pageTitle,
+    description: pageDescription,
+    url: 'https://www.tyrustech.com/case-studies',
+    hasPart: studies.map((study) => ({
+      '@type': 'Article',
+      headline: study.title,
+      url: `https://www.tyrustech.com${study.href}`,
+      about: study.sector
+    }))
+  }
+];
 ---
 
-<DefaultLayout
-  title={pageTitle}
-  description="Review real-world digitization case studies delivered for hospitals, banks, government departments, and enterprises with measurable retrieval and compliance outcomes."
->
+<DefaultLayout title={pageTitle} description={pageDescription} schemas={pageSchemas}>
   <section class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-6xl px-4 py-12">
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
         Case Studies
       </p>
-      <h1 class="mt-2 text-3xl font-semibold text-slate-900">
-        Document digitization success stories.
+      <h1 class="mt-2 max-w-4xl text-3xl font-semibold text-slate-900">
+        Document digitization case studies from finance, healthcare, banking and government teams.
       </h1>
-      <p class="mt-3 max-w-3xl text-sm text-slate-700">
-        A few examples of how we have helped customers across healthcare, banking, government and
-        enterprises digitize large archives and improve access to records.
+      <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-700">
+        These examples explain the type of work Tyrus Technologies has handled over years of
+        document scanning, OCR indexing, and secure archive conversion projects for paper-heavy
+        organizations.
       </p>
     </div>
   </section>
 
-  <section class="bg-slate-50">
-    <div class="mx-auto max-w-6xl px-4 py-12 grid gap-5 md:grid-cols-3">
-      <article class="flex flex-col rounded-2xl bg-white p-5 ring-1 ring-slate-200">
-        <p class="text-xs font-medium uppercase tracking-wide text-emerald-700">
-          Healthcare · 4.5M pages
-        </p>
-        <h2 class="mt-2 text-sm font-semibold text-slate-900">
-          Multi‑hospital medical record digitization.
-        </h2>
-        <p class="mt-2 flex-1 text-xs text-slate-700">
-          Legacy MRD archives were scanned and indexed by MRN and specialty, reducing retrieval
-          times for medico‑legal and clinical requests.
-        </p>
-        <p class="mt-3 text-xs text-emerald-700">
-          Result: 70% faster retrieval · Record rooms freed for new use.
-        </p>
-      </article>
-
-      <article class="flex flex-col rounded-2xl bg-white p-5 ring-1 ring-slate-200">
-        <p class="text-xs font-medium uppercase tracking-wide text-sky-700">
-          Banking · 1.2M pages
-        </p>
-        <h2 class="mt-2 text-sm font-semibold text-slate-900">
-          KYC and loan file digitization for a regional bank.
-        </h2>
-        <p class="mt-2 flex-1 text-xs text-slate-700">
-          Branch‑wise KYC and loan documents were scanned and centralized, with indexing by
-          customer ID and account number.
-        </p>
-        <p class="mt-3 text-xs text-emerald-700">
-          Result: Faster audit response · Reduced carton movement between branches.
-        </p>
-      </article>
-
-      <article class="flex flex-col rounded-2xl bg-white p-5 ring-1 ring-slate-200">
-        <p class="text-xs font-medium uppercase tracking-wide text-amber-700">
-          Government · 800K pages
-        </p>
-        <h2 class="mt-2 text-sm font-semibold text-slate-900">
-          Land and citizen record digitization.
-        </h2>
-        <p class="mt-2 flex-1 text-xs text-slate-700">
-          Department archives of land and citizen records were digitized and organized, improving
-          turnaround for citizen services and RTI responses.
-        </p>
-        <p class="mt-3 text-xs text-emerald-700">
-          Result: Better visibility · Less risk of damage to original records.
-        </p>
-      </article>
+  <section class="bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12 grid gap-5 md:grid-cols-2">
+      {studies.map((study) => (
+        <article class="flex flex-col rounded-2xl bg-white p-5 ring-1 ring-slate-200">
+          <p class={`text-xs font-medium uppercase tracking-wide ${study.color}`}>
+            {study.sector} | {study.volume}
+          </p>
+          <h2 class="mt-2 text-lg font-semibold text-slate-900">
+            <a href={study.href} class="hover:text-emerald-700">{study.title}</a>
+          </h2>
+          <p class="mt-2 flex-1 text-sm leading-7 text-slate-700">
+            {study.summary}
+          </p>
+          <p class="mt-3 text-sm font-semibold text-emerald-700">
+            Result: {study.result}
+          </p>
+          <a href={study.href} class="mt-4 text-sm font-semibold text-slate-900 hover:text-emerald-700">
+            Read case study
+          </a>
+        </article>
+      ))}
     </div>
   </section>
 
-  <section class="bg-white">
-    <div class="mx-auto max-w-6xl px-4 pb-16">
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-3">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Why this matters</p>
+        <h2 class="mt-2 text-xl font-semibold text-slate-900">Proof pages help service keywords rank.</h2>
+      </div>
+      <div class="md:col-span-2 grid gap-4 sm:grid-cols-2">
+        {[
+          ['Experience signals', 'Case studies show 15+ years of real document scanning and digitization work, not just service claims.'],
+          ['Industry relevance', 'Healthcare, BFSI, government, legal, HR, and finance users can see workflows close to their own records.'],
+          ['Keyword support', 'Each case links back to document digitization, document scanning, OCR indexing, onsite scanning, and cost pages.'],
+          ['Lead confidence', 'Buyers searching for the best document digitization company in India need proof before contacting a vendor.']
+        ].map(([title, text]) => (
+          <div class="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900">{title}</h3>
+            <p class="mt-2 text-xs leading-6 text-slate-700">{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 pb-16 pt-12">
       <div class="rounded-3xl bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-slate-100 p-8 ring-1 ring-emerald-200">
         <h2 class="text-xl font-semibold text-slate-900">
-          Want to see what this could look like for you?
+          Planning a similar scanning or digitization project?
         </h2>
-        <p class="mt-2 text-sm text-slate-700">
-          Share your industry, volumes and locations. We can walk you through similar work we have
-          delivered and suggest a realistic plan.
+        <p class="mt-2 text-sm leading-7 text-slate-700">
+          Share your industry, document types, volume, location, and retrieval needs. We can suggest
+          a scanning model, indexing plan, delivery format, and realistic cost range based on similar
+          digitization work.
         </p>
         <div class="mt-4 flex flex-wrap gap-3">
           <a
@@ -102,4 +157,3 @@ const pageTitle = 'Document Digitization Case Studies: Healthcare, BFSI, Governm
     </div>
   </section>
 </DefaultLayout>
-

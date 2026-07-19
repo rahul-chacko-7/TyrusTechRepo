@@ -1,0 +1,61 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+
+const pageTitle = 'Banking KYC and Loan File Digitization Case Study | Tyrus';
+const pageDescription =
+  'Banking document scanning case study for KYC files, loan documents, account records, audit retrieval, OCR indexing, and secure archive handover.';
+---
+
+<DefaultLayout title={pageTitle} description={pageDescription}>
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-700">Banking Case Study</p>
+      <h1 class="mt-2 max-w-4xl text-3xl font-semibold text-slate-900">
+        KYC and loan file digitization for banking and NBFC operations.
+      </h1>
+      <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-700">
+        Banks and NBFCs need quick access to KYC, account opening, loan, and collateral files during
+        audits, customer service requests, branch consolidation, and regulatory reviews.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-[1.1fr,1fr]">
+      <div>
+        <h2 class="text-xl font-semibold text-slate-900">Project workflow</h2>
+        <ol class="mt-3 list-decimal space-y-2 pl-5 text-sm leading-7 text-slate-700">
+          <li>Map branch, customer, account, and loan-level retrieval needs.</li>
+          <li>Pack and track documents by branch, carton, bundle, and file type.</li>
+          <li>Scan records through a secure document scanning workflow.</li>
+          <li>Index documents by customer ID, account number, loan number, branch, and product.</li>
+          <li>Deliver searchable digital archives and index sheets for audit retrieval.</li>
+        </ol>
+      </div>
+      <div class="rounded-2xl bg-white p-6 ring-1 ring-slate-200">
+        <h3 class="text-sm font-semibold text-slate-900">Business results</h3>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li>Faster response to audit and compliance questions.</li>
+          <li>Reduced physical carton movement between branches.</li>
+          <li>Better visibility into missing, incomplete, or duplicate files.</li>
+          <li>Centralized records ready for controlled digital access.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-xl font-semibold text-slate-900">Related pages for BFSI digitization</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-3">
+        {[
+          ['Banking KYC document scanning services', '/banking-document-scanning-services'],
+          ['Banking and finance industry solutions', '/industries/banking-finance'],
+          ['Secure scanning guide for banks', '/posts/secure-document-scanning-for-banks']
+        ].map(([label, href]) => (
+          <a href={href} class="rounded-2xl bg-slate-50 p-5 text-sm font-semibold text-slate-900 ring-1 ring-slate-200 hover:text-emerald-700 hover:ring-emerald-300">{label}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
