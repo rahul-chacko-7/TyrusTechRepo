@@ -77,3 +77,50 @@ export const locationServices = [
   'Legal document scanning',
   'HR document digitization'
 ];
+
+const priorityLocationSlugs = ['bangalore', 'mumbai', 'delhi-ncr', 'chennai', 'hyderabad', 'pune'];
+
+export const serviceLocationTypes = [
+  {
+    slug: 'document-scanning-services',
+    label: 'Document scanning services',
+    titlePrefix: 'Document Scanning Services',
+    keyword: 'document scanning services',
+    serviceIntro:
+      'secure scanning, OCR indexing, metadata capture, searchable PDF delivery and DMS-ready handover',
+    primaryNeed:
+      'turn physical files, forms, records and archive boxes into searchable digital files'
+  },
+  {
+    slug: 'document-digitization-company',
+    label: 'Document digitization company',
+    titlePrefix: 'Document Digitization Company',
+    keyword: 'document digitization company',
+    serviceIntro:
+      'end-to-end paper-to-digital conversion, scanning, OCR, indexing, data capture and digital archive planning',
+    primaryNeed:
+      'choose a reliable digitization partner for long-term paper-to-digital records conversion'
+  },
+  {
+    slug: 'bulk-document-scanning',
+    label: 'Bulk document scanning',
+    titlePrefix: 'Bulk Document Scanning',
+    keyword: 'bulk document scanning',
+    serviceIntro:
+      'high-volume scanning for cartons, branch archives, record rooms, legacy files and multi-location backlogs',
+    primaryNeed:
+      'clear large record-room backlogs with batching, file tracking, image quality checks and index reports'
+  }
+];
+
+export const serviceLocationPages = priorityLocationSlugs.flatMap((locationSlug) => {
+  const location = locationPages.find((item) => item.slug === locationSlug);
+  if (!location) return [];
+
+  return serviceLocationTypes.map((service) => ({
+    citySlug: location.slug,
+    serviceSlug: service.slug,
+    location,
+    service
+  }));
+});
