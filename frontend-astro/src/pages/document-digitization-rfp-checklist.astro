@@ -1,0 +1,183 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+
+const pageTitle = 'Document Digitization RFP Checklist India | Vendor Scorecard';
+const pageDescription =
+  'Use this document digitization RFP checklist and vendor scorecard to compare scanning companies in India by security, OCR, indexing, onsite capability, output quality and case-study proof.';
+
+const scoreRows = [
+  ['Security and chain of custody', '20', 'NDA staff, access control, batch tracking, secure transfer, exception reporting'],
+  ['Scanning and preparation capacity', '15', 'Daily output, mixed paper handling, bound files, registers, damaged pages, multi-location planning'],
+  ['OCR and indexing quality', '20', 'Searchable PDF, metadata fields, manual verification, naming rules, DMS-ready index sheets'],
+  ['Output and integration readiness', '15', 'PDF/A, TIFF, CSV, folder structure, DMS, EMR, ERP, cloud or SFTP handover'],
+  ['Onsite project capability', '10', 'Scanner deployment, operators, supervisors, space planning, local document control'],
+  ['Industry experience and proof', '10', 'Healthcare, BFSI, government, legal, HR, finance, archive and case-study relevance'],
+  ['Commercial clarity', '10', 'Page rate, setup cost, OCR cost, indexing cost, onsite cost, timeline and change requests']
+];
+
+const rfpQuestions = [
+  'What document types, paper sizes and physical conditions can you handle?',
+  'Can you scan onsite if records cannot leave our premises?',
+  'How do you track cartons, files, batches and missing pages?',
+  'What OCR accuracy checks and manual verification steps are included?',
+  'Which metadata fields can be captured for search and retrieval?',
+  'What final formats can you deliver: searchable PDF, PDF/A, TIFF, CSV or DMS-ready folders?',
+  'How are confidential documents protected during scanning, storage and transfer?',
+  'Can you share similar case studies for our industry and volume?',
+  'What is the realistic daily output and project timeline?',
+  'How are damaged, unreadable, duplicate or out-of-sequence documents reported?'
+];
+
+const competitorGaps = [
+  ['Generic service claims', 'Ask for a workflow from file intake to final searchable archive, not only a promise of scanning.'],
+  ['Low per-page pricing', 'Compare total cost including preparation, OCR, indexing, onsite setup, QC and final handover.'],
+  ['Cloud storage promises', 'Confirm whether output can also work with your DMS, EMR, ERP, SFTP or internal archive policy.'],
+  ['Top-company lists', 'Use lists for discovery, but score vendors on execution proof, security and fit for your record types.']
+];
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: pageTitle,
+    description: pageDescription,
+    about: [
+      'Document digitization RFP checklist',
+      'Document scanning vendor scorecard',
+      'Document digitization company comparison India',
+      'OCR indexing and DMS-ready output'
+    ]
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What should a document digitization RFP include?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A document digitization RFP should include document types, page volume, onsite or offsite requirement, security controls, OCR and indexing fields, output formats, quality checks, timeline, and handover expectations.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How should we compare document scanning vendors?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Compare vendors by security, scanning capacity, OCR and indexing quality, output readiness, onsite capability, industry proof, and commercial clarity rather than only by per-page rate.'
+        }
+      }
+    ]
+  }
+];
+---
+
+<DefaultLayout title={pageTitle} description={pageDescription} schemas={pageSchemas}>
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+        Vendor Scorecard
+      </p>
+      <h1 class="mt-2 max-w-4xl text-3xl font-semibold text-slate-900">
+        Document digitization RFP checklist for comparing scanning companies in India.
+      </h1>
+      <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-700">
+        Most competitor pages explain what document scanning is. This checklist helps procurement,
+        operations, IT, compliance and records teams compare vendors before awarding a document
+        digitization project.
+      </p>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a href="/contact" class="rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Share your RFP</a>
+        <a href="/case-studies" class="rounded-full border border-emerald-300 px-5 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">View proof</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-xl font-semibold text-slate-900">Vendor scoring matrix</h2>
+      <div class="mt-5 overflow-x-auto rounded-2xl ring-1 ring-slate-200">
+        <table class="min-w-full divide-y divide-slate-200 bg-white text-left text-sm">
+          <thead class="bg-slate-100 text-xs uppercase tracking-wide text-slate-600">
+            <tr>
+              <th class="px-4 py-3">Evaluation area</th>
+              <th class="px-4 py-3">Weight</th>
+              <th class="px-4 py-3">What to verify</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 text-slate-700">
+            {scoreRows.map(([area, weight, verify]) => (
+              <tr>
+                <td class="px-4 py-4 font-semibold text-slate-900">{area}</td>
+                <td class="px-4 py-4">{weight}%</td>
+                <td class="px-4 py-4 leading-6">{verify}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-[1fr,1fr]">
+      <div>
+        <h2 class="text-xl font-semibold text-slate-900">Questions to include in your RFP</h2>
+        <ol class="mt-5 list-decimal space-y-3 pl-5 text-sm leading-7 text-slate-700">
+          {rfpQuestions.map((question) => (
+            <li>{question}</li>
+          ))}
+        </ol>
+      </div>
+      <div class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
+        <h2 class="text-xl font-semibold text-slate-900">What makes Tyrus different</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">
+          Tyrus can support the full paper-to-digital path: document preparation, bulk scanning,
+          onsite scanning, OCR indexing, metadata capture, searchable PDF, DMS-ready folders,
+          secure handover and case-study-backed industry workflows.
+        </p>
+        <div class="mt-5 grid gap-3">
+          {[
+            ['Document digitization services', '/document-digitization-services'],
+            ['Document scanning services', '/document-scanning-services-india'],
+            ['Document digitization companies comparison', '/document-digitization-companies-india'],
+            ['Case studies', '/case-studies']
+          ].map(([label, href]) => (
+            <a href={href} class="rounded-xl bg-white px-4 py-3 text-sm font-semibold text-slate-900 ring-1 ring-slate-200 hover:text-emerald-700 hover:ring-emerald-300">{label}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-xl font-semibold text-slate-900">Common competitor gaps to check</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-2">
+        {competitorGaps.map(([gap, action]) => (
+          <article class="rounded-2xl bg-white p-5 ring-1 ring-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900">{gap}</h3>
+            <p class="mt-2 text-xs leading-6 text-slate-700">{action}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <div class="rounded-3xl bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-slate-100 p-8 ring-1 ring-emerald-200">
+        <h2 class="text-xl font-semibold text-slate-900">Need help preparing a scanning RFP?</h2>
+        <p class="mt-2 max-w-3xl text-sm leading-7 text-slate-700">
+          Share your page volume, document types, locations, security needs and output format.
+          Tyrus can help define the right scanning scope before the project starts.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="/contact" class="rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Contact Tyrus</a>
+          <a href="/#cost-calculator" class="rounded-full border border-emerald-300 px-5 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Estimate cost</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
