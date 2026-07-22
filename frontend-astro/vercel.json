@@ -11,6 +11,16 @@
       "permanent": true
     },
     {
+      "source": "/document-scanning-indexing-services",
+      "destination": "/document-scanning-indexing-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/document-scanning-indexing-services/",
+      "destination": "/document-scanning-indexing-services-india",
+      "permanent": true
+    },
+    {
       "source": "/document-digitization",
       "destination": "/document-digitization-services",
       "permanent": true

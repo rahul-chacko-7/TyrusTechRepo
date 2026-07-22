@@ -1,0 +1,66 @@
+---
+import SeoServicePage from '../components/SeoServicePage.astro';
+
+const props = {
+  title: 'Invoice Scanning Services in India | AP Document Digitization | Tyrus',
+  description: 'Invoice scanning services in India for accounts payable files, vendor bills, vouchers, OCR, metadata indexing, searchable PDFs and audit-ready archives.',
+  canonical: '/invoice-scanning-services-india',
+  eyebrow: 'Invoice and AP scanning',
+  h1: 'Invoice scanning services in India',
+  serviceType: 'Invoice Scanning Services',
+  intro: 'Tyrus Technologies digitizes vendor invoices, bills, vouchers, purchase orders, delivery challans and accounts payable documents into searchable, indexed files for finance, audit and ERP workflows.',
+  primaryItems: [
+    'Bulk invoice scanning for old AP files, monthly vendor bills, GST records, vouchers, purchase orders and supporting documents.',
+    'Invoice-wise file naming by vendor, invoice number, date, branch, department, PO number or financial year.',
+    'OCR and metadata capture for searchable PDF, Excel index, CSV import or ERP-ready document references.',
+    'Batch tracking and exception reports for missing attachments, unclear invoice numbers, duplicate records and mixed document sets.',
+    'Secure onsite or offsite scanning models for confidential finance and audit records.'
+  ],
+  outputs: [
+    'Searchable PDF invoices',
+    'Invoice number, vendor, date and amount index fields',
+    'Excel or CSV metadata for ERP import',
+    'Financial-year and vendor-wise folder structures',
+    'Batch completion and exception reports',
+    'Secure digital handover through cloud, SFTP or drive'
+  ],
+  process: [
+    ['Map invoice fields', 'We define the required search fields such as vendor name, invoice number, PO number, date, branch and financial year.'],
+    ['Batch and scan', 'Invoices and supporting documents are prepared, batched and scanned with image checks.'],
+    ['OCR and index', 'Documents are processed for searchable text and indexed using agreed finance fields.'],
+    ['Verify and deliver', 'Critical fields and exception cases are checked before the archive is delivered.']
+  ],
+  trustItems: [
+    'Designed for finance teams, shared-service centers, audit teams and corporate AP departments.',
+    'Supports confidential financial records with access control, batch tracking and controlled handover.',
+    'Useful before ERP migration, audit preparation, GST record cleanup or finance archive consolidation.'
+  ],
+  costFactors: [
+    'Invoice volume, number of attachments, mixed paper sizes and preparation effort.',
+    'Required index fields such as invoice number, vendor, PO, amount, GSTIN, date or branch.',
+    'Onsite scanning requirement, ERP import format and timeline.'
+  ],
+  relatedLinks: [
+    ['OCR indexing services', '/ocr-indexing-services', 'For metadata capture, searchable PDF and verified index output.'],
+    ['Document scanning and indexing', '/document-scanning-indexing-services-india', 'For combined scanning and indexing workflows.'],
+    ['Bulk document scanning', '/bulk-document-scanning-services', 'For large archive and backlog scanning projects.'],
+    ['Document digitization cost', '/posts/document-digitization-services-price-cost-india', 'Plan invoice scanning budgets and output choices.']
+  ],
+  industries: [
+    'Finance and accounts payable teams',
+    'Manufacturing companies and vendor archives',
+    'Retail, logistics and branch-heavy organizations',
+    'Shared-service centers',
+    'Audit and compliance teams',
+    'ERP migration and document management teams'
+  ],
+  faqs: [
+    ['Can invoice scanning include OCR?', 'Yes. Invoice files can be processed with OCR so the PDF becomes searchable and selected metadata can be indexed for retrieval.'],
+    ['Can Tyrus index invoice number and vendor name?', 'Yes. Common fields include invoice number, vendor name, date, PO number, branch, department and financial year.'],
+    ['Can invoices be linked with supporting documents?', 'Yes. Supporting documents such as POs, challans and vouchers can be grouped with the invoice based on agreed rules.'],
+    ['Is onsite invoice scanning available?', 'Yes. Onsite scanning can be arranged when finance records cannot leave the office or shared-service center.']
+  ]
+};
+---
+
+<SeoServicePage {...props} />

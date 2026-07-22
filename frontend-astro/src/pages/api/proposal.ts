@@ -296,10 +296,10 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   });
 
   // glowing stats
-  drawMetricCard(page1, { x: 42, y: 438, w: 160, h: 68, title: 'Impact', value: '10B+', font, fontBold, accent: green });
-  page1.drawText('Documents Processed', { x: 52, y: 456, size: 9, font, color: rgb(0.25, 0.29, 0.28) });
-  drawMetricCard(page1, { x: 218, y: 438, w: 160, h: 68, title: 'Clients', value: '250+', font, fontBold, accent: greenAccent });
-  page1.drawText('Enterprise Institutions', { x: 228, y: 456, size: 9, font, color: rgb(0.25, 0.29, 0.28) });
+  drawMetricCard(page1, { x: 42, y: 438, w: 160, h: 68, title: 'Experience', value: 'Since 2009', font, fontBold, accent: green });
+  page1.drawText('Paper-to-Digital Projects', { x: 52, y: 456, size: 9, font, color: rgb(0.25, 0.29, 0.28) });
+  drawMetricCard(page1, { x: 218, y: 438, w: 160, h: 68, title: 'Sectors', value: 'Multi-sector', font, fontBold, accent: greenAccent });
+  page1.drawText('Enterprise Workflows', { x: 228, y: 456, size: 9, font, color: rgb(0.25, 0.29, 0.28) });
   drawMetricCard(page1, { x: 394, y: 438, w: 160, h: 68, title: 'Estimated Value', value: formatCurrency(pricing.estimatedTotal), font, fontBold, accent: greenAccent });
 
   page1.drawText('Consulting-grade delivery for banks, hospitals and enterprise operations.', {
@@ -329,7 +329,7 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   page2.drawText('Experience & Scale', { x: 230, y: 621, size: 9, font: fontBold, color: green });
   page2.drawText('Enterprise Readiness', { x: 392, y: 621, size: 9, font: fontBold, color: green });
   page2.drawText('ISO controls', { x: 58, y: 608, size: 8, font, color: dark });
-  page2.drawText('10B+ docs', { x: 230, y: 608, size: 8, font, color: dark });
+  page2.drawText('Since 2009', { x: 230, y: 608, size: 8, font, color: dark });
   page2.drawText('Governance-first', { x: 392, y: 608, size: 8, font, color: dark });
 
   // process flow
@@ -396,7 +396,7 @@ async function buildProposalPdf(payload: ProposalPayload): Promise<Uint8Array> {
   page3.drawText(`Reference: ${refNo}`, { x: 42, y: 494, size: 9, font, color: dark });
   page3.drawRectangle({ x: 42, y: 410, width: 245, height: 72, color: rgb(1, 1, 1), borderColor: rgb(0.85, 0.88, 0.90), borderWidth: 1 });
   page3.drawText('Why Tyrus Technologies', { x: 52, y: 466, size: 10, font: fontBold, color: green });
-  page3.drawText('10B+ documents processed across enterprise workflows', { x: 52, y: 451, size: 8.5, font, color: dark });
+  page3.drawText('Document digitization experience since 2009', { x: 52, y: 451, size: 8.5, font, color: dark });
   page3.drawText('Multi-level QA checks for indexing quality and completeness', { x: 52, y: 437, size: 8.5, font, color: dark });
   page3.drawText('Secure governance-first delivery with controlled access', { x: 52, y: 423, size: 8.5, font, color: dark });
 
