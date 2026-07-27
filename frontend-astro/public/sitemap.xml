@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.tyrustech.com/</loc>
@@ -106,111 +106,231 @@
   </url>
   <url>
     <loc>https://www.tyrustech.com/locations</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://www.tyrustech.com/locations/bangalore</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://www.tyrustech.com/locations/mumbai</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://www.tyrustech.com/locations/delhi-ncr</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://www.tyrustech.com/locations/chennai</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://www.tyrustech.com/locations/hyderabad</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://www.tyrustech.com/locations/pune</loc>
-    <lastmod>2026-07-15</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/bangalore/document-scanning-services</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/bangalore/document-digitization-company</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/bangalore/bulk-document-scanning</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/mumbai/document-scanning-services</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/mumbai/document-digitization-company</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/mumbai/bulk-document-scanning</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/delhi-ncr/document-scanning-services</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/delhi-ncr/document-digitization-company</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/delhi-ncr/bulk-document-scanning</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/chennai/document-scanning-services</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/chennai/document-digitization-company</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/chennai/bulk-document-scanning</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/hyderabad/document-scanning-services</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/hyderabad/document-digitization-company</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/hyderabad/bulk-document-scanning</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/pune/document-scanning-services</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/pune/document-digitization-company</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tyrustech.com/locations/pune/bulk-document-scanning</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://www.tyrustech.com/locations/kochi</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://www.tyrustech.com/locations/coimbatore</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/bangalore/document-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/bangalore/document-digitization-company</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/bangalore/bulk-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/bangalore/onsite-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/bangalore/ocr-indexing-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/bangalore/pdf-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/mumbai/document-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/mumbai/document-digitization-company</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/mumbai/bulk-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/mumbai/onsite-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/mumbai/ocr-indexing-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/mumbai/pdf-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/delhi-ncr/document-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/delhi-ncr/document-digitization-company</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/delhi-ncr/bulk-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/delhi-ncr/onsite-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/delhi-ncr/ocr-indexing-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/delhi-ncr/pdf-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/chennai/document-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/chennai/document-digitization-company</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/chennai/bulk-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/chennai/onsite-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/chennai/ocr-indexing-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/chennai/pdf-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/hyderabad/document-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/hyderabad/document-digitization-company</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/hyderabad/bulk-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/hyderabad/onsite-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/hyderabad/ocr-indexing-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/hyderabad/pdf-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/pune/document-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/pune/document-digitization-company</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/pune/bulk-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/pune/onsite-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/pune/ocr-indexing-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/pune/pdf-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/kochi/document-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/kochi/document-digitization-company</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/kochi/bulk-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/kochi/onsite-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/kochi/ocr-indexing-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/kochi/pdf-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/coimbatore/document-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/coimbatore/document-digitization-company</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/coimbatore/bulk-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/coimbatore/onsite-document-scanning</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/coimbatore/ocr-indexing-services</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.tyrustech.com/locations/coimbatore/pdf-scanning-services</loc>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://www.tyrustech.com/services</loc>
@@ -349,3 +469,4 @@
     <lastmod>2026-07-21</lastmod>
   </url>
 </urlset>
+

@@ -12,17 +12,26 @@ export function getStaticPaths() {
 }
 
 const { location } = Astro.props;
-const pageTitle = `Document Scanning Services in ${location.city} | Digitization & OCR - Tyrus`;
-const pageDescription = `Document scanning services in ${location.city}: bulk document scanning, onsite scanning, OCR indexing, metadata capture and DMS-ready digitization for enterprises.`;
+const searchCity = location.searchCity || location.city;
+const pageTitle = `Document Scanning in ${searchCity} | Price, Bulk & Onsite Services - Tyrus`;
+const pageDescription = `Document scanning in ${searchCity}: price factors, bulk document scanning, onsite scanning, OCR indexing, PDF output and DMS-ready digitization for enterprises.`;
 
 const faqItems = [
   [
-    `Do you provide document scanning services in ${location.city}?`,
-    `Yes. Tyrus provides document scanning, document digitization, bulk scanning, onsite scanning and OCR indexing services for organizations in ${location.city} and nearby business areas.`
+    `Do you provide document scanning services in ${searchCity}?`,
+    `Yes. Tyrus provides document scanning in ${searchCity}, including document digitization, bulk scanning, onsite scanning and OCR indexing for organizations in ${location.city} and nearby business areas.`
   ],
   [
-    `Can scanning be done onsite in ${location.city}?`,
-    `Yes. Onsite document scanning can be planned in ${location.city} when files are confidential, active, restricted or difficult to move from your premises.`
+    `Can scanning be done onsite in ${searchCity}?`,
+    `Yes. Onsite document scanning can be planned in ${searchCity} when files are confidential, active, restricted or difficult to move from your premises.`
+  ],
+  [
+    `What is the document scanning price in ${searchCity}?`,
+    'Document scanning price depends on page volume, paper condition, color or black-and-white scanning, OCR, indexing fields, onsite setup, output format and timeline. Share sample volumes to get a practical quote.'
+  ],
+  [
+    `Do you support bulk document scanning near me in ${searchCity}?`,
+    `Yes. Tyrus supports bulk document scanning near ${searchCity} business locations, including record rooms, branch archives, hospital files, KYC backlogs, finance records and government archives.`
   ],
   [
     `What files can Tyrus digitize in ${location.city}?`,
@@ -57,13 +66,13 @@ const faqSchema = {
     <div class="mx-auto grid max-w-6xl gap-8 px-4 py-16 md:grid-cols-[1.2fr,0.8fr] md:items-center md:py-20">
       <div>
         <p class="inline-flex rounded-full border border-emerald-300/40 bg-emerald-800/70 px-3 py-1 text-xs font-semibold text-emerald-100">
-          {location.city} document digitization
+          {searchCity} document scanning
         </p>
         <h1 class="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
-          Document scanning services in {location.city}
+          Document scanning in {searchCity}
         </h1>
         <p class="mt-5 max-w-3xl text-sm leading-7 text-emerald-50/90 sm:text-base">
-          {location.intro}
+          {location.intro} If your team is comparing document scanning in {searchCity}, Tyrus can plan bulk scanning, onsite scanning, searchable PDF, OCR indexing, metadata capture and secure digital handover.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/contact" class="rounded-full bg-emerald-400 px-6 py-2 text-sm font-semibold text-emerald-950 shadow-lg shadow-emerald-950/30 hover:bg-white">
@@ -84,11 +93,11 @@ const faqSchema = {
   <section class="border-b border-slate-200 bg-white">
     <div class="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-[1fr,1fr]">
       <div>
-        <h2 class="text-2xl font-semibold text-slate-900">Services available in {location.city}</h2>
+        <h2 class="text-2xl font-semibold text-slate-900">Services available in {searchCity}</h2>
         <div class="mt-6 grid gap-3 sm:grid-cols-2">
           {locationServices.map((service) => (
             <div class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-900 ring-1 ring-slate-200">
-              {service} in {location.city}
+              {service} in {searchCity}
             </div>
           ))}
         </div>
@@ -101,7 +110,8 @@ const faqSchema = {
             'OCR text extraction and metadata capture',
             'Excel or CSV index sheets for retrieval',
             'DMS, EMR, ERP or cloud-ready folder structures',
-            'Batch reports, exception logs and secure handover'
+            'Batch reports, exception logs and secure handover',
+            'Invoice, book, bound-register, fragile-document and large-format scanning support'
           ].map((item) => (
             <li class="flex gap-3">
               <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-sky-500"></span>
@@ -116,15 +126,15 @@ const faqSchema = {
   <section class="border-b border-slate-200 bg-slate-50">
     <div class="mx-auto max-w-6xl px-4 py-14">
       <div class="max-w-3xl">
-        <h2 class="text-2xl font-semibold text-slate-900">Popular local service pages in {location.city}</h2>
+        <h2 class="text-2xl font-semibold text-slate-900">Popular local service pages in {searchCity}</h2>
         <p class="mt-3 text-sm leading-7 text-slate-700">
-          These pages target specific local searches for scanning, digitization and bulk archive conversion in {location.city}.
+          These pages target specific local searches for scanning, digitization, OCR, PDF conversion and bulk archive conversion in {searchCity}.
         </p>
       </div>
       <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {serviceLocationTypes.map((service) => (
           <a href={`/locations/${location.slug}/${service.slug}`} class="rounded-2xl bg-white p-5 ring-1 ring-slate-200 transition hover:ring-emerald-300">
-            <h3 class="text-sm font-semibold text-slate-900">{service.titlePrefix} in {location.city}</h3>
+            <h3 class="text-sm font-semibold text-slate-900">{service.titlePrefix} in {searchCity}</h3>
             <p class="mt-2 text-xs leading-6 text-slate-600">{service.primaryNeed}</p>
           </a>
         ))}
@@ -134,7 +144,7 @@ const faqSchema = {
 
   <section class="border-b border-slate-200 bg-white">
     <div class="mx-auto max-w-6xl px-4 py-14">
-      <h2 class="text-2xl font-semibold text-slate-900">Industries and records covered in {location.city}</h2>
+      <h2 class="text-2xl font-semibold text-slate-900">Industries and records covered in {searchCity}</h2>
       <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {location.industries.map((item) => (
           <div class="rounded-2xl bg-white p-5 text-sm font-semibold text-slate-900 ring-1 ring-slate-200">{item}</div>
@@ -149,7 +159,7 @@ const faqSchema = {
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Project models</p>
         <h2 class="mt-2 text-xl font-semibold text-slate-900">Onsite and offsite scanning</h2>
         <p class="mt-4 text-sm leading-7 text-slate-700">
-          Choose onsite document scanning in {location.city} when records must remain in your office, hospital, branch or archive room. Offsite scanning can be planned when logistics, timeline and security rules allow controlled movement.
+          Choose onsite document scanning in {searchCity} when records must remain in your office, hospital, branch or archive room. Offsite scanning can be planned when logistics, timeline and security rules allow controlled movement.
         </p>
       </div>
       <div>
@@ -163,7 +173,7 @@ const faqSchema = {
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">Cost planning</p>
         <h2 class="mt-2 text-xl font-semibold text-slate-900">What affects price</h2>
         <p class="mt-4 text-sm leading-7 text-slate-700">
-          Pricing depends on page volume, document condition, city location, onsite setup, indexing fields, OCR requirements, output format, timeline and number of sites.
+          Document scanning cost in {searchCity} depends on page volume, document condition, color or black-and-white scanning, onsite setup, indexing fields, OCR requirements, output format, timeline and number of sites.
         </p>
       </div>
     </div>
@@ -186,7 +196,7 @@ const faqSchema = {
   <section class="bg-white">
     <div class="mx-auto max-w-6xl px-4 py-14">
       <div class="rounded-3xl bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-slate-100 p-8 ring-1 ring-emerald-200">
-        <h2 class="text-2xl font-semibold text-slate-900">Get a document scanning quote in {location.city}</h2>
+        <h2 class="text-2xl font-semibold text-slate-900">Get a document scanning quote in {searchCity}</h2>
         <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-700">
           Share page volume, document type, locations, timeline and output requirements. Tyrus will suggest the right scanning model, manpower plan, OCR and indexing scope.
         </p>

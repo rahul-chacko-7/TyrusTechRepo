@@ -2,6 +2,7 @@ export const locationPages = [
   {
     slug: 'bangalore',
     city: 'Bangalore',
+    searchCity: 'Bangalore',
     region: 'Karnataka',
     nearby: 'Bengaluru, Whitefield, Electronic City, Manyata Tech Park, Peenya, Yeshwanthpur and surrounding business hubs',
     industries: ['Hospitals and MRD departments', 'Banks and NBFCs', 'IT and enterprise offices', 'Legal and compliance teams', 'Education institutions'],
@@ -10,6 +11,7 @@ export const locationPages = [
   {
     slug: 'mumbai',
     city: 'Mumbai',
+    searchCity: 'Mumbai',
     region: 'Maharashtra',
     nearby: 'Mumbai, Navi Mumbai, Thane, Andheri, BKC, Lower Parel and nearby corporate locations',
     industries: ['Banks and financial services', 'Insurance operations', 'Hospitals', 'Legal firms', 'Corporate record rooms'],
@@ -18,6 +20,7 @@ export const locationPages = [
   {
     slug: 'delhi-ncr',
     city: 'Delhi NCR',
+    searchCity: 'Delhi',
     region: 'Delhi NCR',
     nearby: 'Delhi, Noida, Gurugram, Faridabad, Ghaziabad and NCR business districts',
     industries: ['Government departments', 'Corporate offices', 'Hospitals', 'Legal teams', 'Education and public-sector archives'],
@@ -26,6 +29,7 @@ export const locationPages = [
   {
     slug: 'chennai',
     city: 'Chennai',
+    searchCity: 'Chennai',
     region: 'Tamil Nadu',
     nearby: 'Chennai, Ambattur, Guindy, T Nagar, OMR, Sriperumbudur and nearby industrial corridors',
     industries: ['Manufacturing units', 'Healthcare groups', 'Banks and NBFCs', 'Education institutions', 'Corporate record rooms'],
@@ -34,6 +38,7 @@ export const locationPages = [
   {
     slug: 'hyderabad',
     city: 'Hyderabad',
+    searchCity: 'Hyderabad',
     region: 'Telangana',
     nearby: 'Hyderabad, HITEC City, Gachibowli, Secunderabad, Kukatpally and surrounding office locations',
     industries: ['IT and enterprise teams', 'Hospitals', 'Banks and NBFCs', 'Government archives', 'Legal and HR teams'],
@@ -42,6 +47,7 @@ export const locationPages = [
   {
     slug: 'pune',
     city: 'Pune',
+    searchCity: 'Pune',
     region: 'Maharashtra',
     nearby: 'Pune, Hinjewadi, Pimpri-Chinchwad, Baner, Kharadi and industrial office locations',
     industries: ['Manufacturing and automotive teams', 'IT companies', 'Hospitals', 'Education institutions', 'Finance and HR teams'],
@@ -50,6 +56,7 @@ export const locationPages = [
   {
     slug: 'kochi',
     city: 'Kochi',
+    searchCity: 'Kochi',
     region: 'Kerala',
     nearby: 'Kochi, Ernakulam, Kakkanad, Infopark, Kalamassery and nearby business locations',
     industries: ['Hospitals', 'Education institutions', 'Corporate offices', 'Finance teams', 'Legal and government records'],
@@ -58,6 +65,7 @@ export const locationPages = [
   {
     slug: 'coimbatore',
     city: 'Coimbatore',
+    searchCity: 'Coimbatore',
     region: 'Tamil Nadu',
     nearby: 'Coimbatore, Peelamedu, Gandhipuram, RS Puram, Tiruppur and nearby industrial areas',
     industries: ['Manufacturing and textile businesses', 'Hospitals', 'Education institutions', 'Finance teams', 'Corporate record rooms'],
@@ -75,10 +83,14 @@ export const locationServices = [
   'Banking KYC document scanning',
   'Government record digitization',
   'Legal document scanning',
-  'HR document digitization'
+  'HR document digitization',
+  'PDF scanning services',
+  'Invoice scanning services',
+  'Large format document scanning',
+  'Book and fragile document scanning'
 ];
 
-const priorityLocationSlugs = ['bangalore', 'mumbai', 'delhi-ncr', 'chennai', 'hyderabad', 'pune'];
+const priorityLocationSlugs = ['bangalore', 'mumbai', 'delhi-ncr', 'chennai', 'hyderabad', 'pune', 'kochi', 'coimbatore'];
 
 export const serviceLocationTypes = [
   {
@@ -110,6 +122,36 @@ export const serviceLocationTypes = [
       'high-volume scanning for cartons, branch archives, record rooms, legacy files and multi-location backlogs',
     primaryNeed:
       'clear large record-room backlogs with batching, file tracking, image quality checks and index reports'
+  },
+  {
+    slug: 'onsite-document-scanning',
+    label: 'Onsite document scanning',
+    titlePrefix: 'Onsite Document Scanning Services',
+    keyword: 'onsite document scanning services',
+    serviceIntro:
+      'onsite scanner setup, trained operators, batch tracking, OCR indexing and secure digital delivery',
+    primaryNeed:
+      'scan restricted, confidential or active files inside your office, hospital, branch or archive room'
+  },
+  {
+    slug: 'ocr-indexing-services',
+    label: 'OCR indexing services',
+    titlePrefix: 'OCR Indexing Services',
+    keyword: 'OCR indexing services',
+    serviceIntro:
+      'OCR text extraction, metadata capture, searchable PDF, index sheets and DMS-ready output',
+    primaryNeed:
+      'make scanned files searchable by customer ID, MRN, invoice number, file number, branch, date or department'
+  },
+  {
+    slug: 'pdf-scanning-services',
+    label: 'PDF scanning services',
+    titlePrefix: 'PDF Scanning Services',
+    keyword: 'PDF scanning services',
+    serviceIntro:
+      'PDF scanning, searchable PDF, PDF/A, OCR, file naming, indexing and archive-ready delivery',
+    primaryNeed:
+      'convert paper files into clean PDF, searchable PDF or PDF/A records for easy retrieval'
   }
 ];
 
