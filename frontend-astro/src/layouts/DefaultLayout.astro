@@ -111,9 +111,40 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
         <slot />
       </main>
       <footer class="border-t border-emerald-100 bg-white/90">
-        <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-          <p>&copy; {new Date().getFullYear()} Tyrus Technologies Pvt Ltd. All rights reserved.</p>
-          <p>Digitize. Secure. Go Green.</p>
+        <div class="mx-auto max-w-6xl px-4 py-6 text-sm text-slate-500">
+          <div class="grid gap-5 border-b border-slate-200 pb-5 md:grid-cols-3">
+            <div>
+              <p class="font-semibold text-slate-800">Popular services</p>
+              <div class="mt-2 flex flex-col gap-1">
+                <a href="/document-scanning-services-india" class="hover:text-emerald-700">Document scanning services in India</a>
+                <a href="/document-digitization-services" class="hover:text-emerald-700">Document digitization services</a>
+                <a href="/bulk-document-scanning-services" class="hover:text-emerald-700">Bulk document scanning services</a>
+                <a href="/onsite-document-scanning-services" class="hover:text-emerald-700">Onsite document scanning services</a>
+              </div>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-800">Specialized scanning</p>
+              <div class="mt-2 flex flex-col gap-1">
+                <a href="/ocr-indexing-services" class="hover:text-emerald-700">OCR indexing services</a>
+                <a href="/ai-document-scanning-services-india" class="hover:text-emerald-700">AI document scanning services</a>
+                <a href="/medical-records-scanning-services" class="hover:text-emerald-700">Medical records scanning services</a>
+                <a href="/legal-document-scanning-services" class="hover:text-emerald-700">Legal document scanning services</a>
+              </div>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-800">Service areas</p>
+              <div class="mt-2 flex flex-col gap-1">
+                <a href="/locations/bangalore/document-scanning-services" class="hover:text-emerald-700">Document scanning in Bangalore</a>
+                <a href="/locations/delhi-ncr/document-scanning-services" class="hover:text-emerald-700">Document scanning in Delhi</a>
+                <a href="/locations/mumbai/document-scanning-services" class="hover:text-emerald-700">Document scanning in Mumbai</a>
+                <a href="/locations" class="hover:text-emerald-700">All service locations</a>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 pt-5 md:flex-row md:items-center md:justify-between">
+            <p>&copy; {new Date().getFullYear()} Tyrus Technologies Pvt Ltd. All rights reserved.</p>
+            <p>Digitize. Secure. Go Green.</p>
+          </div>
         </div>
       </footer>
     </div>
