@@ -52,32 +52,62 @@
     },
     {
       "source": "/data-archives",
-      "destination": "/services/digital-archives",
+      "destination": "/document-archival-services-india",
       "permanent": true
     },
     {
       "source": "/data-archives/",
-      "destination": "/services/digital-archives",
+      "destination": "/document-archival-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/document-archival-services",
+      "destination": "/document-archival-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/document-archival-services/",
+      "destination": "/document-archival-services-india",
       "permanent": true
     },
     {
       "source": "/cloud-document-management-system",
-      "destination": "/services/digital-archives",
+      "destination": "/document-management-system-india",
       "permanent": true
     },
     {
       "source": "/cloud-document-management-system/",
-      "destination": "/services/digital-archives",
+      "destination": "/document-management-system-india",
       "permanent": true
     },
     {
       "source": "/electronic-document-corporate-records-management-system",
-      "destination": "/services/digital-archives",
+      "destination": "/document-management-system-india",
       "permanent": true
     },
     {
       "source": "/electronic-document-corporate-records-management-system/",
-      "destination": "/services/digital-archives",
+      "destination": "/document-management-system-india",
+      "permanent": true
+    },
+    {
+      "source": "/services/legal-document-scanning",
+      "destination": "/legal-document-scanning-services",
+      "permanent": true
+    },
+    {
+      "source": "/services/legal-document-scanning/",
+      "destination": "/legal-document-scanning-services",
+      "permanent": true
+    },
+    {
+      "source": "/services/medical-record-scanning",
+      "destination": "/medical-records-scanning-services",
+      "permanent": true
+    },
+    {
+      "source": "/services/medical-record-scanning/",
+      "destination": "/medical-records-scanning-services",
       "permanent": true
     },
     {
