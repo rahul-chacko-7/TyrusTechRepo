@@ -99,26 +99,38 @@ const pageSchemas = [
 const certificationBadges = [
   {
     src: '/certifications/iso-9001-2015.png',
+    webp: '/certifications/iso-9001-2015.webp',
+    avif: '/certifications/iso-9001-2015.avif',
     label: 'ISO 9001:2015'
   },
   {
     src: '/certifications/iso-27001.png',
+    webp: '/certifications/iso-27001.webp',
+    avif: '/certifications/iso-27001.avif',
     label: 'ISO 27001'
   },
   {
     src: '/certifications/iso-company.png',
+    webp: '/certifications/iso-company.webp',
+    avif: '/certifications/iso-company.avif',
     label: 'ISO certified company'
   },
   {
     src: '/certifications/iso-15000-5-2014.png',
+    webp: '/certifications/iso-15000-5-2014.webp',
+    avif: '/certifications/iso-15000-5-2014.avif',
     label: 'ISO 15000-5:2014'
   },
   {
     src: '/certifications/iso-20000.png',
+    webp: '/certifications/iso-20000.webp',
+    avif: '/certifications/iso-20000.avif',
     label: 'ISO 20000'
   },
   {
     src: '/certifications/iso-45001.png',
+    webp: '/certifications/iso-45001.webp',
+    avif: '/certifications/iso-45001.avif',
     label: 'ISO 45001'
   }
 ];
@@ -246,25 +258,37 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
     >
       {certificationBadges.map((badge) => (
         <figure class="min-w-[10rem] text-center">
-          <img
-            src={badge.src}
-            alt={`${badge.label} certification badge`}
-            class="mx-auto h-24 w-24 object-contain sm:h-28 sm:w-28"
-            loading="lazy"
-            decoding="async"
-          />
+          <picture>
+            <source srcset={badge.avif} type="image/avif" />
+            <source srcset={badge.webp} type="image/webp" />
+            <img
+              src={badge.src}
+              alt={`${badge.label} certification badge`}
+              width="180"
+              height="180"
+              class="mx-auto h-24 w-24 object-contain sm:h-28 sm:w-28"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <figcaption class="sr-only">{badge.label}</figcaption>
         </figure>
       ))}
       {certificationBadges.map((badge) => (
         <figure class="min-w-[10rem] text-center" aria-hidden="true">
-          <img
-            src={badge.src}
-            alt=""
-            class="mx-auto h-24 w-24 object-contain sm:h-28 sm:w-28"
-            loading="lazy"
-            decoding="async"
-          />
+          <picture>
+            <source srcset={badge.avif} type="image/avif" />
+            <source srcset={badge.webp} type="image/webp" />
+            <img
+              src={badge.src}
+              alt=""
+              width="180"
+              height="180"
+              class="mx-auto h-24 w-24 object-contain sm:h-28 sm:w-28"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <figcaption class="sr-only">{badge.label}</figcaption>
         </figure>
       ))}
@@ -959,15 +983,19 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
     </div>
 
     <div class="overflow-hidden rounded-3xl border border-slate-800 bg-white p-3 shadow-xl sm:p-5">
-      <img
-        src="/client-logos-grid.png"
-        alt="Client logos of organizations that worked with Tyrus Technologies"
-        width="1024"
-        height="768"
-        class="h-auto w-full rounded-2xl"
-        loading="lazy"
-        decoding="async"
-      />
+      <picture>
+        <source srcset="/client-logos-grid.avif" type="image/avif" />
+        <source srcset="/client-logos-grid.webp" type="image/webp" />
+        <img
+          src="/client-logos-grid.png"
+          alt="Client logos of organizations that worked with Tyrus Technologies"
+          width="1024"
+          height="682"
+          class="h-auto w-full rounded-2xl"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
     </div>
   </div>
 </section>

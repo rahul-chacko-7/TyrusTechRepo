@@ -83,7 +83,11 @@ const outputs = [
 <DefaultLayout title={pageTitle} description={pageDescription} schemas={pageSchemas}>
   <section class="relative overflow-hidden border-b border-emerald-100 bg-gradient-to-b from-emerald-950 via-emerald-900 to-emerald-800">
     <div class="absolute inset-0">
-      <img src="/hero-scanner-bg.png" alt="" class="h-full w-full object-cover opacity-20" loading="eager" />
+      <picture class="block h-full w-full">
+        <source srcset="/hero-scanner-bg-1200.avif" type="image/avif" />
+        <source srcset="/hero-scanner-bg-1200.webp" type="image/webp" />
+        <img src="/hero-scanner-bg.png" alt="" width="1200" height="800" class="h-full w-full object-cover opacity-20" loading="eager" decoding="async" />
+      </picture>
       <div class="absolute inset-0 bg-gradient-to-r from-emerald-950/95 via-emerald-900/85 to-emerald-800/70"></div>
     </div>
     <div class="relative mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.15fr,0.85fr] md:items-center md:py-20">
