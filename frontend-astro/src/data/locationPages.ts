@@ -152,6 +152,16 @@ export const serviceLocationTypes = [
       'PDF scanning, searchable PDF, PDF/A, OCR, file naming, indexing and archive-ready delivery',
     primaryNeed:
       'convert paper files into clean PDF, searchable PDF or PDF/A records for easy retrieval'
+  },
+  {
+    slug: 'hr-document-scanning',
+    label: 'HR document scanning',
+    titlePrefix: 'HR Document Scanning Services',
+    keyword: 'HR document scanning services',
+    serviceIntro:
+      'employee file scanning, personnel records digitization, onboarding document scanning, payroll file indexing and HRMS-ready output',
+    primaryNeed:
+      'digitize employee files, personnel folders, onboarding records, payroll documents and HR compliance archives'
   }
 ];
 

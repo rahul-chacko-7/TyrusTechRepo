@@ -111,6 +111,46 @@
       "permanent": true
     },
     {
+      "source": "/services/hr-document-digitization",
+      "destination": "/hr-document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/services/hr-document-digitization/",
+      "destination": "/hr-document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/hr-document-scanning-services",
+      "destination": "/hr-document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/hr-document-scanning-services/",
+      "destination": "/hr-document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/human-resources-document-scanning",
+      "destination": "/hr-document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/human-resources-document-scanning/",
+      "destination": "/hr-document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/employee-records-digitization-services",
+      "destination": "/hr-document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/employee-records-digitization-services/",
+      "destination": "/hr-document-scanning-services-india",
+      "permanent": true
+    },
+    {
       "source": "/document-management-consulting",
       "destination": "/document-digitization-companies-india",
       "permanent": true

@@ -134,16 +134,20 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 
 <section class="relative overflow-hidden border-b border-emerald-100 bg-gradient-to-b from-emerald-900 via-emerald-800 to-emerald-700">
   <div class="absolute inset-0">
-    <img
-      src="/hero-scanner-bg.png"
-      alt=""
-      width="1600"
-      height="900"
-      class="h-full w-full object-cover object-center opacity-20"
-      loading="eager"
-      fetchpriority="high"
-      decoding="async"
-    />
+    <picture class="block h-full w-full">
+      <source srcset="/hero-scanner-bg-1200.avif" type="image/avif" />
+      <source srcset="/hero-scanner-bg-1200.webp" type="image/webp" />
+      <img
+        src="/hero-scanner-bg.png"
+        alt=""
+        width="1200"
+        height="800"
+        class="h-full w-full object-cover object-center opacity-20"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
     <div class="absolute inset-0 bg-gradient-to-r from-emerald-950/90 via-emerald-900/78 to-emerald-800/68"></div>
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.12),transparent_28%)]"></div>
   </div>
@@ -905,17 +909,17 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
           <div class="rounded-2xl bg-slate-950/70 p-4 ring-1 ring-slate-800">
             <dt class="text-xs font-medium uppercase tracking-wide text-slate-400">Experience</dt>
             <dd class="mt-1 text-lg font-semibold text-emerald-300">Since 2009</dd>
-            <p class="mt-1 text-[11px] text-slate-400">Specialised in paper-to-digital projects.</p>
+            <dd class="mt-1 text-[11px] text-slate-400">Specialised in paper-to-digital projects.</dd>
           </div>
           <div class="rounded-2xl bg-slate-950/70 p-4 ring-1 ring-slate-800">
             <dt class="text-xs font-medium uppercase tracking-wide text-slate-400">Sectors</dt>
             <dd class="mt-1 text-lg font-semibold text-emerald-300">Multi-sector</dd>
-            <p class="mt-1 text-[11px] text-slate-400">Healthcare, BFSI, IT, manufacturing, NGOs and government.</p>
+            <dd class="mt-1 text-[11px] text-slate-400">Healthcare, BFSI, IT, manufacturing, NGOs and government.</dd>
           </div>
           <div class="rounded-2xl bg-slate-950/70 p-4 ring-1 ring-slate-800">
             <dt class="text-xs font-medium uppercase tracking-wide text-slate-400">Project type</dt>
             <dd class="mt-1 text-lg font-semibold text-emerald-300">High volume</dd>
-            <p class="mt-1 text-[11px] text-slate-400">High‑volume archives with audited quality controls.</p>
+            <dd class="mt-1 text-[11px] text-slate-400">High-volume archives with audited quality controls.</dd>
           </div>
         </dl>
       </div>
