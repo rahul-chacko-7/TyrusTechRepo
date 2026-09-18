@@ -13,8 +13,8 @@ export function getStaticPaths() {
 
 const { location } = Astro.props;
 const searchCity = location.searchCity || location.city;
-const pageTitle = `Document Scanning in ${searchCity} | Price, Bulk & Onsite Services - Tyrus`;
-const pageDescription = `Document scanning in ${searchCity}: price factors, bulk document scanning, onsite scanning, OCR indexing, PDF output and DMS-ready digitization for enterprises.`;
+const pageTitle = `Document Scanning Services Near Me in ${searchCity} | Price & Onsite - Tyrus`;
+const pageDescription = `Document scanning services near me in ${searchCity}: bulk scanning, onsite scanning, OCR indexing, searchable PDF output, HR records, price factors and DMS-ready digitization.`;
 
 const faqItems = [
   [
@@ -73,6 +73,9 @@ const faqSchema = {
         </h1>
         <p class="mt-5 max-w-3xl text-sm leading-7 text-emerald-50/90 sm:text-base">
           {location.intro} If your team is comparing document scanning in {searchCity}, Tyrus can plan bulk scanning, onsite scanning, searchable PDF, OCR indexing, metadata capture and secure digital handover.
+        </p>
+        <p class="mt-3 max-w-3xl text-sm leading-7 text-emerald-50/90 sm:text-base">
+          This page is designed for teams searching for document scanning services near me, document scanning price, onsite scanning and bulk archive conversion in {searchCity}.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/contact" class="rounded-full bg-emerald-400 px-6 py-2 text-sm font-semibold text-emerald-950 shadow-lg shadow-emerald-950/30 hover:bg-white">

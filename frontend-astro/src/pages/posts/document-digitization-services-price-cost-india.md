@@ -1,16 +1,16 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "Document digitization services in India price and cost factors"
+title: "Document scanning cost per page in India: price factors and quote guide"
 date: 2026-07-19
 category: pricing
-excerpt: A clear guide to document digitization services price and cost factors in India, from page volume to OCR, indexing and onsite scanning.
-seoTitle: Document Digitization Services in India Price & Cost Guide
-seoDescription: Learn document digitization services price and cost factors in India, including page volume, document condition, onsite scanning, OCR indexing and output format.
+excerpt: A clear guide to document scanning cost per page in India, including page volume, OCR, indexing, onsite scanning, preparation work and output format.
+seoTitle: Document Scanning Cost Per Page in India | Price & Quote Guide
+seoDescription: Learn document scanning cost per page in India, including page volume, document condition, onsite scanning, OCR indexing, searchable PDF and output format.
 ---
 
-Document digitization services in India price and cost depend on more than the number of pages. Page volume matters, but preparation, scanning location, OCR, indexing and delivery format can change the final estimate.
+Document scanning cost per page in India depends on more than the number of pages. Page volume matters, but preparation, scanning location, OCR, indexing and delivery format can change the final estimate.
 
-This guide explains the main cost factors so your team can budget realistically.
+This guide explains the main cost factors so your team can budget realistically before asking for a scanning quote.
 
 ## 1. Page volume
 
@@ -81,4 +81,4 @@ Share these details:
 - Output format
 - Timeline
 
-You can also read [how to estimate document digitization costs](/posts/how-to-estimate-digitization-costs) or start with [document digitization services in India](/document-digitization-services).
+For a quote, send the approximate page count, document type, location and output requirement through the [cost calculator](/#cost-calculator). You can also read [how to estimate document digitization costs](/posts/how-to-estimate-digitization-costs), compare [document scanning services in India](/document-scanning-services-india), or start with [document digitization services in India](/document-digitization-services).

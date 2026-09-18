@@ -16,8 +16,13 @@ export function getStaticPaths() {
 
 const { location, service } = Astro.props;
 const searchCity = location.searchCity || location.city;
-const pageTitle = `${service.titlePrefix} in ${searchCity} | Price, Bulk & Onsite - Tyrus`;
-const pageDescription = `${service.titlePrefix} in ${searchCity} for enterprises: ${service.serviceIntro}, price factors, secure handling, onsite support and structured digital output.`;
+const isDocumentScanningService = service.slug === 'document-scanning-services';
+const pageTitle = isDocumentScanningService
+  ? `Document Scanning Services in ${searchCity} | Near Me, Price & Onsite - Tyrus`
+  : `${service.titlePrefix} in ${searchCity} | Near Me, Price & Onsite - Tyrus`;
+const pageDescription = isDocumentScanningService
+  ? `Document scanning services in ${searchCity} for offices, hospitals, banks and record rooms. Get onsite or bulk scanning, OCR indexing, searchable PDF output and clear price factors.`
+  : `${service.titlePrefix} in ${searchCity} for enterprises: ${service.serviceIntro}, near-me coverage, price factors, secure handling, onsite support and structured digital output.`;
 const otherServices = serviceLocationTypes.filter((item) => item.slug !== service.slug);
 
 const faqItems = [
@@ -91,6 +96,11 @@ const serviceSchema = {
         <p class="mt-5 max-w-3xl text-sm leading-7 text-emerald-50/90 sm:text-base">
           Tyrus helps teams searching for {service.keyword} in {searchCity} {service.primaryNeed}. Projects can include {service.serviceIntro}, with secure handling, price planning and clear project reporting.
         </p>
+        {isDocumentScanningService && (
+          <p class="mt-3 max-w-3xl text-sm leading-7 text-emerald-50/90 sm:text-base">
+            Useful for searches like document scanning services near me, document scanning cost, bulk document scanning and onsite scanning in {searchCity}.
+          </p>
+        )}
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/contact" class="rounded-full bg-emerald-400 px-6 py-2 text-sm font-semibold text-emerald-950 shadow-lg shadow-emerald-950/30 hover:bg-white">
             Get a local quote
@@ -194,6 +204,10 @@ const serviceSchema = {
         <a href={`/locations/${location.slug}`} class="rounded-2xl bg-white p-5 ring-1 ring-slate-200 transition hover:ring-emerald-300">
           <h3 class="text-sm font-semibold text-slate-900">All document services in {searchCity}</h3>
           <p class="mt-2 text-xs leading-6 text-slate-600">View the main city page for scanning, digitization, OCR and archive services.</p>
+        </a>
+        <a href="/hr-document-scanning-services-india" class="rounded-2xl bg-white p-5 ring-1 ring-slate-200 transition hover:ring-emerald-300">
+          <h3 class="text-sm font-semibold text-slate-900">HR document scanning services in India</h3>
+          <p class="mt-2 text-xs leading-6 text-slate-600">Employee file scanning, personnel records digitization, payroll files and HRMS-ready output.</p>
         </a>
       </div>
     </div>

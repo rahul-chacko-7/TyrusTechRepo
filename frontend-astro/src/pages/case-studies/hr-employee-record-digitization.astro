@@ -1,0 +1,120 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+
+const pageTitle = 'HR Employee Record Digitization Case Study | Tyrus Technologies';
+const pageDescription =
+  'HR employee record digitization case study for employee file scanning, personnel records, payroll documents, HR compliance files, OCR indexing and HRMS-ready output.';
+
+const metrics = [
+  ['Document type', 'Employee personal files, joining documents, payroll papers, appraisal records and exit files'],
+  ['Primary need', 'Faster HR retrieval, cleaner employee-wise folders and audit-ready personnel records'],
+  ['Output', 'Searchable PDFs, employee-wise folders, metadata index sheets and HRMS-ready handover'],
+  ['Services used', 'HR document scanning, OCR indexing, onsite planning, quality checks and secure digital delivery']
+];
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: pageTitle,
+    description: pageDescription,
+    author: {
+      '@type': 'Organization',
+      name: 'Tyrus Technologies Pvt Ltd'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Tyrus Technologies Pvt Ltd',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.tyrustech.com/favicon.svg'
+      }
+    },
+    mainEntityOfPage: 'https://www.tyrustech.com/case-studies/hr-employee-record-digitization'
+  }
+];
+---
+
+<DefaultLayout title={pageTitle} description={pageDescription} schemas={pageSchemas}>
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+        HR Case Study
+      </p>
+      <h1 class="mt-2 max-w-4xl text-3xl font-semibold text-slate-900">
+        HR employee record digitization for faster personnel file retrieval.
+      </h1>
+      <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-700">
+        This case-study style page explains a practical HR document scanning workflow for teams
+        managing employee files, onboarding documents, payroll records, compliance papers and old
+        personnel archives.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-[1fr,1.1fr]">
+      <div class="rounded-2xl bg-white p-6 ring-1 ring-slate-200">
+        <h2 class="text-lg font-semibold text-slate-900">Project snapshot</h2>
+        <dl class="mt-5 space-y-4">
+          {metrics.map(([label, value]) => (
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</dt>
+              <dd class="mt-1 text-sm leading-6 text-slate-800">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold text-slate-900">The challenge</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">
+          HR teams often need employee records during audits, payroll checks, background
+          verification, appraisal review, exit processing and compliance questions. When files are
+          stored in cupboards, branch offices or cartons, retrieval becomes slow and sensitive
+          documents can be misplaced.
+        </p>
+        <h2 class="mt-8 text-xl font-semibold text-slate-900">The Tyrus workflow</h2>
+        <ol class="mt-3 list-decimal space-y-2 pl-5 text-sm leading-7 text-slate-700">
+          <li>Review employee count, active and inactive records, file types and confidentiality rules.</li>
+          <li>Define indexing fields such as employee ID, name, department, location, document type and status.</li>
+          <li>Prepare files by employee folder, batch, department or branch before scanning begins.</li>
+          <li>Scan and quality-check pages, then apply OCR and metadata indexing.</li>
+          <li>Deliver employee-wise folders, searchable PDFs, index sheets and HRMS-ready output.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-xl font-semibold text-slate-900">Business outcomes</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-3">
+        {[
+          ['Faster HR retrieval', 'HR teams can search by employee ID, name, department or document type instead of opening physical files.'],
+          ['Cleaner audit response', 'Personnel records are organized for statutory, payroll, compliance and internal audit requests.'],
+          ['Lower handling risk', 'Sensitive employee files are handled through controlled batches, exception logs and secure digital delivery.']
+        ].map(([title, text]) => (
+          <article class="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900">{title}</h3>
+            <p class="mt-2 text-xs leading-6 text-slate-700">{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-xl font-semibold text-slate-900">Related HR scanning pages</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-3">
+        {[
+          ['HR document scanning services', '/hr-document-scanning-services-india'],
+          ['Employee records digitization guide', '/posts/employee-records-digitization-hr-compliance'],
+          ['Onsite HR document scanning', '/posts/onsite-hr-document-scanning-confidential-files']
+        ].map(([label, href]) => (
+          <a href={href} class="rounded-2xl bg-white p-5 text-sm font-semibold text-slate-900 ring-1 ring-slate-200 hover:text-emerald-700 hover:ring-emerald-300">{label}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
