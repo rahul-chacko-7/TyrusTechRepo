@@ -5,7 +5,7 @@ import '../styles/global.css';
 const {
   title = 'Document Digitization Services India | Go Green & Secure',
   description = 'Document digitization services across India with secure handling of sensitive data, sustainability-focused workflows, and high-speed scanning.',
-  image = '/favicon.svg',
+  image = '/hero-scanner-bg-1200.webp',
   canonical,
   schemas = []
 } = Astro.props;
@@ -14,6 +14,7 @@ const configuredSiteUrl = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.toStri
 const siteUrl = configuredSiteUrl.replace('https://tyrustech.com', 'https://www.tyrustech.com');
 const canonicalUrl = new URL(canonical || Astro.url.pathname, siteUrl).toString();
 const imageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).toString();
+const publishedSchemas = schemas.filter((schema) => schema?.['@type'] !== 'FAQPage');
 const jsonLdSchemas = [
   {
     '@context': 'https://schema.org',
@@ -53,7 +54,7 @@ const jsonLdSchemas = [
       'query-input': 'required name=search_term_string'
     }
   },
-  ...schemas
+  ...publishedSchemas
 ];
 /** GA4 measurement ID: Vercel `PUBLIC_GA_MEASUREMENT_ID` or default below (must match Google stream). */
 const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZMLEXVR9ZB').trim();
@@ -93,12 +94,16 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:image:alt" content="Tyrus Technologies document scanning and digitization services" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content="Tyrus Technologies document scanning and digitization services" />
 
     {jsonLdSchemas.map((schema) => (
       <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
