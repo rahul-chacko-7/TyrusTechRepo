@@ -24,6 +24,10 @@
 - [Case studies](https://www.tyrustech.com/case-studies): examples of archive, healthcare, banking, government, DMS, and HR record work.
 - [Document scanning RFP checklist](https://www.tyrustech.com/document-digitization-rfp-checklist): vendor evaluation and project-scoping guidance.
 - [Document scanning cost guide](https://www.tyrustech.com/posts/document-digitization-services-price-cost-india): factors that affect page, OCR, indexing, onsite, and logistics costs.
+- [Document scanning quality checklist](https://www.tyrustech.com/posts/document-scanning-quality-checklist-india): page completeness, image quality, OCR validation, metadata checks, and secure handover.
+- [OCR vs ICR vs OMR guide](https://www.tyrustech.com/posts/ocr-vs-icr-vs-omr-document-digitization): choosing extraction methods for printed text, handwriting, and marked forms.
+- [Government digital record room project plan](https://www.tyrustech.com/posts/government-digital-record-room-project-plan): RFP scope, metadata, searchable PDF, quality control, DMS upload, and handover.
+- [HR file digitization project plan](https://www.tyrustech.com/posts/hr-file-digitization-project-plan): employee-file indexing, confidential scanning, HRMS handover, and quality checks.
 - [Document digitization company comparison](https://www.tyrustech.com/document-digitization-companies-india): vendor-selection criteria and a source-linked public competitor comparison.
 - [Service locations](https://www.tyrustech.com/locations): city pages for major Indian business locations.
 

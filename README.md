@@ -1,60 +1,41 @@
-# Digitization Platform
+# Tyrus Technologies document digitization platform
 
-Welcome to the Digitization Platform project! This repository contains the code and resources for a comprehensive digitization solution, featuring a frontend built with Astro, a backend developed in Go, and a database managed through Supabase.
+Production website and supporting services for Tyrus Technologies Pvt Ltd, an India-wide document scanning and digitization company. The public site covers bulk and onsite scanning, OCR and indexing, metadata capture, searchable archives, DMS-ready handover, and specialist workflows for HR, healthcare, banking, legal and government records.
 
-## Project Structure
+## Stack
 
-The project is organized into the following main components:
+- **Frontend:** Astro with Tailwind CSS in `frontend-astro`
+- **Deployment:** Vercel adapter and static assets in `frontend-astro/public`
+- **Lead workflow:** Astro server endpoint with Supabase integration
+- **Content:** Service pages, location pages, case studies and Markdown guides under `frontend-astro/src/pages`
 
-- **Frontend (Astro)**: Located in the `frontend-astro` directory, this part of the project handles the user interface and client-side logic.
-- **Backend (Go)**: The `backend-go` directory contains the server-side application, which processes requests and interacts with the database.
-- **Supabase**: The `supabase` directory includes configuration and migration files for managing the database.
-- **Documentation**: The `docs` directory provides detailed documentation on the project's phases and architecture.
-- **Scripts**: The `scripts` directory contains utility scripts for development and setup.
+## Local development
 
-## Development Phases
+```bash
+cd frontend-astro
+npm install
+npm run dev
+```
 
-The project follows a structured development process, which includes:
+Create the environment variables expected by the proposal endpoint before testing lead submission. Do not commit production credentials or client data.
 
-1. **Research**: Understanding the requirements and defining the scope of the project.
-2. **Prototyping**: Creating initial designs and mockups for the user interface.
-3. **Implementation**: Developing the frontend and backend components.
-4. **Deployment**: Preparing the application for production and deploying it to a live environment.
+## Production build
 
-## Getting Started
+```bash
+cd frontend-astro
+npm run build
+```
 
-To get started with the project, follow these steps:
+The build uses the Vercel adapter and prerenders the location routes. The production site is [tyrustech.com](https://www.tyrustech.com/).
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd digitization-platform
-   ```
+## SEO structure
 
-2. Set up the Supabase environment:
-   ```
-   cd supabase
-   ./scripts/setup-supabase.sh
-   ```
+- Service and industry landing pages target document scanning and digitization intent.
+- `/locations/` contains city and service-location pages with canonical URLs.
+- `/posts/` contains practical guides for OCR, indexing, cost planning, quality control, HR files and government archives.
+- `frontend-astro/public/robots.txt`, `sitemap.xml` and `llms.txt` provide crawler and AI-search discovery signals.
+- Case studies provide project context for healthcare, banking, government, DMS and HR records.
 
-3. Start the backend server:
-   ```
-   cd backend-go
-   go run cmd/server/main.go
-   ```
+## Contribution notes
 
-4. Run the frontend development server:
-   ```
-   cd frontend-astro
-   npm install
-   npm run dev
-   ```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit issues or pull requests to improve the project.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.# TyrusTechRepo
-# TyrusTechRepo
+Keep page titles, descriptions, canonical URLs, internal links, structured data and sitemap entries aligned when adding a page. Run `npm run build` before pushing. Never add confidential customer documents, credentials or unverified performance claims.
