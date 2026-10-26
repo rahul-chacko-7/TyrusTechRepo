@@ -4,10 +4,35 @@ import DefaultLayout from './DefaultLayout.astro';
 const { frontmatter, url } = Astro.props;
 const pageTitle = frontmatter.seoTitle ?? frontmatter.title;
 const pageDescription = frontmatter.seoDescription ?? frontmatter.excerpt ?? '';
-const image = frontmatter.image ?? '/favicon.svg';
+const image = frontmatter.image ?? '/tyrus-og-image.webp';
+const articlePath = typeof url === 'string' ? url : url?.pathname ?? '';
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: frontmatter.title,
+  description: pageDescription,
+  datePublished: frontmatter.date,
+  dateModified: frontmatter.date,
+  mainEntityOfPage: `https://www.tyrustech.com${articlePath}`,
+  image: 'https://www.tyrustech.com/tyrus-og-image.webp',
+  author: {
+    '@type': 'Organization',
+    name: 'Tyrus Technologies Pvt Ltd',
+    url: 'https://www.tyrustech.com'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Tyrus Technologies Pvt Ltd',
+    url: 'https://www.tyrustech.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://www.tyrustech.com/tyrus-og-image.webp'
+    }
+  }
+};
 ---
 
-<DefaultLayout title={pageTitle} description={pageDescription} image={image}>
+<DefaultLayout title={pageTitle} description={pageDescription} image={image} schemas={[articleSchema]}>
   <section class="bg-slate-950 border-b border-slate-800">
     <div class="mx-auto max-w-5xl px-4 py-14 space-y-8">
       <div class="space-y-3">
@@ -54,4 +79,3 @@ const image = frontmatter.image ?? '/favicon.svg';
     </div>
   </section>
 </DefaultLayout>
-
