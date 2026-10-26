@@ -4,8 +4,8 @@ title: "Document scanning cost per page in India: price factors and quote guide"
 date: 2026-07-19
 category: pricing
 excerpt: A clear guide to document scanning cost per page in India, including page volume, OCR, indexing, onsite scanning, preparation work and output format.
-seoTitle: Document Scanning Cost Per Page in India | Price & Quote Guide
-seoDescription: Learn document scanning cost per page in India, including page volume, document condition, onsite scanning, OCR indexing, searchable PDF and output format.
+seoTitle: Document Scanning Cost Per Page in India 2026 | Quote Guide
+seoDescription: Understand document scanning cost per page in India in 2026, including volume, paper condition, onsite scanning, OCR, indexing, searchable PDF and quote factors.
 ---
 
 Document scanning cost per page in India depends on more than the number of pages. Page volume matters, but preparation, scanning location, OCR, indexing and delivery format can change the final estimate.
