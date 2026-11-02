@@ -21,13 +21,10 @@ const jsonLdSchemas = [
     '@type': 'Organization',
     name: 'Tyrus Technologies Pvt Ltd',
     url: siteUrl,
-    logo: imageUrl,
+    logo: new URL('/tyrus-logo.png', siteUrl).toString(),
     description,
     email: 'corporatesales@tyrustech.com',
     telephone: '+91 80898 89853',
-    sameAs: [
-      'https://www.tyrustech.com'
-    ],
     contactPoint: [
       {
         '@type': 'ContactPoint',
@@ -48,6 +45,11 @@ const jsonLdSchemas = [
     '@type': 'WebSite',
     name: 'Tyrus Technologies',
     url: siteUrl,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Tyrus Technologies Pvt Ltd',
+      url: siteUrl
+    },
     potentialAction: {
       '@type': 'SearchAction',
       target: `${siteUrl}/blog?search={search_term_string}`,

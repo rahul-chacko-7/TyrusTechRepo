@@ -141,6 +141,26 @@
       "permanent": true
     },
     {
+      "source": "/services/document-scanning",
+      "destination": "/document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/services/document-scanning/",
+      "destination": "/document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/services/document-digitization",
+      "destination": "/document-digitization-services",
+      "permanent": true
+    },
+    {
+      "source": "/services/document-digitization/",
+      "destination": "/document-digitization-services",
+      "permanent": true
+    },
+    {
       "source": "/services/medical-record-scanning",
       "destination": "/medical-records-scanning-services",
       "permanent": true

@@ -16,7 +16,8 @@ const {
   faqs = [],
   trustItems = [],
   costFactors = [],
-  relatedLinks = []
+  relatedLinks = [],
+  answerSummary = intro
 } = Astro.props;
 
 const faqSchema = faqs.length
@@ -41,7 +42,16 @@ const pageSchemas = [
     name: title,
     description,
     url: `https://www.tyrustech.com${canonical}`,
-    about: [h1, serviceType]
+    about: [h1, serviceType],
+    mainEntity: {
+      '@type': 'Service',
+      name: serviceType,
+      provider: {
+        '@type': 'Organization',
+        name: 'Tyrus Technologies Pvt Ltd',
+        url: 'https://www.tyrustech.com'
+      }
+    }
   },
   {
     '@context': 'https://schema.org',
@@ -71,6 +81,7 @@ const pageSchemas = [
       name: 'Tyrus Technologies Pvt Ltd',
       url: 'https://www.tyrustech.com'
     },
+    url: `https://www.tyrustech.com${canonical}`,
     areaServed: {
       '@type': 'Country',
       name: 'India'
@@ -119,6 +130,14 @@ const pageSchemas = [
           ))}
         </ul>
       </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-white" aria-label="Quick answer">
+    <div class="mx-auto max-w-6xl px-4 py-8">
+      <p class="max-w-4xl text-base leading-8 text-slate-800">
+        <strong>{serviceType}:</strong> {answerSummary}
+      </p>
     </div>
   </section>
 
