@@ -1,0 +1,163 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+
+const pageTitle = 'Document Scanning Project Plan | Deliverables, QC & Handover | Tyrus';
+const pageDescription = 'Plan a document scanning project with a clear workflow, quality checks, searchable output, metadata indexes and secure handover. Use the simple readiness checker to choose a scanning model.';
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: pageTitle,
+    description: pageDescription,
+    url: 'https://www.tyrustech.com/project-planning'
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Document scanning project planning',
+    serviceType: 'Document Scanning Project Planning',
+    provider: {
+      '@type': 'Organization',
+      name: 'Tyrus Technologies Pvt Ltd',
+      url: 'https://www.tyrustech.com'
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'India'
+    },
+    description: pageDescription,
+    url: 'https://www.tyrustech.com/project-planning'
+  }
+];
+---
+
+<DefaultLayout title={pageTitle} description={pageDescription} canonical="/project-planning" schemas={pageSchemas}>
+  <section class="border-b border-emerald-100 bg-gradient-to-b from-emerald-950 via-emerald-900 to-emerald-800">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">Simple project planning</p>
+      <h1 class="mt-4 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+        Know what happens before your files are scanned.
+      </h1>
+      <p class="mt-5 max-w-3xl text-sm leading-7 text-emerald-50/90 sm:text-base">
+        Tyrus plans the record type, scanning model, index fields, quality checks and final handover before production starts. This helps your team compare scope, cost and output clearly.
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="#readiness-check" class="rounded-full bg-emerald-400 px-6 py-2 text-sm font-semibold text-emerald-950 hover:bg-white">Check your project</a>
+        <a href="/contact" class="rounded-full border border-emerald-200/70 px-6 py-2 text-sm font-semibold text-emerald-50 hover:bg-emerald-700/70">Request a project review</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Controlled workflow</p>
+        <h2 class="mt-2 text-2xl font-semibold text-slate-900">Five clear stages</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">Every project can be scoped around page volume, document condition, security needs, indexing fields and the system that will receive the files.</p>
+      </div>
+      <div class="mt-8 grid gap-4 md:grid-cols-5">
+        {[
+          ['1', 'Scope', 'Review pages, boxes, record types, locations and the target timeline.'],
+          ['2', 'Prepare', 'Sort, batch, repair, barcode and define the file or folder structure.'],
+          ['3', 'Scan', 'Capture pages in the agreed resolution, colour mode and output format.'],
+          ['4', 'Check', 'Verify page order, image quality, missing pages, OCR and index fields.'],
+          ['5', 'Hand over', 'Deliver files, metadata, reports and physical records as agreed.']
+        ].map(([number, title, text]) => (
+          <article class="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold text-white">{number}</div>
+            <h3 class="mt-4 text-sm font-semibold text-slate-900">{title}</h3>
+            <p class="mt-2 text-xs leading-6 text-slate-700">{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-slate-50">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-2">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">Handover outputs</p>
+        <h2 class="mt-2 text-2xl font-semibold text-slate-900">What your team can receive</h2>
+        <ul class="mt-6 space-y-3 text-sm leading-7 text-slate-700">
+          {[
+            'Searchable PDF or PDF/A files',
+            'TIFF, JPEG or PNG image files when required',
+            'Excel or CSV metadata index sheets',
+            'Employee-wise, patient-wise, customer-wise or department-wise folders',
+            'OCR text, file naming rules and DMS-ready import packages',
+            'Batch quality reports and exception lists'
+          ].map((item) => <li class="flex gap-3"><span class="mt-3 h-1.5 w-1.5 flex-none rounded-full bg-sky-500"></span><span>{item}</span></li>)}
+        </ul>
+      </div>
+      <div class="rounded-3xl bg-white p-7 ring-1 ring-slate-200">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Before you request a quote</p>
+        <h2 class="mt-2 text-2xl font-semibold text-slate-900">Keep these details ready</h2>
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          {['Approximate pages or boxes', 'Document type and condition', 'Onsite or offsite preference', 'OCR and index fields', 'Required file format', 'Locations and deadline'].map((item) => <div class="rounded-xl bg-slate-50 p-4 text-sm font-medium text-slate-800 ring-1 ring-slate-200">{item}</div>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="readiness-check" class="border-b border-slate-200 bg-white">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-14 lg:grid-cols-[0.9fr,1.1fr]">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Project readiness check</p>
+        <h2 class="mt-2 text-2xl font-semibold text-slate-900">Find the right starting model</h2>
+        <p class="mt-3 text-sm leading-7 text-slate-700">Answer three questions. You will get a simple starting recommendation, not a final price.</p>
+      </div>
+      <form id="readiness-form" class="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">
+        <label class="block text-sm font-semibold text-slate-900" for="record-type">What are you scanning?</label>
+        <select id="record-type" class="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900">
+          <option value="general">Office or archive records</option>
+          <option value="hr">HR and employee files</option>
+          <option value="medical">Medical records</option>
+          <option value="banking">KYC, loan or finance files</option>
+          <option value="government">Government records and registers</option>
+        </select>
+        <label class="mt-5 block text-sm font-semibold text-slate-900" for="location-model">Can the files leave your premises?</label>
+        <select id="location-model" class="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900">
+          <option value="offsite">Yes, offsite processing is possible</option>
+          <option value="onsite">No, scanning must happen onsite</option>
+          <option value="both">We need both options assessed</option>
+        </select>
+        <label class="mt-5 block text-sm font-semibold text-slate-900" for="search-model">What should the final files do?</label>
+        <select id="search-model" class="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900">
+          <option value="search">Be searchable with OCR</option>
+          <option value="index">Be organised with metadata indexes</option>
+          <option value="system">Be prepared for DMS, EMR, ERP or cloud upload</option>
+        </select>
+        <button type="submit" class="mt-6 rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Show recommendation</button>
+        <p id="readiness-result" class="mt-5 rounded-xl bg-white p-4 text-sm leading-7 text-slate-700 ring-1 ring-slate-200" aria-live="polite">Your recommendation will appear here.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="rounded-3xl bg-emerald-950 p-8 text-white">
+        <h2 class="text-2xl font-semibold">Need a clear project scope?</h2>
+        <p class="mt-3 max-w-3xl text-sm leading-7 text-emerald-100">Share your record type, approximate volume, locations and desired output. Tyrus can help turn it into a practical scanning, indexing, quality-control and handover plan.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/contact" class="rounded-full bg-emerald-400 px-6 py-2 text-sm font-semibold text-emerald-950 hover:bg-white">Request a project review</a>
+          <a href="/document-scanning-services-india" class="rounded-full border border-emerald-300/70 px-6 py-2 text-sm font-semibold text-emerald-50 hover:bg-emerald-800">View scanning services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('readiness-form');
+    const result = document.getElementById('readiness-result');
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const recordType = document.getElementById('record-type')?.value;
+      const locationModel = document.getElementById('location-model')?.value;
+      const searchModel = document.getElementById('search-model')?.value;
+      const recordLabel = recordType === 'hr' ? 'employee-file indexing' : recordType === 'medical' ? 'patient or MRD indexing' : recordType === 'banking' ? 'customer, account or loan indexing' : recordType === 'government' ? 'department, year or file-series indexing' : 'department or file-number indexing';
+      const locationLabel = locationModel === 'onsite' ? 'onsite scanning with controlled access' : locationModel === 'both' ? 'an onsite/offsite comparison' : 'offsite scanning with tracked handover';
+      const outputLabel = searchModel === 'system' ? 'structured folders and a DMS/EMR/ERP-ready metadata package' : searchModel === 'index' ? 'searchable files with a verified metadata index' : 'OCR-processed searchable PDF files';
+      if (result) result.textContent = `Recommended starting model: ${locationLabel}, ${recordLabel}, and ${outputLabel}. Share page volume and timeline with Tyrus for a project-specific scope and quote.`;
+    });
+  </script>
+</DefaultLayout>
