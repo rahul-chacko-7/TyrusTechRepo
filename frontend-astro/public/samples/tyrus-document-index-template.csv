@@ -1,0 +1,3 @@
+record_id,document_type,department,document_date,source_box,file_name,ocr_status,qc_status,notes
+SAMPLE-0001,Employee file,Human Resources,2026-01-15,BOX-001,EMP-0001.pdf,Passed,Passed,Template row only
+SAMPLE-0002,Invoice,Finance,2026-02-03,BOX-001,INV-0002.pdf,Review,Pending,Template row only

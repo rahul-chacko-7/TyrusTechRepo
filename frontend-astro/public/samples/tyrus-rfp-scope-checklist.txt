@@ -1,0 +1,30 @@
+TYRUS DOCUMENT SCANNING RFP SCOPE CHECKLIST
+
+This is a planning template only. Replace the sample fields with project-approved information.
+
+1. Project scope
+- Record type and approximate page volume
+- Number of boxes, files, branches or locations
+- Loose, stapled, bound, fragile or mixed-size documents
+- Onsite, offsite or hybrid scanning requirement
+
+2. Output requirements
+- PDF, searchable PDF, PDF/A, TIFF, JPEG or other format
+- OCR language and expected text quality
+- Index fields and file naming rules
+- Department, employee, patient, customer, account or file-level folders
+- DMS, EMR, ERP, SFTP or cloud handover requirements
+
+3. Quality and security
+- Page completeness and sequence checks
+- Image quality and rescan rules
+- OCR and metadata validation
+- Batch reconciliation and exception reporting
+- Access control, movement logs and secure transfer
+- Physical file return, retention or destruction instructions
+
+4. Commercial information
+- Target timeline and daily output
+- Number of project locations
+- Pickup, logistics or onsite deployment needs
+- Quote format and assumptions

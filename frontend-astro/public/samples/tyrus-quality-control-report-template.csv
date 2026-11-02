@@ -1,0 +1,2 @@
+batch_id,source_box,files_received,pages_scanned,pages_rejected,pages_rescanned,ocr_checked,index_checked,review_status,reviewer_notes
+SAMPLE-BATCH-001,BOX-001,2,250,3,3,Yes,Yes,Sample,Template row only

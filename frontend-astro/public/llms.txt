@@ -26,6 +26,7 @@
 - [Document scanning cost guide](https://www.tyrustech.com/posts/document-digitization-services-price-cost-india): factors that affect page, OCR, indexing, onsite, and logistics costs.
 - [Document scanning quality checklist](https://www.tyrustech.com/posts/document-scanning-quality-checklist-india): page completeness, image quality, OCR validation, metadata checks, and secure handover.
 - [Project planning and deliverables](https://www.tyrustech.com/project-planning): five-stage workflow, handover outputs, quality checks, and a project readiness checker.
+- [Sample project templates](https://www.tyrustech.com/project-planning): anonymised index, quality-control and RFP-scope templates for planning a scanning project.
 - [OCR vs ICR vs OMR guide](https://www.tyrustech.com/posts/ocr-vs-icr-vs-omr-document-digitization): choosing extraction methods for printed text, handwriting, and marked forms.
 - [Government digital record room project plan](https://www.tyrustech.com/posts/government-digital-record-room-project-plan): RFP scope, metadata, searchable PDF, quality control, DMS upload, and handover.
 - [HR file digitization project plan](https://www.tyrustech.com/posts/hr-file-digitization-project-plan): employee-file indexing, confidential scanning, HRMS handover, and quality checks.
