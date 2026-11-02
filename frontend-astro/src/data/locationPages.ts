@@ -6,7 +6,9 @@ export const locationPages = [
     region: 'Karnataka',
     nearby: 'Bengaluru, Whitefield, Electronic City, Manyata Tech Park, Peenya, Yeshwanthpur and surrounding business hubs',
     industries: ['Hospitals and MRD departments', 'Banks and NBFCs', 'IT and enterprise offices', 'Legal and compliance teams', 'Education institutions'],
-    intro: 'Tyrus supports Bangalore organizations with document scanning, document digitization, bulk archive conversion, onsite document scanning, OCR indexing and DMS-ready digital records.'
+    intro: 'Tyrus supports Bangalore organizations with document scanning, document digitization, bulk archive conversion, onsite document scanning, OCR indexing and DMS-ready digital records.',
+    localFocus: 'Bangalore projects often combine active office files with older branch or record-room backlogs. Planning usually needs separate batches for IT and enterprise records, hospital MRD files, banking documents and legal or compliance archives so each team receives the right index structure.',
+    localRecords: ['Hospital MRD and diagnostic files', 'KYC and loan files from branches', 'IT contracts and project records', 'Legal and compliance archives']
   },
   {
     slug: 'mumbai',
@@ -15,7 +17,9 @@ export const locationPages = [
     region: 'Maharashtra',
     nearby: 'Mumbai, Navi Mumbai, Thane, Andheri, BKC, Lower Parel and nearby corporate locations',
     industries: ['Banks and financial services', 'Insurance operations', 'Hospitals', 'Legal firms', 'Corporate record rooms'],
-    intro: 'Tyrus helps Mumbai teams convert paper-heavy archives into searchable digital records for audit, compliance, retrieval and long-term storage.'
+    intro: 'Tyrus helps Mumbai teams convert paper-heavy archives into searchable digital records for audit, compliance, retrieval and long-term storage.',
+    localFocus: 'Mumbai scanning projects commonly involve distributed branch records, insurance files, financial documents and corporate archives across Mumbai, Navi Mumbai and Thane. A practical plan separates pickup or onsite work by location and uses branch, policy, customer or file-number indexing where needed.',
+    localRecords: ['Insurance claims and policy files', 'Banking and NBFC branch records', 'Corporate contracts and finance archives', 'Hospital and patient records']
   },
   {
     slug: 'delhi-ncr',
@@ -24,7 +28,9 @@ export const locationPages = [
     region: 'Delhi NCR',
     nearby: 'Delhi, Noida, Gurugram, Faridabad, Ghaziabad and NCR business districts',
     industries: ['Government departments', 'Corporate offices', 'Hospitals', 'Legal teams', 'Education and public-sector archives'],
-    intro: 'Tyrus provides Delhi NCR document scanning and digitization services for confidential files, government archives, legal records, KYC documents and bulk backlogs.'
+    intro: 'Tyrus provides Delhi NCR document scanning and digitization services for confidential files, government archives, legal records, KYC documents and bulk backlogs.',
+    localFocus: 'Delhi NCR requirements often span government and public-sector archives, corporate offices in Gurugram and Noida, and legal or compliance records. Projects can be organized by department, district, branch, year or file series, with onsite scanning considered for restricted archives.',
+    localRecords: ['Government registers and citizen records', 'Legal case files and contracts', 'Corporate and HR archives', 'KYC and public-sector files']
   },
   {
     slug: 'chennai',
@@ -33,7 +39,9 @@ export const locationPages = [
     region: 'Tamil Nadu',
     nearby: 'Chennai, Ambattur, Guindy, T Nagar, OMR, Sriperumbudur and nearby industrial corridors',
     industries: ['Manufacturing units', 'Healthcare groups', 'Banks and NBFCs', 'Education institutions', 'Corporate record rooms'],
-    intro: 'Tyrus supports Chennai organizations with secure document scanning, OCR indexing, bulk scanning and DMS-ready archives for operational and compliance records.'
+    intro: 'Tyrus supports Chennai organizations with secure document scanning, OCR indexing, bulk scanning and DMS-ready archives for operational and compliance records.',
+    localFocus: 'Chennai projects frequently include manufacturing drawings, supplier files, hospital records and education archives. Mixed paper sizes and long-running file series make preparation, document grouping and metadata design important before high-volume scanning begins.',
+    localRecords: ['Manufacturing drawings and quality records', 'Supplier and purchase files', 'Hospital MRD archives', 'Education and student records']
   },
   {
     slug: 'hyderabad',
@@ -42,7 +50,9 @@ export const locationPages = [
     region: 'Telangana',
     nearby: 'Hyderabad, HITEC City, Gachibowli, Secunderabad, Kukatpally and surrounding office locations',
     industries: ['IT and enterprise teams', 'Hospitals', 'Banks and NBFCs', 'Government archives', 'Legal and HR teams'],
-    intro: 'Tyrus provides Hyderabad document digitization services for paper files, medical records, HR records, KYC archives and searchable digital repositories.'
+    intro: 'Tyrus provides Hyderabad document digitization services for paper files, medical records, HR records, KYC archives and searchable digital repositories.',
+    localFocus: 'Hyderabad work can involve technology-company records, hospital archives, government files and financial documents. Teams often need searchable PDFs plus structured metadata that can be handed over to a DMS, HR system, ERP or secure cloud repository.',
+    localRecords: ['IT project and HR files', 'Medical records and reports', 'Government department archives', 'Banking KYC and finance records']
   },
   {
     slug: 'pune',
@@ -51,7 +61,9 @@ export const locationPages = [
     region: 'Maharashtra',
     nearby: 'Pune, Hinjewadi, Pimpri-Chinchwad, Baner, Kharadi and industrial office locations',
     industries: ['Manufacturing and automotive teams', 'IT companies', 'Hospitals', 'Education institutions', 'Finance and HR teams'],
-    intro: 'Tyrus helps Pune organizations scan, index and digitize bulk records with onsite or offsite project models and structured digital handover.'
+    intro: 'Tyrus helps Pune organizations scan, index and digitize bulk records with onsite or offsite project models and structured digital handover.',
+    localFocus: 'Pune scanning projects often combine automotive and manufacturing records with IT, education, healthcare and HR files. A project can use different indexing rules for drawings, supplier documents, employee files and operational records while maintaining one controlled handover structure.',
+    localRecords: ['Automotive and engineering drawings', 'Supplier and manufacturing records', 'IT and employee files', 'Education and hospital archives']
   },
   {
     slug: 'kochi',
@@ -60,7 +72,9 @@ export const locationPages = [
     region: 'Kerala',
     nearby: 'Kochi, Ernakulam, Kakkanad, Infopark, Kalamassery and nearby business locations',
     industries: ['Hospitals', 'Education institutions', 'Corporate offices', 'Finance teams', 'Legal and government records'],
-    intro: 'Tyrus supports Kochi and Kerala teams with document scanning, OCR indexing, medical record digitization and secure archive conversion.'
+    intro: 'Tyrus supports Kochi and Kerala teams with document scanning, OCR indexing, medical record digitization and secure archive conversion.',
+    localFocus: 'Kochi and Kerala projects may involve hospital records, education files, government documents and corporate archives spread across regional offices. Malayalam or mixed-language records should be assessed early to confirm OCR expectations and manual indexing needs.',
+    localRecords: ['Hospital MRD and patient files', 'Education and certificate records', 'Government and legal archives', 'Corporate and finance files']
   },
   {
     slug: 'coimbatore',
@@ -69,7 +83,9 @@ export const locationPages = [
     region: 'Tamil Nadu',
     nearby: 'Coimbatore, Peelamedu, Gandhipuram, RS Puram, Tiruppur and nearby industrial areas',
     industries: ['Manufacturing and textile businesses', 'Hospitals', 'Education institutions', 'Finance teams', 'Corporate record rooms'],
-    intro: 'Tyrus helps Coimbatore businesses convert paper records into searchable digital archives with bulk scanning, onsite scanning and indexing workflows.'
+    intro: 'Tyrus helps Coimbatore businesses convert paper records into searchable digital archives with bulk scanning, onsite scanning and indexing workflows.',
+    localFocus: 'Coimbatore and nearby industrial areas often have long-running manufacturing, textile, finance and administrative records. Scanning plans can separate drawings, purchase files, invoices, employee records and older cartons so each archive remains easy to retrieve after handover.',
+    localRecords: ['Textile and manufacturing files', 'Invoices and purchase records', 'Employee and HR archives', 'Hospital and education records']
   }
 ];
 
