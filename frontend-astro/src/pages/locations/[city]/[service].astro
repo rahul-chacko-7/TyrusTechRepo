@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '../../../layouts/DefaultLayout.astro';
+import LeadForm from '../../../components/LeadForm.astro';
 import { serviceLocationPages, serviceLocationTypes } from '../../../data/locationPages';
 
 export const prerender = true;
@@ -18,8 +19,24 @@ const { location, service } = Astro.props;
 const searchCity = location.searchCity || location.city;
 const isDocumentScanningService = service.slug === 'document-scanning-services';
 const pageTitle = isDocumentScanningService
-  ? `Document Scanning Services in ${searchCity} | Near Me, Price & Onsite - Tyrus`
-  : `${service.titlePrefix} in ${searchCity} | Near Me, Price & Onsite - Tyrus`;
+  ? `Document Scanning Services in ${searchCity} | Onsite & Bulk | Tyrus`
+  : `${service.titlePrefix} in ${searchCity} | Tyrus Technologies`;
+
+/**
+ * City x service pages are near-duplicates of each other. Only the ones that
+ * already earn Search Console clicks stay indexable; the rest are noindex,follow
+ * (still reachable for visitors, and excluded from sitemap.xml) until each gets
+ * genuinely local proof: a local project, team or testimonial.
+ */
+const indexableServiceLocations = new Set([
+  'bangalore/document-scanning-services',
+  'delhi-ncr/document-scanning-services',
+  'mumbai/document-scanning-services',
+  'chennai/onsite-document-scanning',
+  'chennai/pdf-scanning-services',
+  'chennai/bulk-document-scanning'
+]);
+const noindex = !indexableServiceLocations.has(`${location.slug}/${service.slug}`);
 const pageDescription = isDocumentScanningService
   ? `Document scanning services in ${searchCity} for offices, hospitals, banks and record rooms. Get onsite or bulk scanning, OCR indexing, searchable PDF output and clear price factors.`
   : `${service.titlePrefix} in ${searchCity} for enterprises: ${service.serviceIntro}, near-me coverage, price factors, secure handling, onsite support and structured digital output.`;
@@ -83,7 +100,7 @@ const serviceSchema = {
 };
 ---
 
-<DefaultLayout title={pageTitle} description={pageDescription} schemas={[serviceSchema, faqSchema]}>
+<DefaultLayout title={pageTitle} description={pageDescription} schemas={[serviceSchema, faqSchema]} noindex={noindex}>
   <section class="border-b border-emerald-100 bg-gradient-to-b from-emerald-950 via-emerald-900 to-emerald-800">
     <div class="mx-auto grid max-w-6xl gap-8 px-4 py-16 md:grid-cols-[1.2fr,0.8fr] md:items-center md:py-20">
       <div>
@@ -248,18 +265,16 @@ const serviceSchema = {
     </div>
   </section>
 
-  <section class="bg-white">
-    <div class="mx-auto max-w-6xl px-4 py-14">
-      <div class="rounded-3xl bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-slate-100 p-8 ring-1 ring-emerald-200">
+  <section class="bg-gradient-to-b from-white to-emerald-50" id="quote">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-14 lg:grid-cols-[0.9fr,1.1fr] lg:items-start">
+      <div>
         <h2 class="text-2xl font-semibold text-slate-900">Get a {service.label.toLowerCase()} quote in {searchCity}</h2>
-        <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-700">
-          Share page volume, file types, locations, onsite requirement, OCR and indexing fields, output format and timeline. Tyrus will suggest a practical project plan.
+        <p class="mt-3 text-sm leading-7 text-slate-700">
+          Share page volume, file types, location, onsite requirement, OCR and indexing fields, output format and timeline. Tyrus will reply within one working day with a practical plan and price.
         </p>
-        <div class="mt-5 flex flex-wrap gap-3">
-          <a href="/contact" class="rounded-full bg-emerald-600 px-6 py-2 text-sm font-semibold text-white shadow-md shadow-emerald-500/40 hover:bg-emerald-700">Contact Tyrus</a>
-          <a href="/locations" class="rounded-full border border-emerald-300 px-6 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">View all cities</a>
-        </div>
+        <a href={`/locations/${location.slug}`} class="mt-5 inline-block text-sm font-semibold text-emerald-700 underline">All services in {searchCity}</a>
       </div>
+      <LeadForm formId={`lead-${location.slug}-${service.slug}`} heading={`Free quote in ${searchCity}`} context={`${service.label} in ${searchCity}`} />
     </div>
   </section>
 </DefaultLayout>

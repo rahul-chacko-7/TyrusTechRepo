@@ -42,7 +42,7 @@ For medical records, confirm:
 - EMR/HMS output format
 - Retrieval support during scanning
 
-See [medical records scanning services](/medical-records-scanning-services) and [medical record digitization services](/medical-record-digitization-services).
+See [medical records scanning services](/medical-records-scanning-services) and [medical record digitization services](/medical-records-scanning-services).
 
 ## Shared controls
 

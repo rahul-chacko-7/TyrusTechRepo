@@ -1,0 +1,35 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import { site, telLink } from '../data/site';
+
+export const prerender = true;
+
+const links = [
+  ['Document scanning services in India', '/document-scanning-services-india'],
+  ['Bulk document scanning', '/bulk-document-scanning-services'],
+  ['Onsite document scanning', '/onsite-document-scanning-services'],
+  ['Medical records scanning', '/medical-records-scanning-services'],
+  ['HR document scanning', '/hr-document-scanning-services-india'],
+  ['Document scanning cost per page', '/posts/document-digitization-services-price-cost-india'],
+  ['All cities we serve', '/locations'],
+  ['Guides', '/blog']
+];
+---
+
+<DefaultLayout title="Page not found | Tyrus Technologies" description="The page you were looking for has moved. Find Tyrus document scanning services, pricing and contact details here." noindex={true}>
+  <section class="bg-white">
+    <div class="mx-auto max-w-3xl px-4 py-16 text-center">
+      <p class="text-sm font-semibold text-emerald-700">404</p>
+      <h1 class="mt-2 text-3xl font-semibold text-slate-900">This page has moved or no longer exists</h1>
+      <p class="mt-4 text-sm leading-7 text-slate-700">
+        Try one of the pages below, or call us on <a href={telLink} class="font-semibold text-emerald-700">{site.phoneDisplay}</a> and we will point you to what you need.
+      </p>
+      <div class="mt-8 grid gap-3 text-left sm:grid-cols-2">
+        {links.map(([label, href]) => (
+          <a href={href} class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-900 ring-1 ring-slate-200 hover:ring-emerald-300">{label}</a>
+        ))}
+      </div>
+      <a href="/contact" class="mt-8 inline-block rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-700">Get a free quote</a>
+    </div>
+  </section>
+</DefaultLayout>

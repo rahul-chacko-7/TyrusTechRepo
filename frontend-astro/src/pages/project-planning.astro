@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
 
 const pageTitle = 'Document Scanning Project Plan | Deliverables, QC & Handover | Tyrus';
 const pageDescription = 'Plan a document scanning project with a clear workflow, quality checks, searchable output, metadata indexes and secure handover. Use the simple readiness checker to choose a scanning model.';
@@ -174,6 +175,12 @@ const pageSchemas = [
           <a href="/document-scanning-services-india" class="rounded-full border border-emerald-300/70 px-6 py-2 text-sm font-semibold text-emerald-50 hover:bg-emerald-800">View scanning services</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="bg-gradient-to-b from-white to-emerald-50" id="quote">
+    <div class="mx-auto max-w-3xl px-4 py-14">
+      <LeadForm formId="project-planning-lead" heading="Send your project details for a written scope and quote" context="Project planning page" />
     </div>
   </section>
 

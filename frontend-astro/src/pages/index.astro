@@ -1,8 +1,8 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import { locationPages } from '../data/locationPages';
-const pageTitle = 'Document Digitization Services India | Tyrus';
-const pageDescription = 'Secure document digitization services in India: bulk scanning, onsite scanning, OCR indexing, DMS-ready archives and medical, banking, legal and government records.';
+const pageTitle = 'Tyrus Technologies | Document Scanning & Digitization India';
+const pageDescription = 'Bulk and onsite document scanning, OCR indexing and DMS-ready archives for hospitals, banks, HR and government. Since 2009. Get a per-page estimate.';
 const pageSchemas = [
   {
     '@context': 'https://schema.org',
@@ -110,18 +110,6 @@ const certificationBadges = [
     label: 'ISO 27001'
   },
   {
-    src: '/certifications/iso-company.png',
-    webp: '/certifications/iso-company.webp',
-    avif: '/certifications/iso-company.avif',
-    label: 'ISO certified company'
-  },
-  {
-    src: '/certifications/iso-15000-5-2014.png',
-    webp: '/certifications/iso-15000-5-2014.webp',
-    avif: '/certifications/iso-15000-5-2014.avif',
-    label: 'ISO 15000-5:2014'
-  },
-  {
     src: '/certifications/iso-20000.png',
     webp: '/certifications/iso-20000.webp',
     avif: '/certifications/iso-20000.avif',
@@ -134,8 +122,6 @@ const certificationBadges = [
     label: 'ISO 45001'
   }
 ];
-const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 ---
 
 <DefaultLayout
@@ -216,12 +202,10 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
           Tyrus plans each project from physical file intake to searchable output: document preparation, scanning, image quality checks, OCR, metadata indexing, file naming, secure transfer and DMS-ready handover.
         </p>
         <p class="text-sm text-slate-300">
-          This helps teams searching for document digitization services in India, bulk document scanning, onsite document scanning, OCR indexing, medical record digitization, banking KYC scanning and government archive digitization.
+          Hospitals, banks, government departments and HR teams use Tyrus to clear record rooms, answer audit requests in minutes and move files into their DMS, EMR or HRMS without losing a page.
         </p>
         <p class="text-sm text-slate-300">
-          This restores the old ranking-era positioning: Document Management, Document Capturing
-          Solutions and Document Scanning Services combined for complete end-to-end delivery of
-          document management requirements, from small teams to enterprise ECM and DMS workflows.
+          One team handles the full job: document scanning, capture and indexing, and handover into your document management system, whether you have a single office backlog or an enterprise ECM rollout.
         </p>
       </div>
       <div class="grid gap-3 sm:grid-cols-2">
@@ -233,7 +217,7 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
           ['Bulk document scanning', '/bulk-document-scanning-services', 'Large-volume page conversion projects with manpower and scanner planning.'],
           ['Onsite scanning services', '/onsite-document-scanning-services', 'Scanning teams deployed at your location when records cannot leave premises.'],
           ['OCR indexing services', '/ocr-indexing-services', 'Searchable PDFs, index sheets, metadata fields and file naming for faster retrieval.'],
-          ['Medical record digitization', '/medical-record-digitization-services', 'MRD, OPD, IPD, diagnostic and hospital archive scanning workflows.'],
+          ['Medical record digitization', '/medical-records-scanning-services', 'MRD, OPD, IPD, diagnostic and hospital archive scanning workflows.'],
           ['HR document scanning', '/hr-document-scanning-services-india', 'Employee files, personnel records, payroll documents and HRMS-ready archives.'],
           ['Chennai document scanning', '/locations/chennai/document-scanning-services', 'Local scanning, OCR and onsite support for Chennai teams.'],
           ['Mumbai document scanning', '/locations/mumbai/document-scanning-services', 'Bulk scanning, price planning and onsite support for Mumbai teams.'],
@@ -270,7 +254,7 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
             <source srcset={badge.webp} type="image/webp" />
             <img
               src={badge.src}
-              alt={`${badge.label} certification badge`}
+              alt={`${badge.label} certificate held by Tyrus Technologies`}
               width="180"
               height="180"
               class="mx-auto h-24 w-24 object-contain sm:h-28 sm:w-28"
@@ -527,7 +511,7 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
         Built for high-volume, confidential and retrieval-heavy scanning projects.
       </h2>
       <p class="text-sm text-slate-300">
-        The strongest ranking competitors explain project execution clearly. Tyrus now surfaces the same decision factors on the homepage: security, onsite capability, OCR accuracy, indexing structure, quality control and DMS-ready outputs.
+        Before you choose a scanning partner, check six things: security, onsite capability, OCR accuracy, indexing structure, quality control and DMS-ready output. Here is how Tyrus handles each.
       </p>
     </div>
     <div class="overflow-hidden rounded-2xl border border-slate-800">
@@ -769,6 +753,9 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
               <input
                 id="phone"
                 name="phone"
+                type="tel"
+                required
+                autocomplete="tel"
                 class="block w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-50 outline-none ring-emerald-500/40 placeholder:text-slate-500 focus:border-emerald-400 focus:ring-2"
                 placeholder="+91 ..."
               />
@@ -1128,16 +1115,8 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
   </div>
 </section>
 
-<script type="module" define:vars={{ supabaseUrl, supabaseAnonKey }}>
-  // Load Supabase client only when the user submits the lead form.
-  // This reduces initial JS parsing/compilation time (Lighthouse Total Blocking Time).
-  let supabaseClient;
-  async function getSupabaseClient() {
-    if (supabaseClient) return supabaseClient;
-    const mod = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.4/+esm');
-    supabaseClient = mod.createClient(supabaseUrl, supabaseAnonKey);
-    return supabaseClient;
-  }
+<script is:inline type="module">
+  // Leads are saved server-side by /api/proposal (no database key in the browser).
 
   const calcForm = document.getElementById('calculator-form');
   const calcError = document.getElementById('calculator-error');
@@ -1195,6 +1174,7 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
           })} · Estimated Completion: ${days} days`;
       }
 
+      try { window.gtag?.('event', 'calculator_estimate', { pages, value: Math.round(estimatedPrice), currency: 'INR', timeline }); } catch {}
       if (leadCard) {
         leadCard.classList.remove('hidden');
         leadCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1225,21 +1205,6 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
           submitButton.textContent = 'Sending request...';
         }
 
-        try {
-          const client = await getSupabaseClient();
-          await client.from('leads').insert([{
-            name: payload.name,
-            company: payload.company,
-            email: payload.email,
-            phone: payload.phone,
-            city: payload.city,
-            pages: Number(payload.pages || 0) || 0,
-            estimated_price: Number(payload.estimated_price || 0) || 0
-          }]);
-        } catch {
-          // Lead save failure should not block proposal creation.
-        }
-
         const contextMessage = `Requirement from calculator: ${lastCalculatorSnapshot.documentType || 'mixed'} files, timeline ${lastCalculatorSnapshot.timeline || 'standard'}, location ${lastCalculatorSnapshot.location || 'not provided'}.`;
         const proposalResponse = await fetch('/api/proposal', {
           method: 'POST',
@@ -1253,7 +1218,9 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
             phone: payload.phone,
             city: payload.city,
             pages: Number(payload.pages || 0) || 0,
-            message: contextMessage
+            message: contextMessage,
+            source: { page: window.location.pathname, formId: 'home-calculator-lead' },
+            attribution: window.tyrus?.getAttribution?.() || {}
           })
         });
 
@@ -1265,6 +1232,7 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
         const emailStatus = result.emailStatus || proposalResponse.headers.get('x-email-status') || 'unknown';
         const leadEmailStatus = result.leadEmailStatus || proposalResponse.headers.get('x-lead-email-status') || 'unknown';
 
+        window.tyrus?.trackLead?.('home-calculator-lead', { pages: Number(payload.pages || 0) || 0, value: Number(payload.estimated_price || 0) || 0 });
         leadForm.reset();
         if (leadSuccess) {
           leadSuccess.textContent = emailStatus === 'sent' || leadEmailStatus === 'sent'

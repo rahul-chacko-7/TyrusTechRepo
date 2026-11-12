@@ -26,7 +26,7 @@ If HRMS or an employee portal will receive the output, match field names, format
 
 Specify searchable PDF or PDF/A, image resolution, colour handling, file naming, folder structure and whether each document type should be a separate file. Decide whether OCR is needed for search, whether key fields need manual indexing and how uncertain values will be reviewed.
 
-The [HR document scanning services guide](/posts/hr-document-scanning-services-india-guide) explains common employee-file categories and indexing choices.
+The [HR document scanning services guide](/hr-document-scanning-services-india) explains common employee-file categories and indexing choices.
 
 ## 4. Build quality checks into every batch
 
@@ -38,7 +38,7 @@ Do not rely on OCR alone for identity or compliance fields. A review step is app
 
 Import a small batch and verify search, permissions, file opening, document type, employee mapping and audit history. Reconcile the source manifest with the delivered files and HRMS records before approving the full handover.
 
-Tyrus provides [HR document scanning services in India](/hr-document-scanning-services-india) and [employee records digitization](/posts/employee-records-digitization-hr-compliance) for organisations planning secure, searchable HR archives.
+Tyrus provides [HR document scanning services in India](/hr-document-scanning-services-india) and [employee records digitization](/hr-document-scanning-services-india) for organisations planning secure, searchable HR archives.
 
 ## Conclusion
 

@@ -4,6 +4,7 @@ import nodemailer from 'nodemailer';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createClient } from '@supabase/supabase-js';
 
 type ProposalPayload = {
   name: string;
@@ -13,7 +14,66 @@ type ProposalPayload = {
   city: string;
   pages: number;
   message: string;
+  source?: { page?: string; formId?: string; title?: string };
+  attribution?: { first?: Record<string, string>; latest?: Record<string, string> };
 };
+
+function clip(value: unknown, max = 500): string {
+  return String(value ?? '').replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, max);
+}
+
+function cleanRecord(value: unknown): Record<string, string> {
+  if (!value || typeof value !== 'object') return {};
+  const out: Record<string, string> = {};
+  for (const [key, raw] of Object.entries(value as Record<string, unknown>).slice(0, 20)) {
+    const k = clip(key, 40);
+    const v = clip(raw, 300);
+    if (k && v) out[k] = v;
+  }
+  return out;
+}
+
+function describeAttribution(payload: ProposalPayload): string[] {
+  const first = payload.attribution?.first || {};
+  const latest = payload.attribution?.latest || {};
+  const line = (label: string, rec: Record<string, string>) => {
+    const parts = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'gclid', 'landing_page', 'referrer']
+      .filter((k) => rec[k])
+      .map((k) => `${k}=${rec[k]}`);
+    return `${label}: ${parts.length ? parts.join(' | ') : 'direct / not captured'}`;
+  };
+  return [
+    `Form page: ${safeText(payload.source?.page)} (${safeText(payload.source?.formId, 'form')})`,
+    line('First touch', first),
+    line('This visit', latest)
+  ];
+}
+
+async function saveLead(payload: ProposalPayload, estimatedPrice: number): Promise<'saved' | 'skipped' | 'failed'> {
+  const url = import.meta.env.PUBLIC_SUPABASE_URL;
+  const key = import.meta.env.SUPABASE_SERVICE_ROLE_KEY || import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return 'skipped';
+  try {
+    const client = createClient(url, key, { auth: { persistSession: false } });
+    const { error } = await client.from('leads').insert([{
+      name: payload.name,
+      company: payload.company,
+      email: payload.email,
+      phone: payload.phone,
+      city: payload.city,
+      pages: Math.max(0, Math.round(payload.pages || 0)),
+      estimated_price: Math.max(0, Math.round(estimatedPrice))
+    }]);
+    if (error) {
+      console.error('Lead save failed:', error.message);
+      return 'failed';
+    }
+    return 'saved';
+  } catch (error) {
+    console.error('Lead save failed:', error);
+    return 'failed';
+  }
+}
 
 type MailerConfig = {
   host: string;
@@ -477,7 +537,7 @@ async function sendLeadNotificationEmail(payload: ProposalPayload): Promise<'sen
     'Message / requirement:',
     safeText(payload.message),
     '',
-    'Source: Tyrus website lead form'
+    ...describeAttribution(payload)
   ];
 
   try {
@@ -487,7 +547,7 @@ async function sendLeadNotificationEmail(payload: ProposalPayload): Promise<'sen
       from: config.from,
       to: leadRecipient,
       replyTo: payload.email || undefined,
-      subject: `New website lead - ${safeText(payload.company, payload.name)}`,
+      subject: `New website lead - ${safeText(payload.company, payload.name)}${payload.pages ? ` - ${payload.pages.toLocaleString('en-IN')} pages` : ''}`,
       text: lines.join('\n')
     });
     return 'sent';
@@ -501,15 +561,29 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     const url = new URL(request.url);
     const shouldDownload = url.searchParams.get('download') === '1';
-    const body = (await request.json()) as Partial<ProposalPayload>;
+    const body = (await request.json()) as Partial<ProposalPayload> & { website?: string; elapsedMs?: number };
+
+    // Spam traps: hidden honeypot field, or a form completed implausibly fast.
+    if (clip(body.website) || (typeof body.elapsedMs === 'number' && body.elapsedMs >= 0 && body.elapsedMs < 2500)) {
+      return new Response(JSON.stringify({ ok: true }), {
+        status: 200,
+        headers: { 'content-type': 'application/json' }
+      });
+    }
+
     const payload: ProposalPayload = {
-      name: safeText(body.name, ''),
-      company: safeText(body.company),
-      email: safeText(body.email, ''),
-      phone: safeText(body.phone),
-      city: safeText(body.city),
-      pages: Number(body.pages) || 0,
-      message: safeText(body.message)
+      name: clip(body.name, 120),
+      company: safeText(clip(body.company, 160)),
+      email: clip(body.email, 160).toLowerCase(),
+      phone: safeText(clip(body.phone, 40)),
+      city: safeText(clip(body.city, 120)),
+      pages: Math.min(100_000_000, Math.max(0, Number(body.pages) || 0)),
+      message: safeText(clip(body.message, 2000)),
+      source: cleanRecord(body.source),
+      attribution: {
+        first: cleanRecord(body.attribution?.first),
+        latest: cleanRecord(body.attribution?.latest)
+      }
     };
 
     if (!payload.name || !payload.email) {
@@ -519,11 +593,20 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
+      return new Response(JSON.stringify({ error: 'Please enter a valid email address.' }), {
+        status: 400,
+        headers: { 'content-type': 'application/json' }
+      });
+    }
+
     const pdfBytes = await buildProposalPdf(payload);
     const fileName = `Tyrus-Proposal-${safeText(payload.company, payload.name).replace(/[^a-zA-Z0-9-_]/g, '-')}.pdf`;
-    const [emailStatus, leadEmailStatus] = await Promise.all([
+    const estimate = payload.pages ? calculatePricing(payload.pages, 'standard').estimatedTotal : 0;
+    const [emailStatus, leadEmailStatus, leadSaveStatus] = await Promise.all([
       sendProposalEmail(payload, pdfBytes, fileName),
-      sendLeadNotificationEmail(payload)
+      sendLeadNotificationEmail(payload),
+      saveLead(payload, estimate)
     ]);
 
     if (shouldDownload) {
@@ -541,7 +624,8 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({
       ok: true,
       emailStatus,
-      leadEmailStatus
+      leadEmailStatus,
+      leadSaveStatus
     }), {
       status: 200,
       headers: {
