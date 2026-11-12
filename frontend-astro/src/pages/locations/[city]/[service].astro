@@ -111,13 +111,8 @@ const serviceSchema = {
           {service.titlePrefix} in {searchCity}
         </h1>
         <p class="mt-5 max-w-3xl text-sm leading-7 text-emerald-50/90 sm:text-base">
-          Tyrus helps teams searching for {service.keyword} in {searchCity} {service.primaryNeed}. Projects can include {service.serviceIntro}, with secure handling, price planning and clear project reporting.
+          Tyrus helps teams in {searchCity} {service.primaryNeed}. Projects can include {service.serviceIntro}, with secure handling, price planning and clear project reporting.
         </p>
-        {isDocumentScanningService && (
-          <p class="mt-3 max-w-3xl text-sm leading-7 text-emerald-50/90 sm:text-base">
-            Useful for searches like document scanning services near me, document scanning cost, bulk document scanning and onsite scanning in {searchCity}.
-          </p>
-        )}
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/contact" class="rounded-full bg-emerald-400 px-6 py-2 text-sm font-semibold text-emerald-950 shadow-lg shadow-emerald-950/30 hover:bg-white">
             Get a local quote

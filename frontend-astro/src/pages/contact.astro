@@ -1,10 +1,10 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import LeadForm from '../components/LeadForm.astro';
-import { site, hasAddress, telLink, whatsappLink } from '../data/site';
+import { site, hasAddress, mailLink, whatsappLink } from '../data/site';
 
 const pageTitle = 'Contact Tyrus Technologies | Document Scanning Quote';
-const pageDescription = `Get a document scanning quote from Tyrus Technologies. Call ${site.phoneDisplay}, WhatsApp us or send your page count and we reply within one working day.`;
+const pageDescription = `Get a document scanning quote from Tyrus Technologies. WhatsApp or email us, or send your page count and we reply within one working day.`;
 const contactSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
@@ -34,16 +34,12 @@ const contactSchema = {
           <h2 class="text-base font-semibold text-slate-900">Reach us directly</h2>
           <dl class="mt-4 space-y-4 text-sm text-slate-800">
             <div>
-              <dt class="text-xs font-medium uppercase tracking-wide text-slate-500">Phone</dt>
-              <dd><a href={telLink} class="text-lg font-semibold text-emerald-700">{site.phoneDisplay}</a></dd>
-            </div>
-            <div>
               <dt class="text-xs font-medium uppercase tracking-wide text-slate-500">WhatsApp</dt>
-              <dd><a href={whatsappLink} target="_blank" rel="noopener" class="font-semibold text-emerald-700">{site.whatsappDisplay}</a></dd>
+              <dd><a href={whatsappLink} target="_blank" rel="noopener" class="text-lg font-semibold text-emerald-700">{site.whatsappDisplay}</a></dd>
             </div>
             <div>
               <dt class="text-xs font-medium uppercase tracking-wide text-slate-500">Email</dt>
-              <dd><a href={`mailto:${site.email}`} class="font-semibold text-emerald-700">{site.email}</a></dd>
+              <dd><a href={mailLink} class="text-lg font-semibold text-emerald-700">{site.email}</a></dd>
             </div>
             <div>
               <dt class="text-xs font-medium uppercase tracking-wide text-slate-500">Hours</dt>

@@ -2,7 +2,8 @@
  * Single source of truth for business details used in the header, footer,
  * sticky contact bar, lead forms and structured data.
  *
- * NAP (name, address, phone) must match Google Business Profile, Justdial,
+ * Contact is by WhatsApp and email only (no public calling number).
+ * Name and address must match Google Business Profile, Justdial,
  * IndiaMART and LinkedIn exactly. Fill in `address` with the registered
  * office in Bangalore: the footer address block and LocalBusiness schema
  * switch on automatically once `streetAddress` (and `postalCode`) are set.
@@ -12,8 +13,6 @@ export const site = {
   shortName: 'Tyrus Technologies',
   url: 'https://www.tyrustech.com',
   email: 'corporatesales@tyrustech.com',
-  phone: '+918089889853',
-  phoneDisplay: '+91 80898 89853',
   whatsapp: '919742065852',
   whatsappDisplay: '+91 97420 65852',
   whatsappMessage: 'Hi Tyrus, I need a quote for document scanning.',
@@ -35,7 +34,7 @@ export const site = {
 export const hasAddress = Boolean(site.address.streetAddress && site.address.addressLocality);
 
 export const whatsappLink = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`;
-export const telLink = `tel:${site.phone}`;
+export const mailLink = `mailto:${site.email}?subject=${encodeURIComponent('Document scanning quote request')}`;
 
 /** Indicative per-page pricing, shared by the calculator, proposal PDF and price tables. */
 export const pricingTiers = [

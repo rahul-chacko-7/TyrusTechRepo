@@ -1,5 +1,5 @@
 ---
-import { site, whatsappLink, telLink } from '../data/site';
+import { site, whatsappLink, mailLink } from '../data/site';
 
 interface Props {
   formId: string;
@@ -75,8 +75,8 @@ const note = dark ? 'text-slate-400' : 'text-slate-500';
         Get my quote
       </button>
       <p class={`text-xs ${note}`}>
-        Prefer to talk? <a href={telLink} class="font-semibold text-emerald-600 underline" data-track="call">Call {site.phoneDisplay}</a> or
-        <a href={whatsappLink} class="font-semibold text-emerald-600 underline" data-track="whatsapp" target="_blank" rel="noopener">WhatsApp us</a>.
+        Prefer to chat? <a href={whatsappLink} class="font-semibold text-emerald-600 underline" target="_blank" rel="noopener">WhatsApp us</a> or
+        email <a href={mailLink} class="font-semibold text-emerald-600 underline">{site.email}</a>.
       </p>
     </div>
     <p class={`text-[11px] ${note}`}>We use your details only to reply to this request. No spam, no sharing.</p>
