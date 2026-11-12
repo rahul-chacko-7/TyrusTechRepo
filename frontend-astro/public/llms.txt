@@ -13,7 +13,7 @@
 
 ## Industries and records
 
-- [Healthcare and medical records](https://www.tyrustech.com/medical-record-digitization-services)
+- [Healthcare and medical records](https://www.tyrustech.com/medical-records-scanning-services)
 - [Banking and KYC records](https://www.tyrustech.com/banking-document-scanning-services)
 - [Government records and archives](https://www.tyrustech.com/government-record-digitization-services)
 - [Legal document scanning](https://www.tyrustech.com/legal-document-scanning-services)
@@ -30,7 +30,7 @@
 - [OCR vs ICR vs OMR guide](https://www.tyrustech.com/posts/ocr-vs-icr-vs-omr-document-digitization): choosing extraction methods for printed text, handwriting, and marked forms.
 - [Government digital record room project plan](https://www.tyrustech.com/posts/government-digital-record-room-project-plan): RFP scope, metadata, searchable PDF, quality control, DMS upload, and handover.
 - [HR file digitization project plan](https://www.tyrustech.com/posts/hr-file-digitization-project-plan): employee-file indexing, confidential scanning, HRMS handover, and quality checks.
-- [Document digitization company comparison](https://www.tyrustech.com/document-digitization-companies-india): vendor-selection criteria and a source-linked public competitor comparison.
+- [Document digitization company comparison](https://www.tyrustech.com/posts/top-document-digitization-services-india): vendor-selection criteria and a source-linked public competitor comparison.
 - [Service locations](https://www.tyrustech.com/locations): city pages for major Indian business locations.
 
 ## Contact

@@ -1,12 +1,14 @@
 ---
 import Header from '../components/Header.astro';
 import '../styles/global.css';
+import { site, hasAddress, telLink, whatsappLink } from '../data/site';
 
 const {
   title = 'Document Digitization Services India | Go Green & Secure',
   description = 'Document digitization services across India with secure handling of sensitive data, sustainability-focused workflows, and high-speed scanning.',
   image = '/tyrus-og-image.webp',
   canonical,
+  noindex = false,
   schemas = []
 } = Astro.props;
 
@@ -19,17 +21,21 @@ const jsonLdSchemas = [
   {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Tyrus Technologies Pvt Ltd',
+    '@id': `${siteUrl}/#organization`,
+    name: site.name,
+    alternateName: site.shortName,
     url: siteUrl,
     logo: new URL('/tyrus-logo.png', siteUrl).toString(),
     description,
-    email: 'corporatesales@tyrustech.com',
-    telephone: '+91 80898 89853',
+    email: site.email,
+    telephone: site.phoneDisplay,
+    foundingDate: site.foundingYear,
+    sameAs: [...site.sameAs],
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+91 80898 89853',
-        email: 'corporatesales@tyrustech.com',
+        telephone: site.phoneDisplay,
+        email: site.email,
         contactType: 'sales',
         areaServed: 'IN',
         availableLanguage: ['en', 'hi']
@@ -40,6 +46,27 @@ const jsonLdSchemas = [
       name: 'India'
     }
   },
+  ...(hasAddress
+    ? [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'ProfessionalService',
+          '@id': `${siteUrl}/#business`,
+          name: site.name,
+          url: `${siteUrl}/`,
+          image: new URL('/tyrus-og-image.webp', siteUrl).toString(),
+          logo: new URL('/tyrus-logo.png', siteUrl).toString(),
+          telephone: site.phoneDisplay,
+          email: site.email,
+          foundingDate: site.foundingYear,
+          openingHours: site.openingHours,
+          address: { '@type': 'PostalAddress', ...site.address },
+          areaServed: { '@type': 'Country', name: 'India' },
+          parentOrganization: { '@id': `${siteUrl}/#organization` },
+          sameAs: [...site.sameAs]
+        }
+      ]
+    : []),
   {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -82,7 +109,7 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
     <meta name="theme-color" content="#047857" />
     <meta name="google-site-verification" content="d3IOP12jDpQPkdQyH0hf5xijhtu62q4Ky0wjBVLXJks" />
     <link rel="canonical" href={canonicalUrl} />
@@ -111,7 +138,7 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
       <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
     ))}
   </head>
-  <body class="min-h-screen bg-gradient-to-b from-emerald-50 via-slate-50 to-slate-100 text-slate-900">
+  <body class="min-h-screen pb-16 md:pb-0 bg-gradient-to-b from-emerald-50 via-slate-50 to-slate-100 text-slate-900">
     <div class="flex min-h-screen flex-col">
       <Header />
       <main class="flex-1">
@@ -119,7 +146,21 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
       </main>
       <footer class="border-t border-emerald-100 bg-white/90">
         <div class="mx-auto max-w-6xl px-4 py-6 text-sm text-slate-500">
-          <div class="grid gap-5 border-b border-slate-200 pb-5 md:grid-cols-3">
+          <div class="grid gap-5 border-b border-slate-200 pb-5 md:grid-cols-4">
+            <div>
+              <p class="font-semibold text-slate-800">Contact Tyrus</p>
+              <div class="mt-2 flex flex-col gap-1">
+                <a href={telLink} class="font-semibold text-emerald-700 hover:text-emerald-800">Call {site.phoneDisplay}</a>
+                <a href={whatsappLink} target="_blank" rel="noopener" class="hover:text-emerald-700">WhatsApp {site.whatsappDisplay}</a>
+                <a href={`mailto:${site.email}`} class="hover:text-emerald-700">{site.email}</a>
+                <span>{site.openingHoursDisplay}</span>
+                {hasAddress && (
+                  <address class="not-italic">
+                    {site.name}<br />{site.address.streetAddress}<br />{site.address.addressLocality}{site.address.postalCode ? ` – ${site.address.postalCode}` : ''}, {site.address.addressRegion}, India
+                  </address>
+                )}
+              </div>
+            </div>
             <div>
               <p class="font-semibold text-slate-800">Popular services</p>
               <div class="mt-2 flex flex-col gap-1">
@@ -151,11 +192,37 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
             </div>
           </div>
           <div class="flex flex-col gap-2 pt-5 md:flex-row md:items-center md:justify-between">
-            <p>&copy; {new Date().getFullYear()} Tyrus Technologies Pvt Ltd. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Tyrus Technologies Pvt Ltd. Document scanning and digitization since {site.foundingYear}.</p>
             <p>Digitize. Secure. Go Green.</p>
           </div>
         </div>
       </footer>
     </div>
+
+    <!-- Mobile sticky contact bar -->
+    <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-emerald-200 bg-white/95 text-center text-xs font-semibold shadow-[0_-4px_16px_rgba(15,23,42,0.08)] backdrop-blur md:hidden" data-sticky-cta>
+      <a href={telLink} class="flex flex-col items-center gap-0.5 py-2.5 text-emerald-800">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.3a1 1 0 01.95.68l1.1 3.3a1 1 0 01-.5 1.2l-1.7.85a11 11 0 005.8 5.8l.85-1.7a1 1 0 011.2-.5l3.3 1.1a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.7 21 3 14.3 3 6V5z"/></svg>
+        Call
+      </a>
+      <a href={whatsappLink} target="_blank" rel="noopener" class="flex flex-col items-center gap-0.5 border-x border-emerald-100 py-2.5 text-emerald-800">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c2.2.9 2.2.6 2.6.6a2.2 2.2 0 001.5-1 1.8 1.8 0 00.1-1c-.1-.1-.2-.2-.5-.3z"/></svg>
+        WhatsApp
+      </a>
+      <a href="/contact" data-track-cta class="flex flex-col items-center gap-0.5 bg-emerald-600 py-2.5 text-white">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M7 3h7l5 5v11a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+        Free quote
+      </a>
+    </div>
+
+    <!-- Desktop floating WhatsApp -->
+    <a href={whatsappLink} target="_blank" rel="noopener" aria-label="Chat with Tyrus on WhatsApp" class="fixed bottom-6 right-6 z-40 hidden items-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-900/30 transition hover:bg-emerald-700 md:inline-flex">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
+      WhatsApp for a quote
+    </a>
+
+    <script>
+      import '../scripts/site.ts';
+    </script>
   </body>
 </html>

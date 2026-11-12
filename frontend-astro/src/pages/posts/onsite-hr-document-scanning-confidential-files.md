@@ -4,8 +4,8 @@ title: "Onsite HR document scanning for confidential employee files"
 date: 2026-09-08
 category: Onsite HR scanning
 excerpt: When confidential HR files should be scanned onsite and how to plan employee file scanning inside your office or record room.
-seoTitle: Onsite HR Document Scanning for Confidential Employee Files
-seoDescription: Guide to onsite HR document scanning for employee files, personnel records, payroll documents, compliance archives and confidential HR backlogs.
+seoTitle: "Onsite Employee File Scanning: Keep HR Records In-House"
+seoDescription: "When to scan HR files onsite, what to prepare, and what output your HR team receives. A practical guide for confidential employee records."
 ---
 
 Onsite HR document scanning is useful when employee files are too sensitive, active or restricted to be moved outside the organization.

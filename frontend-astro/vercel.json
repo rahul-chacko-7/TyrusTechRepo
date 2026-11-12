@@ -212,12 +212,12 @@
     },
     {
       "source": "/document-management-consulting",
-      "destination": "/document-digitization-companies-india",
+      "destination": "/posts/top-document-digitization-services-india",
       "permanent": true
     },
     {
       "source": "/document-management-consulting/",
-      "destination": "/document-digitization-companies-india",
+      "destination": "/posts/top-document-digitization-services-india",
       "permanent": true
     },
     {
@@ -332,12 +332,12 @@
     },
     {
       "source": "/tag/how-to-choose-document-scanning-services",
-      "destination": "/document-digitization-companies-india",
+      "destination": "/posts/top-document-digitization-services-india",
       "permanent": true
     },
     {
       "source": "/tag/how-to-choose-document-scanning-services/",
-      "destination": "/document-digitization-companies-india",
+      "destination": "/posts/top-document-digitization-services-india",
       "permanent": true
     },
     {
@@ -348,6 +348,106 @@
     {
       "source": "/uncategorized/how-digitization-is-helping-the-environment/",
       "destination": "/posts/benefits-of-document-digitization",
+      "permanent": true
+    },
+    {
+      "source": "/medical-record-digitization-services",
+      "destination": "/medical-records-scanning-services",
+      "permanent": true
+    },
+    {
+      "source": "/medical-record-digitization-services/",
+      "destination": "/medical-records-scanning-services",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hr-document-scanning-services-india-guide",
+      "destination": "/hr-document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hr-document-scanning-services-india-guide/",
+      "destination": "/hr-document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/posts/employee-records-digitization-hr-compliance",
+      "destination": "/hr-document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/posts/employee-records-digitization-hr-compliance/",
+      "destination": "/hr-document-scanning-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/document-digitization-companies-india",
+      "destination": "/posts/top-document-digitization-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/document-digitization-companies-india/",
+      "destination": "/posts/top-document-digitization-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/posts/best-document-digitization-services-india-checklist",
+      "destination": "/posts/top-document-digitization-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/posts/best-document-digitization-services-india-checklist/",
+      "destination": "/posts/top-document-digitization-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/posts/document-digitization-companies-india-comparison",
+      "destination": "/posts/top-document-digitization-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/posts/document-digitization-companies-india-comparison/",
+      "destination": "/posts/top-document-digitization-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/posts/how-to-choose-document-digitization-company-india",
+      "destination": "/posts/top-document-digitization-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/posts/how-to-choose-document-digitization-company-india/",
+      "destination": "/posts/top-document-digitization-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/posts/records-digitization-company-india",
+      "destination": "/posts/top-document-digitization-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/posts/records-digitization-company-india/",
+      "destination": "/posts/top-document-digitization-services-india",
+      "permanent": true
+    },
+    {
+      "source": "/posts/digital-transformation-services-for-paper-heavy-businesses",
+      "destination": "/posts/digital-transformation-companies-india-document-digitization",
+      "permanent": true
+    },
+    {
+      "source": "/posts/digital-transformation-services-for-paper-heavy-businesses/",
+      "destination": "/posts/digital-transformation-companies-india-document-digitization",
+      "permanent": true
+    },
+    {
+      "source": "/posts/digital-transformation-consulting-services-document-records",
+      "destination": "/posts/digital-transformation-companies-india-document-digitization",
+      "permanent": true
+    },
+    {
+      "source": "/posts/digital-transformation-consulting-services-document-records/",
+      "destination": "/posts/digital-transformation-companies-india-document-digitization",
       "permanent": true
     }
   ]
