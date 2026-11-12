@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
 import LeadForm from '../../components/LeadForm.astro';
+import TrustBar from '../../components/TrustBar.astro';
 import { pricingTiers } from '../../data/site';
 import { locationPages, locationServices, serviceLocationTypes } from '../../data/locationPages';
 
@@ -93,6 +94,8 @@ const faqSchema = {
       </div>
     </div>
   </section>
+
+  <TrustBar />
 
   <section class="border-b border-slate-200 bg-white">
     <div class="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-[1fr,1fr]">

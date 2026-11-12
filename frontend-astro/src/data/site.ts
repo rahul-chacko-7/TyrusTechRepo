@@ -42,3 +42,12 @@ export const pricingTiers = [
   { label: '10,000 – 50,000 pages', min: 10000, max: 49999, pricePerPage: 1.6, baseDays: 10, example: 25000 },
   { label: 'Over 50,000 pages', min: 50000, max: Infinity, pricePerPage: 1.2, baseDays: 15, example: 100000 }
 ] as const;
+
+/** Clients shown in the client-logo grid (public/client-logos-grid.*) and the proposal PDF. */
+export const clients = [
+  'Airtel', 'Bosch', 'Infosys', "St. Mary's Hospital", 'Keltron', 'Cochin Shipyard Ltd',
+  'CMC Vellore', 'CUSAT', 'Caritas Hospital', 'Altisource', 'Azim Premji Foundation', 'Indian Navy'
+] as const;
+
+/** Page volumes from the published case studies (healthcare 4.5M, banking 1.2M, government 800K). */
+export const featuredPages = '6.5 million+';

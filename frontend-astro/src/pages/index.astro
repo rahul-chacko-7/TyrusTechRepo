@@ -1,5 +1,7 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
+import TrustBar from '../components/TrustBar.astro';
+import { clients } from '../data/site';
 import { locationPages } from '../data/locationPages';
 const pageTitle = 'Tyrus Technologies | Document Scanning & Digitization India';
 const pageDescription = 'Bulk and onsite document scanning, OCR indexing and DMS-ready archives for hospitals, banks, HR and government. Since 2009. Get a per-page estimate.';
@@ -158,7 +160,7 @@ const certificationBadges = [
       </p>
 
       <h1 class="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
-        Document digitization services in India for scanning, OCR and DMS
+        Document scanning and digitization company in India
       </h1>
 
       <p class="max-w-xl mx-auto text-balance text-xs text-emerald-50/90 sm:text-sm md:mx-0 md:text-base">
@@ -189,6 +191,8 @@ const certificationBadges = [
 
   </div>
 </section>
+
+<TrustBar theme="dark" />
 
 <section id="document-digitization-services-india" class="border-b border-slate-800 bg-slate-950">
   <div class="mx-auto max-w-6xl px-4 py-16">
@@ -995,7 +999,7 @@ const certificationBadges = [
         <source srcset="/client-logos-grid.webp" type="image/webp" />
         <img
           src="/client-logos-grid.png"
-          alt="Client logos of organizations that worked with Tyrus Technologies"
+          alt={`Client logos: ${clients.join(", ")}`}
           width="1024"
           height="682"
           class="h-auto w-full rounded-2xl"

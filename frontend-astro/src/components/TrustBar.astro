@@ -1,0 +1,28 @@
+---
+import { site, clients, featuredPages } from '../data/site';
+const { theme = 'light' } = Astro.props;
+const dark = theme === 'dark';
+---
+
+<section class={dark ? 'border-b border-slate-800 bg-slate-900' : 'border-b border-slate-200 bg-emerald-50/60'} aria-label="Track record">
+  <div class="mx-auto max-w-6xl px-4 py-6">
+    <dl class="grid gap-4 text-center sm:grid-cols-3">
+      <div>
+        <dt class={`text-xs uppercase tracking-wide ${dark ? 'text-slate-400' : 'text-slate-500'}`}>Digitizing records since</dt>
+        <dd class={`text-2xl font-semibold ${dark ? 'text-emerald-300' : 'text-emerald-800'}`}>{site.foundingYear}</dd>
+      </div>
+      <div>
+        <dt class={`text-xs uppercase tracking-wide ${dark ? 'text-slate-400' : 'text-slate-500'}`}>Pages in featured projects</dt>
+        <dd class={`text-2xl font-semibold ${dark ? 'text-emerald-300' : 'text-emerald-800'}`}>{featuredPages}</dd>
+      </div>
+      <div>
+        <dt class={`text-xs uppercase tracking-wide ${dark ? 'text-slate-400' : 'text-slate-500'}`}>Head office</dt>
+        <dd class={`text-2xl font-semibold ${dark ? 'text-emerald-300' : 'text-emerald-800'}`}>Bengaluru</dd>
+      </div>
+    </dl>
+    <p class={`mx-auto mt-4 max-w-4xl text-center text-sm leading-6 ${dark ? 'text-slate-300' : 'text-slate-700'}`}>
+      <span class="font-semibold">Clients include</span> {clients.join(', ')}.
+      <a href="/case-studies" class={`ml-1 font-semibold underline ${dark ? 'text-emerald-300' : 'text-emerald-700'}`}>See case studies</a>
+    </p>
+  </div>
+</section>

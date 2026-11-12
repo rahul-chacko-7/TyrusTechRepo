@@ -5,7 +5,7 @@ const pageTitle = 'Document Digitization Insights & OCR Best Practices | Tyrus T
 const posts = await Astro.glob('./posts/*.md');
 ---
 
-<DefaultLayout
+<DefaultLayout showLeadForm={true}
   title={pageTitle}
   description="Read practical guides on document digitization, OCR, secure scanning, and industry use cases across healthcare, BFSI, legal, and government operations in India."
 >

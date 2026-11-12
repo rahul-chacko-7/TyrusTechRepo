@@ -7,7 +7,7 @@ export const locationPages = [
     nearby: 'Bengaluru, Whitefield, Electronic City, Manyata Tech Park, Peenya, Yeshwanthpur and surrounding business hubs',
     industries: ['Hospitals and MRD departments', 'Banks and NBFCs', 'IT and enterprise offices', 'Legal and compliance teams', 'Education institutions'],
     intro: 'Tyrus supports Bangalore organizations with document scanning, document digitization, bulk archive conversion, onsite document scanning, OCR indexing and DMS-ready digital records.',
-    localFocus: 'Bangalore projects often combine active office files with older branch or record-room backlogs. Planning usually needs separate batches for IT and enterprise records, hospital MRD files, banking documents and legal or compliance archives so each team receives the right index structure.',
+    localFocus: 'Tyrus Technologies is headquartered in Bengaluru, so Bangalore projects are planned and supervised directly by the core project team. Bangalore projects often combine active office files with older branch or record-room backlogs. Planning usually needs separate batches for IT and enterprise records, hospital MRD files, banking documents and legal or compliance archives so each team receives the right index structure.',
     localRecords: ['Hospital MRD and diagnostic files', 'KYC and loan files from branches', 'IT contracts and project records', 'Legal and compliance archives']
   },
   {
