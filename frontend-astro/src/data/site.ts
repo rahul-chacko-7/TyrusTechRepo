@@ -4,8 +4,8 @@
  *
  * NAP (name, address, phone) must match Google Business Profile, Justdial,
  * IndiaMART and LinkedIn exactly. Fill in `address` with the registered
- * office: the footer address block and LocalBusiness schema switch on
- * automatically once `streetAddress` and `addressLocality` are set.
+ * office in Bangalore: the footer address block and LocalBusiness schema
+ * switch on automatically once `streetAddress` (and `postalCode`) are set.
  */
 export const site = {
   name: 'Tyrus Technologies Pvt Ltd',
@@ -22,8 +22,8 @@ export const site = {
   openingHoursDisplay: 'Mon–Sat, 9:30 am – 6:30 pm',
   address: {
     streetAddress: '',
-    addressLocality: '',
-    addressRegion: '',
+    addressLocality: 'Bengaluru',
+    addressRegion: 'Karnataka',
     postalCode: '',
     addressCountry: 'IN'
   },
