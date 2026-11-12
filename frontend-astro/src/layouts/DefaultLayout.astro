@@ -99,6 +99,8 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
         <script is:inline define:vars={{ gaMeasurementId }}>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          // define:vars wraps this script in a function; expose gtag so site-wide lead and click events can use it.
+          window.gtag = gtag;
           gtag('js', new Date());
 
           gtag('config', gaMeasurementId);
