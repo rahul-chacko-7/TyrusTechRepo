@@ -449,6 +449,26 @@
       "source": "/posts/digital-transformation-consulting-services-document-records/",
       "destination": "/posts/digital-transformation-companies-india-document-digitization",
       "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/got-stuck-try-electronic-document-management-system-to-streamline-your-organisation",
+      "destination": "/document-management-system-india",
+      "permanent": true
+    },
+    {
+      "source": "/blog/got-stuck-try-electronic-document-management-system-to-streamline-your-organisation/",
+      "destination": "/document-management-system-india",
+      "permanent": true
+    },
+    {
+      "source": "/cgi-sys/suspendedpage.cgi",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
