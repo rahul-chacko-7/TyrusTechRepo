@@ -4,7 +4,7 @@ import SeoServicePage from '../components/SeoServicePage.astro';
 const props = {
   title: 'HR Document Scanning Services India | Employee Files | Tyrus',
   description:
-    'HR document scanning services in India for employee file digitization, personnel records, payroll files, onboarding documents, HR compliance records, OCR indexing and HRMS-ready archives.',
+    'HR document scanning and employee file digitization in India: personnel, payroll and onboarding records indexed by employee ID, with HRMS-ready output. Free quote.',
   canonical: '/hr-document-scanning-services-india',
   eyebrow: 'HR records scanning India',
   h1: 'HR document scanning services in India',
@@ -75,15 +75,29 @@ const props = {
   },
   extraSections: [
     {
+      "heading": "HR documents we scan, across the employee lifecycle",
+      "paragraphs": [
+        "Most employee files mix documents from every stage of employment. Tyrus splits each file by document type during scanning so HR, payroll and auditors can open exactly the page they need."
+      ],
+      "items": [
+        "Hiring: applications, interview records, offer and appointment letters",
+        "Onboarding: joining forms, ID and address proof, education and experience certificates, bank details",
+        "Payroll and benefits: salary revisions, PF and ESI forms, nominations, insurance and reimbursement records",
+        "Performance and growth: appraisals, promotion and transfer letters, training certificates",
+        "Policy and conduct: signed policy acknowledgements, NDAs, warnings and disciplinary records",
+        "Exit: resignation, full-and-final settlement, relieving and experience letters"
+      ]
+    },
+    {
       "heading": "Index fields HR teams usually choose",
       "paragraphs": [
-        "Each employee file is split into document types and indexed so HR, payroll and auditors can find a single document in seconds instead of pulling the whole file."
+        "Fields are agreed before scanning starts, so every file comes back named and searchable the same way. A typical output is one folder per employee, for example EMP1042 › Onboarding › EMP1042_ID-proof.pdf, plus a CSV index that lists every document."
       ],
       "items": [
         "Employee ID, name, department and location",
-        "Document type: offer letter, appointment, KYC, payroll, appraisal, exit",
-        "Joining date and exit date",
-        "Output: one folder per employee plus a CSV index for HRMS import"
+        "Document type and sub-type",
+        "Joining date, exit date and employment status",
+        "Document date and page count, with an exception flag for missing or unclear pages"
       ]
     },
     {
@@ -92,10 +106,52 @@ const props = {
         "Tyrus prepares searchable PDFs, a folder structure and a CSV index in the format your HR platform expects, so files can be imported into systems such as Darwinbox, SAP SuccessFactors or Keka, or kept in a secure shared drive."
       ],
       "items": [
-        "Onsite scanning when employee files cannot leave HR",
-        "Access limited to named Tyrus staff under NDA",
-        "Projects scoped with DPDP Act 2023 obligations in mind",
-        "Read the HR employee record digitization case study"
+        "Searchable PDF or PDF/A per document or per employee",
+        "CSV or Excel index mapped to your HRMS employee ID",
+        "Folder naming that matches your HRMS document categories",
+        "Exception log for missing, duplicate or damaged documents"
+      ]
+    },
+    {
+      "heading": "How an HR file project ran: case study summary",
+      "paragraphs": [
+        "In the employee record digitization project, HR needed faster retrieval for audits, payroll checks and background verification, with employee files spread across cupboards and cartons. Tyrus first reviewed active and inactive files and agreed index fields (employee ID, name, department, location, document type and status). Files were then prepared employee-wise, scanned with quality checks, OCR-processed and delivered as employee-wise folders with an index sheet ready for HRMS upload.",
+        "The result: HR teams search by employee ID or document type instead of opening physical files, audit requests are answered from organised digital records, and sensitive files are handled through controlled batches and exception logs."
+      ],
+      "items": [
+        [
+          "Read the HR employee record digitization case study",
+          "/case-studies/hr-employee-record-digitization"
+        ],
+        [
+          "See the HR file digitization project plan",
+          "/posts/hr-file-digitization-project-plan"
+        ]
+      ]
+    },
+    {
+      "heading": "Legal validity, retention and data protection",
+      "paragraphs": [
+        "Under the Information Technology Act, 2000, electronic records are legally recognised where a law requires information in writing, as long as they stay accessible for later reference. Scanned employee files hold personal data, so the Digital Personal Data Protection Act, 2023 also applies: access should be limited, use should be tracked, and data should not be kept longer than needed.",
+        "Some documents, such as statutory registers or papers with original signatures, may need to be kept in original form for a set period. Confirm retention rules with your legal or compliance team before destroying paper. Tyrus can return files in their original order after scanning."
+      ],
+      "items": [
+        "Access limited to named Tyrus staff working under NDA",
+        "Batch logs and file movement records for every carton",
+        "Onsite scanning when files cannot leave your premises",
+        "Encrypted digital handover; working copies removed after delivery as agreed"
+      ]
+    },
+    {
+      "heading": "In-house scanning versus an HR scanning partner",
+      "paragraphs": [
+        "Many HR teams start scanning in-house on an office scanner and stop when the backlog grows. A partner makes sense when the volume is large, files are old or mixed, or the output has to fit an HRMS."
+      ],
+      "items": [
+        "In-house: fine for a few new-joiner files a week",
+        "In-house: usually no OCR, inconsistent file names, no index sheet",
+        "Partner: production scanners, document preparation and quality checks",
+        "Partner: employee-wise indexing and HRMS-ready output, done in a fixed timeline"
       ]
     }
   ],
@@ -105,7 +161,10 @@ const props = {
     ['Can HR files be scanned onsite?', 'Yes. Tyrus can deploy scanning teams at your office or record room when employee files are confidential, active or difficult to move.'],
     ['Can output be prepared for HRMS or DMS upload?', 'Yes. Files can be delivered with searchable PDF, employee-wise folders, CSV or Excel metadata and naming rules aligned to HRMS, DMS, ERP or cloud upload requirements.'],
     ['How is HR scanning cost calculated?', 'Cost depends on employee count, page volume, document condition, preparation work, indexing fields, OCR, onsite setup, verification depth and timeline.'],
-    ['Do you handle old employee file backlogs?', 'Yes. Tyrus handles legacy HR backlogs, active employee files and recurring scanning of new HR documents across India.']
+    ['Do you handle old employee file backlogs?', 'Yes. Tyrus handles legacy HR backlogs, active employee files and recurring scanning of new HR documents across India.'],
+    ['Are scanned HR records legally valid in India?', 'Under the Information Technology Act, 2000, electronic records are legally recognised where a law requires information in writing, provided they remain accessible. Some statutory documents may still need to be kept in original form, so confirm retention rules with your legal team.'],
+    ['Can we destroy the paper files after scanning?', 'Only after your legal or compliance team confirms the retention period for each document type. Tyrus returns files in their original order so you can archive or dispose of them under your own policy.'],
+    ['How long does an HR scanning project take?', 'It depends on page volume and indexing depth. Backlogs under 10,000 pages typically take about a week; larger HR archives are delivered in phases so priority employee files come first.']
   ]
 };
 ---

@@ -8,7 +8,7 @@ seoTitle: "Onsite Employee File Scanning: Keep HR Records In-House"
 seoDescription: "When to scan HR files onsite, what to prepare, and what output your HR team receives. A practical guide for confidential employee records."
 ---
 
-Onsite HR document scanning is useful when employee files are too sensitive, active or restricted to be moved outside the organization.
+Onsite HR document scanning is useful when employee files are too sensitive, active or restricted to be moved outside the organization. It is one of the delivery options in Tyrus [HR document scanning services](/hr-document-scanning-services-india), alongside offsite scanning for older archives.
 
 HR departments often manage identity proofs, salary documents, disciplinary records, medical declarations, appraisal notes, compliance papers and exit records. These files need careful handling during digitization.
 

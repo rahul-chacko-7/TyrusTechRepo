@@ -1,16 +1,16 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "Document scanning cost per page in India (2026): ₹1.20 to ₹2.00"
+title: "Document scanning charges & cost per page in India (2026): ₹1.20 to ₹2.00"
 date: 2026-07-19
-updated: 2026-11-12
+updated: 2026-11-21
 category: pricing
-excerpt: Professional document scanning in India typically costs ₹1.20 to ₹2.00 per page, depending on volume. See the price tiers, what is included, what costs extra and how to get an exact quote.
-seoTitle: "Document Scanning Cost Per Page in India: ₹1.20–₹2 (2026)"
-seoDescription: "Document scanning in India costs ₹1.20–₹2.00 per page, depending on volume. See price tiers, OCR and onsite charges, and get a free estimate in 24 hours."
+excerpt: Document scanning charges in India typically run ₹1.20 to ₹2.00 per page, depending on volume. See the price tiers, charges by document type, what costs extra and how to compare quotes.
+seoTitle: "Scanning Charges & Cost Per Page in India: ₹1.20–₹2 (2026)"
+seoDescription: "Document scanning charges in India: ₹1.20–₹2.00 per page by volume. See charges by document type, OCR and onsite costs, and get a free quote in 24 hours."
 ---
-**Professional document scanning in India typically costs ₹1.20 to ₹2.00 per page.** Small jobs under 10,000 pages cost about ₹2.00 per page, 10,000–50,000 pages about ₹1.60, and projects above 50,000 pages about ₹1.20. OCR, detailed indexing, onsite teams and fragile documents add to the base rate.
+**Professional document scanning charges in India typically run ₹1.20 to ₹2.00 per page.** Small jobs under 10,000 pages cost about ₹2.00 per page, 10,000–50,000 pages about ₹1.60, and projects above 50,000 pages about ₹1.20. OCR, detailed indexing, onsite teams and fragile documents add to the base rate.
 
-## Document scanning price per page in India
+## Document scanning charges per page in India
 
 | Project size | Price per page | Example total | Typical turnaround |
 | --- | --- | --- | --- |
@@ -36,6 +36,43 @@ These are Tyrus base rates for loose A4 or legal-size paper, excluding GST. Use 
 - **Document preparation:** removing staples and pins, repairing torn pages, unbinding registers.
 - **Special formats:** bound books, fragile records, large-format drawings and maps.
 - **Urgent timelines:** extra scanners and shifts to finish faster.
+
+## Scanning charges by document type
+
+The per-page rates above are for loose, single-sided A4 or legal-size paper. Other material is charged differently, because it takes more handling or different equipment.
+
+| Document type | How it is usually charged |
+| --- | --- |
+| Loose single-sided A4 / legal | Base per-page rate (table above) |
+| Double-sided pages | Charged per side scanned, so roughly twice the single-sided rate per sheet |
+| Stapled or clipped files | Base rate plus a preparation charge for removing pins, staples and clips |
+| Bound registers and books | Higher per-page rate: pages are scanned without damaging the binding |
+| Large-format drawings and maps (A2–A0) | Charged per sheet on a wide-format scanner |
+| Fragile, torn or old records | Premium for slower, careful handling and minor repair |
+| Photographs and slides | Charged per item at higher resolution |
+
+## Resolution and colour
+
+Most business documents are scanned at 300 DPI, which keeps text sharp and OCR accurate. Small print, stamps and signatures may need 400 DPI, and photographs or drawings 600 DPI. Black-and-white output costs least; greyscale and colour add file size and some processing time. Ask every vendor which resolution their per-page charge includes.
+
+## How to compare scanning quotes
+
+Two quotes with the same per-page rate can cost very different amounts by the end of the project. Before comparing, check that each quote states:
+
+- Resolution and colour mode included in the base rate
+- Whether OCR (searchable PDF) is included or extra
+- How many index fields are included, and the charge per extra field
+- Preparation charges: staples, unbinding, repairs
+- Quality checks and re-scan policy for missed or unclear pages
+- Pickup, transport and onsite setup charges
+- Minimum project charge, if any
+- GST and payment terms
+
+The [document scanning RFP checklist](/document-digitization-rfp-checklist) has a scoring sheet you can use to compare vendors side by side.
+
+## Scanning charges versus keeping paper
+
+Scanning is a one-time charge. Keeping paper costs every year: office or warehouse space, cupboards, staff time to find files, and the risk of loss or damage. For files you need to keep for several years, a one-time scanning charge is usually lower than the cost of storing and retrieving the paper over the same period.
 
 ## What changes your price
 
@@ -115,7 +152,7 @@ For a quote, send the approximate page count, document type, location and output
 
 ## Frequently asked questions
 
-**What is the cost of scanning per page in India?**
+**What are the document scanning charges per page in India?**
 Professional bulk scanning costs about ₹1.20 to ₹2.00 per page, depending on volume. Larger projects get a lower per-page rate because setup is spread across more pages.
 
 **Is OCR included in scanning charges?**
@@ -126,3 +163,12 @@ Onsite scanning needs scanners, operators and a supervisor at your location, so 
 
 **Is there a minimum order?**
 Tyrus handles projects from a few thousand pages to several lakh pages. Share your page count and record type and we will confirm whether a per-page or fixed project price works best.
+
+**Do scanning charges differ by city?**
+Location mainly affects pickup, transport and onsite setup, not the per-page scanning work itself. Tyrus quotes projects across India, including Bangalore, Mumbai, Delhi NCR, Chennai, Hyderabad, Pune, Kochi and Coimbatore.
+
+**Are double-sided pages charged twice?**
+Usually yes: double-sided pages are charged per side scanned, because each side is a separate image that has to be checked.
+
+**Is GST included in the scanning charges?**
+The rates on this page exclude GST, which is added at the applicable rate on the invoice.

@@ -8,7 +8,7 @@ seoTitle: HR File Digitization Project Plan | Employee Records India
 seoDescription: Plan HR file digitization with employee record index fields, confidential scanning, OCR validation, HRMS-ready output and quality checks.
 ---
 
-HR file digitization works best when the project is planned around retrieval tasks, not only scanning volume. HR teams may need a joining form, ID proof, appraisal, payroll document or exit record quickly and with controlled access.
+HR file digitization works best when the project is planned around retrieval tasks, not only scanning volume. This plan follows the same steps Tyrus uses in its [HR document scanning services](/hr-document-scanning-services-india). HR teams may need a joining form, ID proof, appraisal, payroll document or exit record quickly and with controlled access.
 
 ## 1. Segment the employee records
 
@@ -26,7 +26,7 @@ If HRMS or an employee portal will receive the output, match field names, format
 
 Specify searchable PDF or PDF/A, image resolution, colour handling, file naming, folder structure and whether each document type should be a separate file. Decide whether OCR is needed for search, whether key fields need manual indexing and how uncertain values will be reviewed.
 
-The [HR document scanning services guide](/hr-document-scanning-services-india) explains common employee-file categories and indexing choices.
+The [HR document scanning services page](/hr-document-scanning-services-india) explains common employee-file categories and indexing choices.
 
 ## 4. Build quality checks into every batch
 
