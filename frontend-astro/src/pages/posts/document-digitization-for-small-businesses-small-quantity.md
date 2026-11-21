@@ -4,7 +4,7 @@ title: "Document digitization for small businesses and small quantity scanning"
 date: 2026-07-21
 category: document digitization
 excerpt: A practical guide for small companies that need document digitization for a limited number of files, records, invoices, contracts or office documents.
-seoTitle: Document Digitization for Small Businesses | Small Quantity Scanning
+seoTitle: Document Digitization for Small Businesses | Tyrus
 seoDescription: Document digitization for small businesses and small quantity scanning projects, including invoices, contracts, HR files, office records, OCR and searchable PDFs.
 ---
 

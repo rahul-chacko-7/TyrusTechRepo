@@ -5,7 +5,7 @@ date: 2026-07-27
 category: AI OCR
 excerpt: A practical guide to AI document scanning, intelligent document processing, OCR data extraction and exception review for paper-heavy teams.
 seoTitle: AI OCR Services India | Intelligent Document Processing Guide
-seoDescription: Learn how AI OCR, intelligent document processing, automated data extraction and manual validation help Indian organizations convert paper records into searchable data.
+seoDescription: How AI OCR, intelligent document processing and manual validation help Indian organisations turn paper records into searchable data.
 ---
 
 AI OCR and intelligent document processing are useful when scanning alone is not enough. Many organizations have invoices, KYC forms, patient records, contracts, HR files and government records that must be searched, indexed or imported into another system.

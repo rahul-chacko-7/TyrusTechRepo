@@ -17,8 +17,8 @@ export function getStaticPaths() {
 const { location } = Astro.props;
 const searchCity = location.searchCity || location.city;
 const lowestRate = Math.min(...pricingTiers.map((t) => t.pricePerPage)).toFixed(2);
-const pageTitle = `Document Scanning Services in ${searchCity} | Onsite & Bulk | Tyrus`;
-const pageDescription = `Onsite and bulk document scanning in ${searchCity} from ₹${lowestRate} per page. OCR, indexing and DMS-ready output for hospitals, banks and HR teams. Free quote.`;
+const pageTitle = `Document Scanning & Digitization in ${searchCity} | Tyrus`;
+const pageDescription = `Document scanning and digitization in ${searchCity} from ₹${lowestRate} per page: onsite or bulk, OCR, indexing and DMS-ready output. Free quote.`;
 
 const faqItems = [
   [

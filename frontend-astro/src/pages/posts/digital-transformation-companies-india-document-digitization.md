@@ -4,7 +4,7 @@ title: "Digital transformation companies in India: why document digitization is 
 date: 2026-07-21
 category: digital transformation
 excerpt: A practical guide for Indian businesses comparing digital transformation companies and why paper records, scanning, OCR and digital archives should come first.
-seoTitle: Digital Transformation Companies in India | Document Digitization Guide
+seoTitle: "Digital Transformation Companies India: Digitization Guide"
 seoDescription: Compare digital transformation companies in India and learn why document digitization, scanning, OCR indexing and digital archives are a practical first step.
 ---
 

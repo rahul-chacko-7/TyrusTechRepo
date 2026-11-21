@@ -38,8 +38,8 @@ const indexableServiceLocations = new Set([
 ]);
 const noindex = !indexableServiceLocations.has(`${location.slug}/${service.slug}`);
 const pageDescription = isDocumentScanningService
-  ? `Document scanning services in ${searchCity} for offices, hospitals, banks and record rooms. Get onsite or bulk scanning, OCR indexing, searchable PDF output and clear price factors.`
-  : `${service.titlePrefix} in ${searchCity} for enterprises: ${service.serviceIntro}, near-me coverage, price factors, secure handling, onsite support and structured digital output.`;
+  ? `Document scanning services in ${searchCity} for offices, hospitals and banks: onsite or bulk scanning, OCR indexing and searchable PDFs. Free quote.`
+  : `${service.titlePrefix} in ${searchCity}: onsite or offsite, OCR indexing, searchable PDFs and secure handover. Free quote from Tyrus.`;
 const otherServices = serviceLocationTypes.filter((item) => item.slug !== service.slug);
 
 const faqItems = [
