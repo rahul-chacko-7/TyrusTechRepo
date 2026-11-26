@@ -176,11 +176,11 @@ function wireLeadForms() {
         trackLead(form.id, { pages: Number(data.pages || 0) || 0 });
         form.reset();
         if (successEl) {
-          successEl.textContent = 'Thank you — your request is with our team. We will call you back within one working day. Need it sooner? WhatsApp us using the button below.';
+          successEl.textContent = 'Thank you — your request is with our team. We will get back to you within one working day. Need it sooner? WhatsApp us using the button below.';
           successEl.classList.remove('hidden');
         }
       } catch {
-        if (errorEl) errorEl.textContent = 'Sorry, we could not send that. Please call or WhatsApp us and we will help straight away.';
+        if (errorEl) errorEl.textContent = 'Sorry, we could not send that. Please WhatsApp us or email corporatesales@tyrustech.com and we will help straight away.';
       } finally {
         if (button) {
           button.disabled = false;

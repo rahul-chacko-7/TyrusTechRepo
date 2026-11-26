@@ -710,7 +710,7 @@ const certificationBadges = [
         id="lead-form-card"
         class="hidden rounded-2xl bg-slate-950/80 p-6 ring-1 ring-emerald-500/40"
       >
-        <h3 class="text-sm font-semibold text-slate-50">Request proposal</h3>
+        <h3 class="text-sm font-semibold text-slate-50">Request a quote</h3>
         <p class="mt-1 text-xs text-slate-300">
           Send your details. Our team will send your quote.
         </p>
@@ -1232,21 +1232,16 @@ const certificationBadges = [
           throw new Error('proposal_failed');
         }
 
-        const result = await proposalResponse.json();
-        const emailStatus = result.emailStatus || proposalResponse.headers.get('x-email-status') || 'unknown';
-        const leadEmailStatus = result.leadEmailStatus || proposalResponse.headers.get('x-lead-email-status') || 'unknown';
 
         window.tyrus?.trackLead?.('home-calculator-lead', { pages: Number(payload.pages || 0) || 0, value: Number(payload.estimated_price || 0) || 0 });
         leadForm.reset();
         if (leadSuccess) {
-          leadSuccess.textContent = emailStatus === 'sent' || leadEmailStatus === 'sent'
-            ? 'Thanks. Your request has been sent to the Tyrus team.'
-            : 'Thanks. Your request was received and our team will follow up.';
+          leadSuccess.textContent = 'Thanks. Your request has been sent to the Tyrus sales team. We will reply with a written quote within one working day.';
         }
       } catch {
         if (leadError) {
           leadError.textContent =
-            'Unable to send the request right now. Please email or call us directly.';
+            'Unable to send the request right now. Please WhatsApp us or email corporatesales@tyrustech.com.';
         }
       } finally {
         if (submitButton) {

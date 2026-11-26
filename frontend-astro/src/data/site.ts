@@ -36,14 +36,14 @@ export const hasAddress = Boolean(site.address.streetAddress && site.address.add
 export const whatsappLink = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`;
 export const mailLink = `mailto:${site.email}?subject=${encodeURIComponent('Document scanning quote request')}`;
 
-/** Indicative per-page pricing, shared by the calculator, proposal PDF and price tables. */
+/** Indicative per-page pricing, shared by the calculator and price tables. */
 export const pricingTiers = [
   { label: 'Under 10,000 pages', min: 0, max: 9999, pricePerPage: 2.0, baseDays: 5, example: 5000 },
   { label: '10,000 – 50,000 pages', min: 10000, max: 49999, pricePerPage: 1.6, baseDays: 10, example: 25000 },
   { label: 'Over 50,000 pages', min: 50000, max: Infinity, pricePerPage: 1.2, baseDays: 15, example: 100000 }
 ] as const;
 
-/** Clients shown in the client-logo grid (public/client-logos-grid.*) and the proposal PDF. */
+/** Clients shown in the client-logo grid (public/client-logos-grid.*). */
 export const clients = [
   'Airtel', 'Bosch', 'Infosys', "St. Mary's Hospital", 'Keltron', 'Cochin Shipyard Ltd',
   'CMC Vellore', 'CUSAT', 'Caritas Hospital', 'Altisource', 'Azim Premji Foundation', 'Indian Navy'
