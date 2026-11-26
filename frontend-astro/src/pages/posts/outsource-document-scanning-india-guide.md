@@ -33,7 +33,7 @@ The right model depends on sensitivity, page volume, city, available workspace, 
 
 ## Cost factors
 
-Outsourced document scanning cost depends on:
+[Outsourced document scanning cost](/posts/document-digitization-services-price-cost-india) depends on:
 
 - Page volume
 - Paper condition

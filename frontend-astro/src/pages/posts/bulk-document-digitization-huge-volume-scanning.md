@@ -130,7 +130,7 @@ Each industry needs a different indexing structure.
 
 ## Tyrus services for bulk digitization
 
-Tyrus Technologies supports high-volume scanning and digitization projects across India with document preparation, scanning, OCR, metadata capture, indexing, quality checks and secure handover.
+Tyrus Technologies supports [high-volume scanning](/bulk-document-scanning-services) and digitization projects across India with document preparation, scanning, OCR, metadata capture, indexing, quality checks and secure handover.
 
 Useful pages:
 

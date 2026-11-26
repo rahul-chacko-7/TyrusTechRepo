@@ -165,6 +165,7 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
                 <a href={whatsappLink} target="_blank" rel="noopener" class="font-semibold text-emerald-700 hover:text-emerald-800">WhatsApp {site.whatsappDisplay}</a>
                 <a href={mailLink} class="hover:text-emerald-700">{site.email}</a>
                 <span>{site.openingHoursDisplay}</span>
+                <a href="/about" class="hover:text-emerald-700">About Tyrus Technologies</a>
                 {hasAddress && (
                   <address class="not-italic">
                     {site.name}<br />{site.address.streetAddress}<br />{site.address.addressLocality}{site.address.postalCode ? ` – ${site.address.postalCode}` : ''}, {site.address.addressRegion}, India
@@ -203,7 +204,7 @@ const gaMeasurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-ZM
             </div>
           </div>
           <div class="flex flex-col gap-2 pt-5 md:flex-row md:items-center md:justify-between">
-            <p>&copy; {new Date().getFullYear()} Tyrus Technologies Pvt Ltd. Document scanning and digitization since {site.foundingYear}.</p>
+            <p>&copy; {new Date().getFullYear()} <a href="/about" class="hover:text-emerald-700">Tyrus Technologies Pvt Ltd</a>. Document scanning and digitization since {site.foundingYear}.</p>
             <p>Digitize. Secure. Go Green.</p>
           </div>
         </div>

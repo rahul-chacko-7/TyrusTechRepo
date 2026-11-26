@@ -38,7 +38,7 @@ For searchable output, see [OCR indexing services](/ocr-indexing-services).
 
 ## PDF/A for archives
 
-PDF/A is often used for long-term preservation. It is designed for archiving records where future readability matters.
+PDF/A is often used for long-term preservation. It is designed for [archiving records](/document-archival-services-india) where future readability matters.
 
 PDF/A can be useful for:
 

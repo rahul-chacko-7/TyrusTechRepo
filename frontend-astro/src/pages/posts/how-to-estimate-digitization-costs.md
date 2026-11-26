@@ -82,7 +82,7 @@ Beyond per‑page scanning cost, consider:
 - Transportation from your offices to the digitization centre (if off‑site)
 - Long‑term digital storage (on‑premises or cloud)
 
-These items are usually small compared to the scanning cost but should be mentioned upfront to avoid
+These items are usually small compared to the [scanning cost](/posts/document-digitization-services-price-cost-india) but should be mentioned upfront to avoid
 surprises.
 
 ## 7. Convert cost into business impact

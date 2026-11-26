@@ -2,11 +2,11 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "Document scanning charges & cost per page in India (2026): ₹1.20 to ₹2.00"
 date: 2026-07-19
-updated: 2026-11-21
+updated: 2026-11-26
 category: pricing
 excerpt: Document scanning charges in India typically run ₹1.20 to ₹2.00 per page, depending on volume. See the price tiers, charges by document type, what costs extra and how to compare quotes.
 seoTitle: "Scanning Charges & Cost Per Page in India: ₹1.20–₹2 (2026)"
-seoDescription: "Document scanning charges in India: ₹1.20–₹2.00 per page by volume. See charges by document type, OCR and onsite costs, and get a free quote in 24 hours."
+seoDescription: "2026 scanning charges per page: ₹1.20–₹2.00 by volume. See what OCR, indexing and onsite work add, then get your exact estimate in 2 minutes."
 ---
 **Professional document scanning charges in India typically run ₹1.20 to ₹2.00 per page.** Small jobs under 10,000 pages cost about ₹2.00 per page, 10,000–50,000 pages about ₹1.60, and projects above 50,000 pages about ₹1.20. OCR, detailed indexing, onsite teams and fragile documents add to the base rate.
 
@@ -153,7 +153,7 @@ For a quote, send the approximate page count, document type, location and output
 ## Frequently asked questions
 
 **What are the document scanning charges per page in India?**
-Professional bulk scanning costs about ₹1.20 to ₹2.00 per page, depending on volume. Larger projects get a lower per-page rate because setup is spread across more pages.
+Professional [bulk scanning](/bulk-document-scanning-services) costs about ₹1.20 to ₹2.00 per page, depending on volume. Larger projects get a lower per-page rate because setup is spread across more pages.
 
 **Is OCR included in scanning charges?**
 Basic scanning produces image PDFs. OCR, which makes the text searchable, is a separate add-on that is quoted per page.
@@ -165,7 +165,7 @@ Onsite scanning needs scanners, operators and a supervisor at your location, so 
 Tyrus handles projects from a few thousand pages to several lakh pages. Share your page count and record type and we will confirm whether a per-page or fixed project price works best.
 
 **Do scanning charges differ by city?**
-Location mainly affects pickup, transport and onsite setup, not the per-page scanning work itself. Tyrus quotes projects across India, including Bangalore, Mumbai, Delhi NCR, Chennai, Hyderabad, Pune, Kochi and Coimbatore.
+Location mainly affects pickup, transport and onsite setup, not the per-page scanning work itself. Tyrus quotes projects across India, including [Bangalore](/locations/bangalore), [Mumbai](/locations/mumbai), [Delhi NCR](/locations/delhi-ncr), Chennai, [Hyderabad](/locations/hyderabad), Pune, Kochi and Coimbatore.
 
 **Are double-sided pages charged twice?**
 Usually yes: double-sided pages are charged per side scanned, because each side is a separate image that has to be checked.
