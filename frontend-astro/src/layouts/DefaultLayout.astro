@@ -26,11 +26,18 @@ const jsonLdSchemas = [
     '@type': 'Organization',
     '@id': `${siteUrl}/#organization`,
     name: site.name,
+    legalName: site.name,
     alternateName: site.shortName,
     url: siteUrl,
     logo: new URL('/tyrus-logo.png', siteUrl).toString(),
-    description,
+    description: `${site.shortName} provides bulk and onsite document scanning, OCR indexing and digitization services across India from its head office in Bengaluru, since ${site.foundingYear}.`,
     email: site.email,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: site.address.addressLocality,
+      addressRegion: site.address.addressRegion,
+      addressCountry: site.address.addressCountry
+    },
     foundingDate: site.foundingYear,
     sameAs: [...site.sameAs],
     contactPoint: [
@@ -72,11 +79,8 @@ const jsonLdSchemas = [
     '@type': 'WebSite',
     name: 'Tyrus Technologies',
     url: siteUrl,
-    publisher: {
-      '@type': 'Organization',
-      name: 'Tyrus Technologies Pvt Ltd',
-      url: siteUrl
-    },
+    alternateName: ['Tyrus Tech', 'Tyrus Technologies Pvt Ltd'],
+    publisher: { '@id': `${siteUrl}/#organization` },
     potentialAction: {
       '@type': 'SearchAction',
       target: `${siteUrl}/blog?search={search_term_string}`,
