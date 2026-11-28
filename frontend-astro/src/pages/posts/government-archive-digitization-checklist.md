@@ -4,7 +4,7 @@ title: Government archive digitization checklist for departments in India
 date: 2026-03-18
 category: government digitization
 excerpt: A simple checklist for government departments planning to digitize land records, citizen files and legacy archives.
-seoTitle: Government archive digitization checklist for Indian departments
+seoTitle: Government Archive Digitization Checklist for India
 seoDescription: Checklist for Indian government departments digitizing land records, citizen files and legacy registers, covering access, security and compliance.
 image: https://images.pexels.com/photos/209137/pexels-photo-209137.jpeg
 ---

@@ -19,8 +19,8 @@ const { location, service } = Astro.props;
 const searchCity = location.searchCity || location.city;
 const isDocumentScanningService = service.slug === 'document-scanning-services';
 const pageTitle = isDocumentScanningService
-  ? `Document Scanning Services in ${searchCity} | Onsite & Bulk | Tyrus`
-  : `${service.titlePrefix} in ${searchCity} | Tyrus Technologies`;
+  ? `Document Scanning Services in ${searchCity} | Tyrus`
+  : `${service.titlePrefix} in ${searchCity} | Tyrus`;
 
 /**
  * City x service pages are near-duplicates of each other. Only the ones that

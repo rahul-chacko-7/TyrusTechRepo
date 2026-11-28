@@ -4,7 +4,7 @@ title: "Legal and medical record scanning checklist for sensitive documents"
 date: 2026-07-27
 category: sensitive records
 excerpt: A checklist for legal document scanning, medical records scanning, onsite execution, OCR indexing, searchable PDFs and secure handover.
-seoTitle: Legal and Medical Records Scanning Checklist | Tyrus Technologies
+seoTitle: "Legal & Medical Records Scanning Checklist | Tyrus"
 seoDescription: Use this checklist before scanning legal files, contracts, case bundles, MRD files, patient records and other sensitive documents.
 ---
 

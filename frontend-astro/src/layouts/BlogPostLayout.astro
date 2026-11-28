@@ -32,6 +32,7 @@ const articleSchema = {
     }
   }
 };
+const formatDate = (value) => new Date(value).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
 ---
 
 <DefaultLayout title={pageTitle} description={pageDescription} image={image} schemas={[articleSchema]}>
@@ -50,11 +51,13 @@ const articleSchema = {
           </p>
         )}
         <p class="text-xs text-slate-400">
-          {frontmatter.date && new Date(frontmatter.date).toLocaleDateString('en-IN', {
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric'
-          })}
+          By the Tyrus Technologies digitization team
+          {frontmatter.date && (
+            <> · Published <time datetime={new Date(frontmatter.date).toISOString().slice(0, 10)}>{formatDate(frontmatter.date)}</time></>
+          )}
+          {frontmatter.updated && String(frontmatter.updated) !== String(frontmatter.date) && (
+            <> · Updated <time datetime={new Date(frontmatter.updated).toISOString().slice(0, 10)}>{formatDate(frontmatter.updated)}</time></>
+          )}
         </p>
       </div>
 

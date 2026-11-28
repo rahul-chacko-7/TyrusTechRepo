@@ -4,7 +4,7 @@ title: "AI OCR and intelligent document processing for Indian businesses"
 date: 2026-07-27
 category: AI OCR
 excerpt: A practical guide to AI document scanning, intelligent document processing, OCR data extraction and exception review for paper-heavy teams.
-seoTitle: AI OCR Services India | Intelligent Document Processing Guide
+seoTitle: "AI OCR & Intelligent Document Processing in India"
 seoDescription: How AI OCR, intelligent document processing and manual validation help Indian organisations turn paper records into searchable data.
 ---
 

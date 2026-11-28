@@ -1,6 +1,11 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
-const pageTitle = 'About Tyrus Technologies: Document Digitization Company in India';
+import { site, clients, featuredPages, pricingTiers } from '../data/site';
+import { locationPages } from '../data/locationPages';
+const certifications = ['ISO 9001:2015 (quality management)', 'ISO 27001 (information security)', 'ISO 20000 (IT service management)', 'ISO 45001 (occupational health and safety)'];
+const minRate = Math.min(...pricingTiers.map((tier) => tier.pricePerPage)).toFixed(2);
+const maxRate = Math.max(...pricingTiers.map((tier) => tier.pricePerPage)).toFixed(2);
+const pageTitle = 'About Tyrus Technologies | Document Digitization, India';
 ---
 
 <DefaultLayout showLeadForm={true}
@@ -36,21 +41,40 @@ const pageTitle = 'About Tyrus Technologies: Document Digitization Company in In
           We combine proven processes, trained teams and secure infrastructure to deliver projects that
           are reliable, predictable and easy for your operations teams to work with.
         </p>
+        <p class="text-sm text-slate-700">
+          {site.name} is headquartered in Bengaluru and runs projects across India — offsite at our
+          scanning facility or onsite at the client's premises when files cannot move. Projects described
+          in our <a href="/case-studies" class="font-semibold text-emerald-700 underline">case studies</a> alone
+          cover more than {featuredPages} pages, including 4.5 million hospital record pages, 1.2 million
+          banking pages and 800,000 government archive pages.
+        </p>
       </div>
       <div class="space-y-4 rounded-2xl bg-white p-6 ring-1 ring-slate-200">
         <h3 class="text-sm font-semibold text-slate-900">At a glance</h3>
         <dl class="mt-2 space-y-2 text-sm text-slate-800">
-          <div class="flex justify-between">
-            <dt>Years of experience</dt>
-            <dd class="font-semibold text-emerald-700">Since 2009</dd>
+          <div class="flex justify-between gap-4">
+            <dt>Founded</dt>
+            <dd class="font-semibold text-emerald-700">{site.foundingYear}</dd>
           </div>
-          <div class="flex justify-between">
-            <dt>Sectors served</dt>
-            <dd class="font-semibold text-emerald-700">Multi-sector</dd>
+          <div class="flex justify-between gap-4">
+            <dt>Head office</dt>
+            <dd class="font-semibold text-emerald-700">Bengaluru, Karnataka</dd>
           </div>
-          <div class="flex justify-between">
-            <dt>Project focus</dt>
-            <dd class="font-semibold text-emerald-700">Large archives</dd>
+          <div class="flex justify-between gap-4">
+            <dt>Pages digitized (case studies)</dt>
+            <dd class="font-semibold text-emerald-700">{featuredPages}</dd>
+          </div>
+          <div class="flex justify-between gap-4">
+            <dt>Cities served</dt>
+            <dd class="font-semibold text-emerald-700">{locationPages.length} cities + onsite across India</dd>
+          </div>
+          <div class="flex justify-between gap-4">
+            <dt>Certifications</dt>
+            <dd class="font-semibold text-emerald-700">ISO 9001, 27001, 20000, 45001</dd>
+          </div>
+          <div class="flex justify-between gap-4">
+            <dt>Published price</dt>
+            <dd class="font-semibold text-emerald-700">₹{minRate}–₹{maxRate} per page</dd>
           </div>
         </dl>
       </div>
@@ -75,6 +99,65 @@ const pageTitle = 'About Tyrus Technologies: Document Digitization Company in In
           We make it easy to store and find documents.
         </p>
       </div>
+    </div>
+  </section>
+
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12 grid gap-10 md:grid-cols-2">
+      <div class="space-y-3">
+        <h2 class="text-xl font-semibold text-slate-900">What Tyrus does.</h2>
+        <ul class="space-y-2 text-sm leading-6 text-slate-800">
+          <li>• <a href="/bulk-document-scanning-services" class="font-semibold text-emerald-700 underline">Bulk document scanning</a> for archives from 10,000 to millions of pages.</li>
+          <li>• <a href="/onsite-document-scanning-services" class="font-semibold text-emerald-700 underline">Onsite scanning</a> with our scanners, operators and a supervisor at your office.</li>
+          <li>• <a href="/ocr-indexing-services" class="font-semibold text-emerald-700 underline">OCR and indexing</a> so files are searchable by name, number or date.</li>
+          <li>• <a href="/document-management-system-india" class="font-semibold text-emerald-700 underline">DMS-ready output</a>: searchable PDF, PDF/A, TIFF and Excel or CSV indexes.</li>
+          <li>• Sector programs for <a href="/medical-records-scanning-services" class="font-semibold text-emerald-700 underline">hospitals</a>, <a href="/banking-document-scanning-services" class="font-semibold text-emerald-700 underline">banks</a>, <a href="/hr-document-scanning-services-india" class="font-semibold text-emerald-700 underline">HR teams</a>, <a href="/legal-document-scanning-services" class="font-semibold text-emerald-700 underline">legal firms</a> and <a href="/government-record-digitization-services" class="font-semibold text-emerald-700 underline">government departments</a>.</li>
+        </ul>
+      </div>
+      <div class="space-y-3">
+        <h2 class="text-xl font-semibold text-slate-900">How we keep records safe.</h2>
+        <ul class="space-y-2 text-sm leading-6 text-slate-800">
+          <li>• ISO 27001-certified information security practices.</li>
+          <li>• NDA-backed, trained staff and controlled access to scanning areas.</li>
+          <li>• Batch tracking and logs for every file movement, from pickup to return.</li>
+          <li>• Quality checks for missing pages, image clarity and index accuracy before delivery.</li>
+          <li>• Onsite option so confidential files never leave your building.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12 grid gap-10 md:grid-cols-2">
+      <div class="space-y-3">
+        <h2 class="text-xl font-semibold text-slate-900">Certifications.</h2>
+        <ul class="space-y-2 text-sm text-slate-800">
+          {certifications.map((item) => <li>• {item}</li>)}
+        </ul>
+      </div>
+      <div class="space-y-3">
+        <h2 class="text-xl font-semibold text-slate-900">Organisations we have worked with.</h2>
+        <p class="text-sm leading-6 text-slate-700">{clients.join(', ')}.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-xl font-semibold text-slate-900">Where we work.</h2>
+      <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-700">
+        Head office in Bengaluru, with project teams for
+        {locationPages.map((location, index) => (
+          <>
+            <a href={`/locations/${location.slug}`} class="font-semibold text-emerald-700 underline">{location.city}</a>{index < locationPages.length - 2 ? ', ' : index === locationPages.length - 2 ? ' and ' : '.'}
+          </>
+        ))}
+        {' '}Onsite teams can be deployed to other Indian cities after a site survey.
+      </p>
+      <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-700">
+        Reach us on WhatsApp at <a href={`https://wa.me/${site.whatsapp}`} class="font-semibold text-emerald-700 underline">{site.whatsappDisplay}</a>
+        or email <a href={`mailto:${site.email}`} class="font-semibold text-emerald-700 underline">{site.email}</a>, {site.openingHoursDisplay}.
+      </p>
     </div>
   </section>
 

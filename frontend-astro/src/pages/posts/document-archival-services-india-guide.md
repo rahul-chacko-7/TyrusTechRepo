@@ -4,7 +4,7 @@ title: "Document archival services in India: how to digitize old archives"
 date: 2026-07-27
 category: archive digitization
 excerpt: A guide to document archival services, archive digitization, box-to-file references, OCR indexing, PDF/A and searchable digital archives.
-seoTitle: Document Archival Services India | Archive Digitization Guide
+seoTitle: "Document Archival Services in India: Digitization Guide"
 seoDescription: Learn how document archival services in India convert old archives, cartons, registers and record rooms into searchable digital archives with OCR and metadata.
 ---
 

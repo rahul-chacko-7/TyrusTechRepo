@@ -2,7 +2,7 @@
 import SeoServicePage from '../components/SeoServicePage.astro';
 
 const props = {
-  title: 'Document Scanning Services in India | Bulk, Onsite & OCR | Tyrus',
+  title: 'Document Scanning Services in India | Bulk & Onsite | Tyrus',
   description: 'Get your documents and records in order with document scanning services in India, records management, bulk scanning, OCR indexing, and DMS-ready digital archives.',
   canonical: '/document-scanning-services-india',
   eyebrow: 'India-wide document scanning',
@@ -92,6 +92,23 @@ const props = {
       ]
     },
     {
+      "heading": "How long Indian businesses must keep records",
+      "paragraphs": [
+        "Most retention rules in India allow records to be kept in electronic form, provided the scans are complete, readable and can be produced when asked. Use this table to plan which archives to digitize first and how long the digital copies must stay retrievable."
+      ],
+      "table": {
+        "columns": ["Record type", "Minimum period", "Rule"],
+        "rows": [
+          ["Company books of account and vouchers", "8 financial years", "Companies Act, 2013, section 128(5); electronic books allowed under section 128(1)"],
+          ["GST accounts and records", "72 months from the due date of the annual return", "CGST Act, 2017, section 36"],
+          ["Bank, NBFC and other reporting-entity transaction records", "5 years", "Prevention of Money Laundering Act, 2002, section 12"],
+          ["Indoor patient medical records", "3 years from start of treatment (minimum)", "Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulations, 2002, regulation 1.3.1"],
+          ["Insurance policy and claim records", "Must also be kept in electronic form, in data centres in India", "IRDAI (Maintenance of Insurance Records) Regulations, 2015, regulation 3"]
+        ]
+      },
+      "note": "Periods are minimums and longer holds apply during audits, litigation or investigations. This is a planning guide, not legal advice — confirm the rule that applies to your organisation with your auditor or legal team."
+    },
+    {
       "heading": "Cities and states we cover",
       "paragraphs": [
         "Tyrus runs scanning projects across India from its head office in Bengaluru, with local teams in most of the cities below. For other cities, onsite teams can be deployed after a site survey."
@@ -112,7 +129,9 @@ const props = {
     ['What are document scanning services?', 'Document scanning services convert physical paper records into digital images and searchable files using scanning, OCR, indexing, quality checks, and secure delivery.'],
     ['Can Tyrus handle bulk document scanning?', 'Yes. Tyrus plans manpower, scanners, batching, quality checks, and delivery for high-volume scanning projects across India.'],
     ['Do you provide onsite document scanning?', 'Yes. Tyrus can deploy a scanning team at your premises when records are sensitive or cannot be moved offsite.'],
-    ['What file formats can we receive?', 'Common outputs include searchable PDF, PDF/A, TIFF, JPEG, PNG, Excel indexes, CSV metadata, and DMS-ready folders.']
+    ['What file formats can we receive?', 'Common outputs include searchable PDF, PDF/A, TIFF, JPEG, PNG, Excel indexes, CSV metadata, and DMS-ready folders.'],
+    ['Are scanned documents legally valid in India?', 'Yes, in most cases. The Information Technology Act, 2000 gives electronic records legal recognition (section 4) and lets a retention requirement be met electronically if the record stays accessible, unaltered and traceable to its origin (section 7). In court, electronic records are admissible under section 63 of the Bharatiya Sakshya Adhiniyam, 2023 with the required certificate.'],
+    ['Can we destroy the paper originals after scanning?', 'Often yes, but not always. Some records, such as originals needed as evidence, title deeds or documents under an active audit or case, should be kept. Agree a retention and destruction policy with your legal team first; Tyrus can then scan, verify and hand back or securely return the originals.']
   ]
 };
 ---

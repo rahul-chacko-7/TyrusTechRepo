@@ -2,9 +2,17 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import TrustBar from '../components/TrustBar.astro';
 
-const pageTitle = 'Document Digitization Services in India | OCR, Indexing & DMS';
+const pageTitle = 'Document Digitization Services India | OCR & DMS';
 const pageDescription =
   'Document digitization services in India: bulk scanning, OCR indexing and searchable PDFs for HR, medical, KYC and archive files. DMS-ready.';
+const digitizationFaqs: [string, string][] = [
+          ['What is document digitization?', 'Document digitization is the process of converting paper files, records, and archives into digital files with scanning, OCR, indexing, and organized storage.'],
+          ['Is document digitization different from scanning?', 'Scanning captures the image of a document. Digitization is broader and can include sorting, indexing, OCR, metadata capture, quality control, archive design, and retrieval planning.'],
+          ['Can you scan confidential documents onsite?', 'Yes. If documents are sensitive or cannot leave your premises, Tyrus can plan an onsite scanning workflow with trained operators and controlled access.'],
+          ['What output format can we get?', 'Common outputs include searchable PDF, PDF/A, TIFF, JPEG, PNG, Excel or CSV indexes, folder structures, and DMS-ready files.'],
+          ['How do we get a quote?', 'Share the approximate number of pages, document types, locations, and timeline. Tyrus can then estimate cost, manpower, scanning approach, and delivery schedule.']
+];
+
 const pageSchemas = [
   {
     '@context': 'https://schema.org',
@@ -25,40 +33,11 @@ const pageSchemas = [
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'What are document digitization services?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Document digitization services convert paper records and archives into organized digital files using scanning, OCR, indexing, quality checks, and secure digital delivery.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Can Tyrus handle large document scanning projects?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes. Tyrus supports high-volume digitization projects for hospitals, banks, enterprises, government departments, legal teams, and record rooms across India.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Do you provide OCR and searchable PDF output?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes. Projects can include OCR, searchable PDF, indexed folders, metadata capture, and structured data files depending on the required output.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Can digitization be done onsite?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes. Tyrus can plan onsite or offsite scanning depending on document sensitivity, available space, timeline, and security requirements.'
-        }
-      }
-    ]
+    mainEntity: digitizationFaqs.map(([question, answer]) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer }
+    }))
   }
 ];
 
@@ -306,13 +285,7 @@ const outputs = [
     <div class="mx-auto max-w-6xl px-4 py-14">
       <h2 class="text-2xl font-semibold text-slate-900">Frequently asked questions</h2>
       <div class="mt-6 space-y-4">
-        {[
-          ['What is document digitization?', 'Document digitization is the process of converting paper files, records, and archives into digital files with scanning, OCR, indexing, and organized storage.'],
-          ['Is document digitization different from scanning?', 'Scanning captures the image of a document. Digitization is broader and can include sorting, indexing, OCR, metadata capture, quality control, archive design, and retrieval planning.'],
-          ['Can you scan confidential documents onsite?', 'Yes. If documents are sensitive or cannot leave your premises, Tyrus can plan an onsite scanning workflow with trained operators and controlled access.'],
-          ['What output format can we get?', 'Common outputs include searchable PDF, PDF/A, TIFF, JPEG, PNG, Excel or CSV indexes, folder structures, and DMS-ready files.'],
-          ['How do we get a quote?', 'Share the approximate number of pages, document types, locations, and timeline. Tyrus can then estimate cost, manpower, scanning approach, and delivery schedule.']
-        ].map(([question, answer]) => (
+        {digitizationFaqs.map(([question, answer]) => (
           <details class="rounded-2xl bg-white p-5 ring-1 ring-slate-200">
             <summary class="cursor-pointer text-sm font-semibold text-slate-900">{question}</summary>
             <p class="mt-3 text-sm leading-7 text-slate-700">{answer}</p>

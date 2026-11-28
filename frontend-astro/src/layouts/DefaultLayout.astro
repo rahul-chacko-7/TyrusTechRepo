@@ -19,7 +19,8 @@ const configuredSiteUrl = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.toStri
 const siteUrl = configuredSiteUrl.replace('https://tyrustech.com', 'https://www.tyrustech.com');
 const canonicalUrl = new URL(canonical || Astro.url.pathname, siteUrl).toString();
 const imageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).toString();
-const publishedSchemas = schemas.filter((schema) => schema?.['@type'] !== 'FAQPage');
+// FAQPage is published only where the same questions are visible on the page.
+const publishedSchemas = schemas;
 const jsonLdSchemas = [
   {
     '@context': 'https://schema.org',
